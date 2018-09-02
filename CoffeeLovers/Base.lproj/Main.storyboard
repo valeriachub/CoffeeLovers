@@ -179,7 +179,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="31.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT4-f3-eHD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="95" height="31.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="31.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="vT4-f3-eHD" secondAttribute="height" multiplier="3:1" id="fpN-mP-tsd"/>
                                                                 </constraints>
@@ -188,19 +188,25 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sqn-sQ-2fX">
-                                                                <rect key="frame" x="111" y="0.0" width="216" height="31.5"/>
+                                                                <rect key="frame" x="110" y="0.0" width="217" height="31.5"/>
                                                                 <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="J37-e8-5mL">
-                                                                        <rect key="frame" x="0.0" y="8" width="216" height="15.5"/>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="J37-e8-5mL" customClass="IngredientsView" customModule="CoffeeLovers" customModuleProvider="target">
+                                                                        <rect key="frame" x="1" y="1" width="215" height="29.5"/>
                                                                     </stackView>
                                                                 </subviews>
-                                                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="backgroundColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="J37-e8-5mL" firstAttribute="leading" secondItem="Sqn-sQ-2fX" secondAttribute="leading" id="8jH-ey-hE5"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="J37-e8-5mL" secondAttribute="bottom" constant="8" id="EO6-I8-fNS"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="J37-e8-5mL" secondAttribute="trailing" id="MxJ-tm-Gln"/>
-                                                                    <constraint firstItem="J37-e8-5mL" firstAttribute="top" secondItem="Sqn-sQ-2fX" secondAttribute="top" constant="8" id="cCF-jv-AGF"/>
+                                                                    <constraint firstItem="J37-e8-5mL" firstAttribute="leading" secondItem="Sqn-sQ-2fX" secondAttribute="leading" constant="1" id="8jH-ey-hE5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="J37-e8-5mL" secondAttribute="bottom" constant="1" id="EO6-I8-fNS"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="J37-e8-5mL" secondAttribute="trailing" constant="1" id="MxJ-tm-Gln"/>
+                                                                    <constraint firstItem="J37-e8-5mL" firstAttribute="top" secondItem="Sqn-sQ-2fX" secondAttribute="top" constant="1" id="cCF-jv-AGF"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="4"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
@@ -208,7 +214,7 @@
                                                         <rect key="frame" x="0.0" y="47.5" width="327" height="31.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-Ie-0cU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="31.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="94.5" height="31.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GVa-Ie-0cU" secondAttribute="height" multiplier="3:1" id="2wg-C9-mdj"/>
                                                                 </constraints>
@@ -216,29 +222,15 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WJD-Bt-wJm">
-                                                                <rect key="frame" x="110" y="0.0" width="217" height="31.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="size_big_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="orz-VR-jTf">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="42.5" height="31.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="size_big_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="Jxm-f5-FYd">
-                                                                        <rect key="frame" x="58.5" y="0.0" width="42.5" height="31.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="size_big_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="CS6-4a-Tnu">
-                                                                        <rect key="frame" x="117" y="0.0" width="42" height="31.5"/>
-                                                                    </imageView>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kKU-SG-BKX">
-                                                                        <rect key="frame" x="175" y="0.0" width="42" height="31.5"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </view>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="CS6-4a-Tnu" firstAttribute="width" secondItem="orz-VR-jTf" secondAttribute="width" id="DY5-ay-tM1"/>
-                                                                    <constraint firstItem="Jxm-f5-FYd" firstAttribute="width" secondItem="orz-VR-jTf" secondAttribute="width" id="O3t-8s-MLZ"/>
-                                                                    <constraint firstItem="kKU-SG-BKX" firstAttribute="width" secondItem="orz-VR-jTf" secondAttribute="width" id="fU6-40-1X6"/>
-                                                                </constraints>
-                                                            </stackView>
+                                                            <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-OA-PX7">
+                                                                <rect key="frame" x="110.5" y="0.0" width="216.5" height="32.5"/>
+                                                                <segments>
+                                                                    <segment title="" image="size_s"/>
+                                                                    <segment title="" image="size_m"/>
+                                                                    <segment title="" image="size_l"/>
+                                                                </segments>
+                                                                <color key="tintColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </segmentedControl>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-9I-lDB">
@@ -253,35 +245,23 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Uie-yA-yXP">
-                                                                <rect key="frame" x="110" y="0.0" width="217" height="31.5"/>
-                                                                <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar_zero_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="gI6-Tx-aTi">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="31.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar_small_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="y1h-z2-u3S">
-                                                                        <rect key="frame" x="58" y="0.0" width="42.5" height="31.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar_small_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="C6v-K4-LSf">
-                                                                        <rect key="frame" x="116.5" y="0.0" width="42.5" height="31.5"/>
-                                                                    </imageView>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sugar_small_unselected" translatesAutoresizingMaskIntoConstraints="NO" id="oOx-fi-gP3">
-                                                                        <rect key="frame" x="175" y="0.0" width="42" height="31.5"/>
-                                                                    </imageView>
-                                                                </subviews>
-                                                                <constraints>
-                                                                    <constraint firstItem="C6v-K4-LSf" firstAttribute="width" secondItem="gI6-Tx-aTi" secondAttribute="width" id="BEU-tF-A7k"/>
-                                                                    <constraint firstItem="oOx-fi-gP3" firstAttribute="width" secondItem="gI6-Tx-aTi" secondAttribute="width" id="YDt-q1-7xU"/>
-                                                                    <constraint firstItem="y1h-z2-u3S" firstAttribute="width" secondItem="gI6-Tx-aTi" secondAttribute="width" id="wv2-TP-a1J"/>
-                                                                </constraints>
-                                                            </stackView>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3rR-nv-i4g">
+                                                                <rect key="frame" x="110" y="0.0" width="217" height="32.5"/>
+                                                                <segments>
+                                                                    <segment title="" image="sugar_zero_selected"/>
+                                                                    <segment title="" image="sugar_s_selected"/>
+                                                                    <segment title="" image="sugar_m_selected"/>
+                                                                    <segment title="" image="sugar_l_selected"/>
+                                                                </segments>
+                                                                <color key="tintColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            </segmentedControl>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cc5-pB-0kt">
                                                         <rect key="frame" x="0.0" y="142.5" width="327" height="31.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gia-UQ-PbD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="94" height="31.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="95" height="31.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="gia-UQ-PbD" secondAttribute="height" multiplier="3:1" id="2zH-dK-kGs"/>
                                                                 </constraints>
@@ -290,20 +270,20 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="agl-Xl-TVM">
-                                                                <rect key="frame" x="110" y="0.0" width="217" height="31.5"/>
+                                                                <rect key="frame" x="111" y="0.0" width="216" height="31.5"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addition_cream" translatesAutoresizingMaskIntoConstraints="NO" id="PIh-UW-blO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="42.5" height="31.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="42" height="31.5"/>
                                                                     </imageView>
                                                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addition_flower" translatesAutoresizingMaskIntoConstraints="NO" id="OC1-6U-Wpx">
-                                                                        <rect key="frame" x="58.5" y="0.0" width="42.5" height="31.5"/>
+                                                                        <rect key="frame" x="58" y="0.0" width="42" height="31.5"/>
                                                                     </imageView>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ATi-jw-Y0y">
-                                                                        <rect key="frame" x="117" y="0.0" width="42" height="31.5"/>
+                                                                        <rect key="frame" x="116" y="0.0" width="42.5" height="31.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WyV-1d-UbG">
-                                                                        <rect key="frame" x="175" y="0.0" width="42" height="31.5"/>
+                                                                        <rect key="frame" x="174.5" y="0.0" width="41.5" height="31.5"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
                                                                 </subviews>
@@ -365,6 +345,8 @@
                     </view>
                     <connections>
                         <outlet property="imageCoffee" destination="6OY-QV-c7W" id="id7-kd-TNs"/>
+                        <outlet property="ingredientsView" destination="J37-e8-5mL" id="JMr-C8-ObF"/>
+                        <outlet property="sizeSegment" destination="WlK-OA-PX7" id="2JN-g7-6fo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="677-oD-o8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -404,8 +386,12 @@
         <image name="header" width="375" height="250"/>
         <image name="home" width="24" height="24"/>
         <image name="latte" width="196" height="280"/>
-        <image name="size_big_unselected" width="29" height="43"/>
-        <image name="sugar_small_unselected" width="12" height="13"/>
-        <image name="sugar_zero_unselected" width="20" height="20"/>
+        <image name="size_l" width="21" height="30"/>
+        <image name="size_m" width="18" height="25"/>
+        <image name="size_s" width="15" height="21"/>
+        <image name="sugar_l_selected" width="26" height="24"/>
+        <image name="sugar_m_selected" width="26" height="18"/>
+        <image name="sugar_s_selected" width="12" height="13"/>
+        <image name="sugar_zero_selected" width="22" height="22"/>
     </resources>
 </document>
