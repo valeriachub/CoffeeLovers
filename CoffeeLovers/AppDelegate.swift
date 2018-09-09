@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: - Preloading Data Methods
     
     func isDataBaseEmpty(context : NSManagedObjectContext) -> Bool {
-        let testRequest : NSFetchRequest<Ingredient> = Ingredient.fetchRequest()
+        let testRequest : NSFetchRequest<Coffee> = Coffee.fetchRequest()
         do{
             let count = try context.fetch(testRequest).count
             print("\(count)")
@@ -81,7 +81,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
             let jsonObj = try JSON(data: data)
             
-            preloadIngredients(context: context, jsonObj: jsonObj)
             preloadCoffee(context : context, jsonObj: jsonObj)
             
             do {
@@ -95,46 +94,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func preloadIngredients(context : NSManagedObjectContext, jsonObj : JSON){
-        let ingredientArray = jsonObj["ingredient"]
-        
-        for (_, object) in ingredientArray {
-            let newIngredient = Ingredient(context: context)
-            newIngredient.setValue(object["title"].stringValue, forKey: "title")
-            newIngredient.setValue(object["calories"].doubleValue , forKey: "calories")
-        }
-    }
-    
     func preloadCoffee(context : NSManagedObjectContext, jsonObj : JSON){
         let coffeeArray = jsonObj["coffee"]
         
         for (_, coffee) in coffeeArray {
             let newCoffee = Coffee(context: context)
             newCoffee.setValue(coffee["title"].stringValue, forKey: "title")
-            newCoffee.setValue(coffee["image"].stringValue, forKey: "image")
+            newCoffee.setValue(coffee["imageIngredients"].stringValue, forKey: "imageIngredients")
             newCoffee.setValue(coffee["isFavourite"].boolValue, forKey: "isFavourite")
+            newCoffee.setValue(coffee["calories"].doubleValue, forKey: "calories")
             
-            for(_, item) in coffee["ingredient"] {
-                let newIngredient = IngredientOfCoffee(context: context)
-                newIngredient.setValue(item["percentage"].doubleValue, forKey: "percentage")
-                newIngredient.coffee = newCoffee
-                guard let ingredient = fetchIngredient(context: context, title: item["title"].stringValue) else {fatalError("Error fetching Ingredient")}
-                newIngredient.ingredient = ingredient
+            for (_, imageTitle) in coffee["imageSet"] {
+                let newImage = ImageSet(context: context)
+                newImage.setValue(imageTitle.stringValue, forKey: "title")
+                newImage.coffee = newCoffee
             }
         }
-    }
-    
-    func fetchIngredient(context : NSManagedObjectContext, title : String ) -> Ingredient?{
-        let request : NSFetchRequest<Ingredient> = Ingredient.fetchRequest()
-        request.predicate = NSPredicate(format: "title == %@", title)
-        do{
-            let ingredient = try context.fetch(request)[0]
-            return ingredient
-            
-        }catch {
-            print("Error fetching Ingredient")
-        }
-        return nil
     }
 }
 

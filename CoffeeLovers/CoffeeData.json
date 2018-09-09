@@ -1,220 +1,138 @@
 {
     "coffee": [
                {
-               "title" : "Espresso",
-               "image" : "espresso",
-               "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               }
-                               ]
-               },
-               {
                "title" : "Americano",
-               "image" : "americano",
+               "imageIngredients" : "americano",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },
-                               {
-                               "title" : "Water",
-                               "percentage" : 3
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["americano1", "americano2"]
                },
                {
-               "title" : "Latte",
-               "image" : "latte",
+               "title" : "Bon Bon",
+               "imageIngredients" : "bonbon",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },
-                               {
-                               "title" : "Milk",
-                               "percentage" : 2
-                               },
-                               {
-                               "title" : "Milk Foam",
-                               "percentage" : 1
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["bonbon1", "bonbon2"]
+               },
+               {
+               "title" : "Borgia",
+               "imageIngredients" : "borgia",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["borgia1", "borgia2"]
+               },
+               {
+               "title" : "Breve",
+               "imageIngredients" : "breve",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["breve1"]
                },
                {
                "title" : "Cappuccino",
-               "image" : "cappuccino",
+               "imageIngredients" : "cappuccino",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },
-                               {
-                               "title" : "Milk",
-                               "percentage" : 1
-                               },
-                               {
-                               "title" : "Milk Foam",
-                               "percentage" : 2
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["cappuccino1", "cappuccino2"]
                },
                {
-               "title" : "Macchiato",
-               "image" : "macchiato",
+               "title" : "Espresso",
+               "imageIngredients" : "espresso",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 3
-                               },{
-                               "title" : "Milk Foam",
-                               "percentage" : 2
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["espresso1"]
                },
                {
-               "title" : "Mocha",
-               "image" : "mocha",
+               "title" : "Flat White",
+               "imageIngredients" : "flat_white",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },{
-                               "title" : "Milk",
-                               "percentage" : 1
-                               },{
-                               "title" : "Milk Foam",
-                               "percentage" : 1
-                               },{
-                               "title" : "Chocolate",
-                               "percentage" : 1
-                               }
-                               ]
-               },
-               {
-               "title" : "Glace",
-               "image" : "glace",
-               "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },{
-                               "title" : "Chocolate",
-                               "percentage" : 1
-                               },{
-                               "title" : "Ice Cream",
-                               "percentage" : 2
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["flat_white1", "flat_white2"]
                },
                {
                "title" : "Frappe",
-               "image" : "frappe",
+               "imageIngredients" : "frappe",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },{
-                               "title" : "Milk",
-                               "percentage" : 2
-                               },{
-                               "title" : "Ice",
-                               "percentage" : 1
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["frappe1", "frappe2"]
+               },
+               {
+               "title" : "Galao",
+               "imageIngredients" : "galao",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["galao1", "galao2"]
                },
                {
                "title" : "Irish Coffee",
-               "image" : "irish_coffee",
+               "imageIngredients" : "irish",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },{
-                               "title" : "Whiskey",
-                               "percentage" : 1
-                               },{
-                               "title" : "Whipped Cream",
-                               "percentage" : 2
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["irish1", "irish2", "irish3"]
                },
                {
-               "title" : "Freddo",
-               "image" : "freddo",
+               "title" : "Latte",
+               "imageIngredients" : "latte",
                "isFavourite" : "No",
-               "ingredient" : [
-                               {
-                               "title" : "Espresso",
-                               "percentage" : 2
-                               },{
-                               "title" : "Milk",
-                               "percentage" : 2
-                               },{
-                               "title" : "Caramel",
-                               "percentage" : 1
-                               }
-                               ]
+               "calories" : 300,
+               "imageSet" : ["latte1", "latte2"]
+               },
+               {
+               "title" : "Long Black",
+               "imageIngredients" : "long_black",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["long_black1", "long_black2"]
+               },
+               {
+               "title" : "Lungo",
+               "imageIngredients" : "lungo",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["lungo1", "lungo2"]
+               },
+               {
+               "title" : "Macchiato",
+               "imageIngredients" : "macchiato",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["macchiato1"]
+               },
+               {
+               "title" : "Mazagran",
+               "imageIngredients" : "mazagran",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["mazagran1", "mazagran2"]
+               },
+               {
+               "title" : "Mocha",
+               "imageIngredients" : "mocha",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["mocha1", "mocha2"]
+               },
+               {
+               "title" : "Turkish Coffee",
+               "imageIngredients" : "turkish",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["turkish1", "turkish2"]
+               },
+               {
+               "title" : "Vienna",
+               "imageIngredients" : "vienna",
+               "isFavourite" : "No",
+               "calories" : 300,
+               "imageSet" : ["vienna1", "vienna2"]
                }
-               ],
-    "ingredient":[
-                  {
-                  "title" : "Espresso" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Water" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Milk" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Milk Foam" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Chocolate" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Liquor" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Ice Cream" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Ice" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Syrup" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Whiskey" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Whipped Cream" ,
-                  "calories" : "0"
-                  },
-                  {
-                  "title" : "Caramel" ,
-                  "calories" : "0"
-                  }
-                  ]
+               ]
 }
+
+
+
+
+
+
+
+

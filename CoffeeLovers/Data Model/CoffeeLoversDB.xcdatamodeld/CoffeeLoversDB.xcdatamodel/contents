@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Coffee" representedClassName=".Coffee" syncable="YES" codeGenerationType="class">
-        <attribute name="image" attributeType="String" syncable="YES"/>
+        <attribute name="calories" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imageIngredients" attributeType="String" syncable="YES"/>
         <attribute name="isFavourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="ingredientOfCoffee" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IngredientOfCoffee" inverseName="coffee" inverseEntity="IngredientOfCoffee" syncable="YES"/>
+        <relationship name="imageSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageSet" inverseName="coffee" inverseEntity="ImageSet" syncable="YES"/>
     </entity>
-    <entity name="Ingredient" representedClassName=".Ingredient" syncable="YES" codeGenerationType="class">
-        <attribute name="calories" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="ingredientOfCoffee" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IngredientOfCoffee" inverseName="ingredient" inverseEntity="IngredientOfCoffee" syncable="YES"/>
-    </entity>
-    <entity name="IngredientOfCoffee" representedClassName=".IngredientOfCoffee" syncable="YES" codeGenerationType="class">
-        <attribute name="percentage" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="coffee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coffee" inverseName="ingredientOfCoffee" inverseEntity="Coffee" syncable="YES"/>
-        <relationship name="ingredient" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ingredient" inverseName="ingredientOfCoffee" inverseEntity="Ingredient" syncable="YES"/>
+    <entity name="ImageSet" representedClassName="ImageSet" syncable="YES" codeGenerationType="class">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="coffee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coffee" inverseName="imageSet" inverseEntity="Coffee" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Coffee" positionX="-423" positionY="9" width="128" height="105"/>
-        <element name="Ingredient" positionX="-45" positionY="9" width="128" height="90"/>
-        <element name="IngredientOfCoffee" positionX="-227" positionY="9" width="128" height="90"/>
+        <element name="Coffee" positionX="-423" positionY="9" width="128" height="118"/>
+        <element name="ImageSet" positionX="-207" positionY="18" width="128" height="73"/>
     </elements>
 </model>

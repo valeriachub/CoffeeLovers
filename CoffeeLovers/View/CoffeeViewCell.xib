@@ -44,9 +44,9 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="C2b-SH-zee"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.99215686270000003" green="0.99607843139999996" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="highlightedColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -56,7 +56,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.15686274510000001" blue="0.1215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Rbc-qn-OsE" firstAttribute="top" secondItem="tC5-J6-bLd" secondAttribute="top" constant="8" id="6fY-f5-U4j"/>
                             <constraint firstAttribute="bottom" secondItem="Rbc-qn-OsE" secondAttribute="bottom" constant="8" id="Jz4-Dq-SYt"/>
@@ -82,6 +82,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="latte" width="196" height="280"/>
+        <image name="latte" width="96" height="173"/>
     </resources>
 </document>

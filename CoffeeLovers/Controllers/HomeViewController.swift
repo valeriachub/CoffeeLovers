@@ -41,7 +41,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         
         let coffee = coffeeArray[indexPath.row]
         
-        guard let image = coffee.image
+        guard let image = coffee.imageIngredients
             else {
                 fatalError("Error with coffee assets")
         }
@@ -53,7 +53,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     }
     
     func collectionView(_ collectionView : UICollectionView, layout collectionViewLayout : UICollectionViewLayout, sizeForItemAt indexPath : IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.size.width/2)-8, height: (view.frame.size.width/2)-8)
+        return CGSize(width: (view.frame.size.width/2)-0.5, height: (view.frame.size.width/2)-1)
     }
     
     //MARK: - Data methods

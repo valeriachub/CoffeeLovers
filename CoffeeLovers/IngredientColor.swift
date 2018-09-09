@@ -42,4 +42,8 @@ extension UIColor {
     static func whiskeyColor() -> UIColor {
         return UIColor(hexString: "#BA6427")
     }
+    
+    static func backgroudColor() -> UIColor {
+        return UIColor(hexString: "#2c281f")
+    }
 }

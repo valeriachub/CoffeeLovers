@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import CoreData
 
 class FavouriteViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
-    var coffeeList = [Coffee]()
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    var coffeeArray = [Coffee]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView?.register(UINib(nibName: "CoffeeViewCell", bundle: nil), forCellWithReuseIdentifier: "CoffeeCell")
-        
-        loadTempData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadCoffee()
+        print("viewWillAppear")
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -25,7 +31,7 @@ class FavouriteViewController: UICollectionViewController, UICollectionViewDeleg
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return coffeeList.count
+        return coffeeArray.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -34,33 +40,55 @@ class FavouriteViewController: UICollectionViewController, UICollectionViewDeleg
                 fatalError("Error with CollectionViewCell")
         }
         
-        let coffee = coffeeList[indexPath.row]
+        let coffee = coffeeArray[indexPath.row]
         
-        guard let image = coffee.image
+        guard let image = coffee.imageIngredients
             else {
                 fatalError("Error with coffee assets")
         }
         
-//        cell.label.text = coffee.name
-//        cell.image.image = image
+        cell.label.text = coffee.title
+        cell.image.image = UIImage(named: image)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (view.frame.size.width/2) - 8, height: (view.frame.size.width/2) - 8)
+        return CGSize(width: (view.frame.size.width/2) - 0.5, height: (view.frame.size.width/2) - 1)
     }
     
     //MARK: - Temp methods
     
-    func loadTempData(){
-//        let espresso = Coffee(name: "Espresso", image: UIImage(named: "espresso")!)
-//        let mocha = Coffee(name: "Mocha", image: UIImage(named: "mocha")!)
-//        let latte = Coffee(name: "Latte", image: UIImage(named: "latte")!)
-//        
-//        coffeeList.append(espresso)
-//        coffeeList.append(mocha)
-//        coffeeList.append(latte)
+    func loadCoffee(){
+        coffeeArray.removeAll()
+        
+        let request : NSFetchRequest<Coffee> = Coffee.fetchRequest()
+        let predicate = NSPredicate(format: "isFavourite == YES")
+        request.predicate = predicate
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        do{
+           coffeeArray = try context.fetch(request)
+            collectionView?.reloadData()
+        }catch{
+            print("Error Load Favourite Coffee Data")
+        }
     }
-
+    
+    //MARK: - Navigation
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showCoffee", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! CoffeeViewController
+        
+        destination.hidesBottomBarWhenPushed = true
+        
+        if let index = collectionView?.indexPathsForSelectedItems?.first?.row {
+            destination.coffee = coffeeArray[index]
+        }
+        
+    }
 }
