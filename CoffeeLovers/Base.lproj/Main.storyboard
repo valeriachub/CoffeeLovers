@@ -51,7 +51,7 @@
                             <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoffeeCell" id="G59-1g-BO7" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CoffeeCell" id="G59-1g-BO7" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="4" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -114,7 +114,7 @@
                             <inset key="sectionInset" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoffeeCell" id="zgk-Ur-ndq" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CoffeeCell" id="zgk-Ur-ndq" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="4" width="71" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -207,7 +207,7 @@
                                                                 </segments>
                                                                 <color key="tintColor" red="0.50196078430000002" green="0.2666666667" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <connections>
-                                                                    <action selector="sizeChanged:" destination="LLb-ie-lMj" eventType="valueChanged" id="SPt-Wc-gZj"/>
+                                                                    <action selector="coffeeSizeChanged:" destination="LLb-ie-lMj" eventType="valueChanged" id="SPt-Wc-gZj"/>
                                                                 </connections>
                                                             </segmentedControl>
                                                         </subviews>
@@ -234,7 +234,7 @@
                                                                 </segments>
                                                                 <color key="tintColor" red="0.50196078430000002" green="0.2666666667" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <connections>
-                                                                    <action selector="sugarChanged:" destination="LLb-ie-lMj" eventType="valueChanged" id="Icu-zu-gaR"/>
+                                                                    <action selector="coffeeSugarChanged:" destination="LLb-ie-lMj" eventType="valueChanged" id="Icu-zu-gaR"/>
                                                                 </connections>
                                                             </segmentedControl>
                                                         </subviews>

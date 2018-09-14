@@ -12,15 +12,20 @@ import CoreData
 class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditionsDelegate {
    
     //MARK: - Properties
+    
+    let appDelegate : AppDelegate = (UIApplication.shared.delegate) as! AppDelegate
+    lazy var context = appDelegate.persistentContainer.viewContext
+    
     var coffee : Coffee?
-    var imagesArray = [String]()
-    var slides = [ImageSlideView]()
-    var size : Double = 250 {
+    var coffeeImageTitles = [String]()
+    var imageSlides = [ImageSlideView]()
+    
+    var coffeeSize : Double = 250 {
         didSet{
            showCalories()
         }
     }
-    var sugar : Double = 0 {
+    var coffeeSugar : Double = 0 {
         didSet{
            showCalories()
         }
@@ -37,8 +42,6 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
             showCalories()
         }
     }
-  
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
    
     //MARK: - Outlets
     
@@ -50,7 +53,7 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
     @IBOutlet weak var caloriesView: UILabel!
     @IBOutlet weak var saveButton: UIButton!
     
-    //MARK: - View Lifecycle
+    //MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,55 +64,19 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
         title = coffee.title
         showCalories()
         
-        imagesArray = getImageSet(from: coffee)
-        slides = getImageSlides(from: imagesArray)
-        setImagesScrollView(with: slides)
+        coffeeImageTitles = getImageSet(from: coffee)
+        imageSlides = getImageSlides(from: coffeeImageTitles)
+        setImagesScrollView(with: imageSlides)
         setPageControl()
         
         setSaveButton()
     }
     
-    //MARK: - Actions
-    
-    @IBAction func savePressed(_ sender: UIButton) {
-        print("Pressed")
-        
-        coffee?.setValue(!((coffee?.isFavourite)!), forKey: "isFavourite")
-        setSaveButton()
-        
-        do{
-            try context.save()
-        }catch{
-            print("Error saving")
-        }
-    }
-    
-    @IBAction func sizeChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0: size = 250
-        case 1: size = 300
-        case 2: size = 400
-        default:
-            print("Something gone wrong")
-        }
-    }
-    
-    @IBAction func sugarChanged(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0: sugar = 0
-        case 1: sugar = 10
-        case 2: sugar = 20
-        case 3: sugar = 40
-        default:
-             print("Something gone wrong")
-        }
-    }
-    
-    //MARK: - Set Methods
+    //MARK: - Setup Methods
     
     func getImageSet(from coffee : Coffee) -> [String] {
         var imageSet = [String]()
-        imageSet.append(coffee.imageIngredients!)
+        imageSet.append(coffee.imageOfIngredients!)
         
         let request : NSFetchRequest<ImageSet> = ImageSet.fetchRequest()
         let predicate = NSPredicate(format: "coffee.title = %@", coffee.title!)
@@ -121,7 +88,8 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
                 imageSet.append(coffee.title!)
             }
             
-        }catch {print("Error fetching ImageSet")}
+        } catch {print("Error fetching ImageSet")}
+        
         return imageSet
     }
     
@@ -153,15 +121,46 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
     }
     
     private func setPageControl(){
-        pageControl.numberOfPages = slides.count
+        pageControl.numberOfPages = imageSlides.count
         pageControl.currentPage = 0
     }
     
     private func showCalories() {
-        var calories = coffee!.calories/250 * size + sugar
+        var calories = coffee!.calories/250 * coffeeSize + coffeeSugar
         calories = isCreamSelected ? calories + 2 : calories
         calories = isSyrupSelected ? calories + 1 : calories
         caloriesView.text = "\(calories)"
+    }
+    
+    //MARK: - Actions
+    
+    @IBAction func savePressed(_ sender: UIButton) {
+      
+        coffee!.setValue(!((coffee!.isFavourite)), forKey: "isFavourite")
+        setSaveButton()
+        
+        appDelegate.saveContext()
+    }
+    
+    @IBAction func coffeeSizeChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: coffeeSize = 250
+        case 1: coffeeSize = 300
+        case 2: coffeeSize = 400
+        default:
+            print("Something gone wrong")
+        }
+    }
+    
+    @IBAction func coffeeSugarChanged(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0: coffeeSugar = 0
+        case 1: coffeeSugar = 10
+        case 2: coffeeSugar = 20
+        case 3: coffeeSugar = 40
+        default:
+             print("Something gone wrong")
+        }
     }
     
     //MARK: - UIScrollView Delegate Methods

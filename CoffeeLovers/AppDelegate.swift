@@ -66,10 +66,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let testRequest : NSFetchRequest<Coffee> = Coffee.fetchRequest()
         do{
             let count = try context.fetch(testRequest).count
-            print("\(count)")
             return count == 0
         }catch{
-            print("Empty")
+            print("Error fetching database")
         }
         return true
     }
@@ -83,11 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             preloadCoffee(context : context, jsonObj: jsonObj)
             
-            do {
-                try context.save()
-            } catch {
-                print("Save Error")
-            }
+            saveContext()
             
         } catch let error {
             print("parse error: \(error.localizedDescription)")
@@ -100,7 +95,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for (_, coffee) in coffeeArray {
             let newCoffee = Coffee(context: context)
             newCoffee.setValue(coffee["title"].stringValue, forKey: "title")
-            newCoffee.setValue(coffee["imageIngredients"].stringValue, forKey: "imageIngredients")
+            newCoffee.setValue(coffee["imageOfIngredients"].stringValue, forKey: "imageOfIngredients")
             newCoffee.setValue(coffee["isFavourite"].boolValue, forKey: "isFavourite")
             newCoffee.setValue(coffee["calories"].doubleValue, forKey: "calories")
             

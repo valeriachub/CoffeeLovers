@@ -11,9 +11,12 @@ import CoreData
 
 class HomeViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    //MARK: - Properties
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var coffeeArray = [Coffee]()
+    
+    //MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,19 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.register(UINib(nibName: "CoffeeViewCell", bundle: nil), forCellWithReuseIdentifier: "CoffeeCell")
         
         loadCoffee()
+    }
+    
+    //MARK: - Data Model methods
+    
+    func loadCoffee(){
+        let request : NSFetchRequest<Coffee> = Coffee.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        
+        do {
+            coffeeArray = try context.fetch(request)
+        }catch {
+            print("Error Load Coffee Data")
+        }
     }
     
     //MARK: - UICollectionView SourceData methods
@@ -35,16 +51,11 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CoffeeCell", for: indexPath) as? CoffeeViewCell
-            else{
-                fatalError("Error with CollectionViewCell")
-        }
+            else {fatalError("Error with CollectionViewCell")}
         
         let coffee = coffeeArray[indexPath.row]
         
-        guard let image = coffee.imageIngredients
-            else {
-                fatalError("Error with coffee assets")
-        }
+        guard let image = coffee.imageOfIngredients else {fatalError("Error with coffee assets")}
         
         cell.label.text = coffee.title
         cell.image.image = UIImage(named: image)
@@ -56,20 +67,7 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return CGSize(width: (view.frame.size.width/2)-0.5, height: (view.frame.size.width/2)-1)
     }
     
-    //MARK: - Data methods
-    
-    func loadCoffee(){
-        let request : NSFetchRequest<Coffee> = Coffee.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-        
-        do {
-            coffeeArray = try context.fetch(request)
-        }catch {
-            print("Error Load Coffee Data")
-        }
-    }
-    
-    // MARK: - Navigation
+    // MARK: - Navigation Methods
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showCoffee", sender: self)

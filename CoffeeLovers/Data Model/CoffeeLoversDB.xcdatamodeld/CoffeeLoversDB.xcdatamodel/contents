@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Coffee" representedClassName=".Coffee" syncable="YES" codeGenerationType="class">
         <attribute name="calories" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="imageIngredients" attributeType="String" syncable="YES"/>
+        <attribute name="imageOfIngredients" attributeType="String" syncable="YES"/>
         <attribute name="isFavourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="title" attributeType="String" syncable="YES"/>
         <relationship name="imageSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageSet" inverseName="coffee" inverseEntity="ImageSet" syncable="YES"/>
@@ -12,7 +12,7 @@
         <relationship name="coffee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coffee" inverseName="imageSet" inverseEntity="Coffee" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Coffee" positionX="-423" positionY="9" width="128" height="118"/>
+        <element name="Coffee" positionX="-423" positionY="9" width="128" height="120"/>
         <element name="ImageSet" positionX="-207" positionY="18" width="128" height="73"/>
     </elements>
 </model>
