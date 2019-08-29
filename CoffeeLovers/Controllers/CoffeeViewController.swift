@@ -10,6 +10,16 @@ import UIKit
 import CoreData
 
 class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditionsDelegate {
+    
+    //MARK: - IBOutlets
+    
+    @IBOutlet weak var imagesScrollVIew: UIScrollView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var sizeSegment: UISegmentedControl!
+    @IBOutlet weak var sugarSegment: UISegmentedControl!
+    @IBOutlet weak var additionsView: CoffeeAdditionsView!
+    @IBOutlet weak var caloriesView: UILabel!
+    @IBOutlet weak var saveButton: UIButton!
    
     //MARK: - Properties
     
@@ -43,15 +53,6 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
         }
     }
    
-    //MARK: - Outlets
-    
-    @IBOutlet weak var imagesScrollVIew: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var sizeSegment: UISegmentedControl!
-    @IBOutlet weak var sugarSegment: UISegmentedControl!
-    @IBOutlet weak var additionsView: CoffeeAdditionsView!
-    @IBOutlet weak var caloriesView: UILabel!
-    @IBOutlet weak var saveButton: UIButton!
     
     //MARK: - Lifecycle Methods
     

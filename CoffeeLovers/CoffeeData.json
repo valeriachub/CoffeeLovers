@@ -2,126 +2,91 @@
     "coffee": [
                {
                "title" : "Americano",
-               "imageOfIngredients" : "americano",
+               "imageOfIngredients" : "c_americano",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["americano1", "americano2"]
                },
                {
                "title" : "Bon Bon",
-               "imageOfIngredients" : "bonbon",
+               "imageOfIngredients" : "c_bonbon",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["bonbon1", "bonbon2"]
                },
                {
                "title" : "Borgia",
-               "imageOfIngredients" : "borgia",
+               "imageOfIngredients" : "c_borgia",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["borgia1", "borgia2"]
                },
                {
-               "title" : "Breve",
-               "imageOfIngredients" : "breve",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["breve1"]
-               },
-               {
                "title" : "Cappuccino",
-               "imageOfIngredients" : "cappuccino",
+               "imageOfIngredients" : "c_cappuccino",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["cappuccino1", "cappuccino2"]
                },
                {
                "title" : "Espresso",
-               "imageOfIngredients" : "espresso",
+               "imageOfIngredients" : "c_espresso",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["espresso1"]
                },
                {
                "title" : "Flat White",
-               "imageOfIngredients" : "flat_white",
+               "imageOfIngredients" : "c_flat",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["flat_white1", "flat_white2"]
                },
                {
                "title" : "Frappe",
-               "imageOfIngredients" : "frappe",
+               "imageOfIngredients" : "c_frappe",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["frappe1", "frappe2"]
                },
                {
-               "title" : "Galao",
-               "imageOfIngredients" : "galao",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["galao1", "galao2"]
-               },
-               {
                "title" : "Irish Coffee",
-               "imageOfIngredients" : "irish",
+               "imageOfIngredients" : "c_irish",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["irish1", "irish2", "irish3"]
                },
                {
                "title" : "Latte",
-               "imageOfIngredients" : "latte",
+               "imageOfIngredients" : "c_latte",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["latte1", "latte2"]
                },
                {
-               "title" : "Long Black",
-               "imageOfIngredients" : "long_black",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["long_black1", "long_black2"]
-               },
-               {
                "title" : "Lungo",
-               "imageOfIngredients" : "lungo",
+               "imageOfIngredients" : "c_lungo",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["lungo1", "lungo2"]
                },
                {
                "title" : "Macchiato",
-               "imageOfIngredients" : "macchiato",
+               "imageOfIngredients" : "c_macchiato",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["macchiato1"]
                },
                {
-               "title" : "Mazagran",
-               "imageOfIngredients" : "mazagran",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["mazagran1", "mazagran2"]
-               },
-               {
                "title" : "Mocha",
-               "imageOfIngredients" : "mocha",
+               "imageOfIngredients" : "c_mocha",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["mocha1", "mocha2"]
                },
                {
-               "title" : "Turkish Coffee",
-               "imageOfIngredients" : "turkish",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["turkish1", "turkish2"]
-               },
-               {
                "title" : "Vienna",
-               "imageOfIngredients" : "vienna",
+               "imageOfIngredients" : "c_vienna",
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["vienna1", "vienna2"]

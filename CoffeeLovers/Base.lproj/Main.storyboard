@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wQt-rL-UTf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wQt-rL-UTf">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -156,7 +155,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ylj-4V-h0U" userLabel="ImagesView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-BG-Gb2">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pdm-BG-Gb2">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pdm-BG-Gb2" secondAttribute="height" multiplier="5:4" id="oTF-sN-4oe"/>
@@ -187,10 +186,10 @@
                                                 <rect key="frame" x="8" y="8" width="359" height="221"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-9F-u7S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="28"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="28.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-Ie-0cU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="84" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="28.5"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GVa-Ie-0cU" secondAttribute="height" multiplier="3:1" id="2wg-C9-mdj"/>
                                                                 </constraints>
@@ -199,7 +198,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-OA-PX7">
-                                                                <rect key="frame" x="100" y="0.0" width="259" height="29"/>
+                                                                <rect key="frame" x="101" y="0.0" width="258" height="29.5"/>
                                                                 <segments>
                                                                     <segment title="S"/>
                                                                     <segment title="M"/>
@@ -213,10 +212,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-9I-lDB">
-                                                        <rect key="frame" x="0.0" y="44" width="359" height="28"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="359" height="28"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmE-bl-6ub">
-                                                                <rect key="frame" x="0.0" y="0.0" width="84" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="28"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="rmE-bl-6ub" secondAttribute="height" multiplier="3:1" id="rHq-el-IWO"/>
                                                                 </constraints>
@@ -225,7 +224,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3rR-nv-i4g">
-                                                                <rect key="frame" x="100" y="0.0" width="259" height="29"/>
+                                                                <rect key="frame" x="101" y="0.0" width="258" height="29"/>
                                                                 <segments>
                                                                     <segment title="" image="sugar_zero_selected"/>
                                                                     <segment title="" image="sugar_s_selected"/>
@@ -240,7 +239,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cc5-pB-0kt">
-                                                        <rect key="frame" x="0.0" y="88" width="359" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="88.5" width="359" height="28.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gia-UQ-PbD">
                                                                 <rect key="frame" x="0.0" y="0.0" width="85" height="28.5"/>
@@ -257,16 +256,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ful-eA-t07">
-                                                        <rect key="frame" x="0.0" y="132.5" width="359" height="88.5"/>
+                                                        <rect key="frame" x="0.0" y="133" width="359" height="88"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT9-NK-kup">
-                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="88.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="88"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                                 <color key="textColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJO-j9-GQP">
-                                                                <rect key="frame" x="179.5" y="0.0" width="179.5" height="88.5"/>
+                                                                <rect key="frame" x="179.5" y="0.0" width="179.5" height="88"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                                 <color key="textColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>

@@ -11,12 +11,16 @@ import UIKit
 
 @IBDesignable
 class CoffeeViewCell: UICollectionViewCell {
-
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var label: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var coffeeImageView: UIImageView!
+    @IBOutlet weak var coffeeTitle: UILabel!
+    
+    // MARK: - Methods
+    
+    func setCell(image: UIImage, title: String) {
+        coffeeTitle.text = title
+        coffeeImageView.image = image
     }
 }
