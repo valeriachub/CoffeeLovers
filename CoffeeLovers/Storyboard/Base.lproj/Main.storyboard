@@ -14,7 +14,7 @@
         <scene sceneID="z1e-C6-Z3J">
             <objects>
                 <navigationController id="rfc-ne-ZDv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="favourite" id="l7E-w5-0j8">
+                    <tabBarItem key="tabBarItem" title="" image="ic_like" id="l7E-w5-0j8">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m0A-Ae-xf0">
@@ -39,7 +39,7 @@
         <scene sceneID="S3e-eZ-hrt">
             <objects>
                 <collectionViewController id="jBV-3T-6nc" customClass="FavouriteViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="X3r-VN-n6w">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="X3r-VN-n6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -77,7 +77,7 @@
         <scene sceneID="dxH-62-SgP">
             <objects>
                 <navigationController id="vWD-5S-ZEG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="home" id="gdi-U5-VEd">
+                    <tabBarItem key="tabBarItem" title="" image="ic_coffee" id="gdi-U5-VEd">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwX-Vy-onN">
@@ -102,7 +102,7 @@
         <scene sceneID="yum-rW-V4L">
             <objects>
                 <collectionViewController id="WYP-Gy-cAY" customClass="HomeViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UdD-tU-nI7">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UdD-tU-nI7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,7 +128,7 @@
                             <outlet property="delegate" destination="WYP-Gy-cAY" id="JD8-a4-I8W"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="" image="home" id="78X-J0-9wl">
+                    <tabBarItem key="tabBarItem" title="" id="78X-J0-9wl">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
@@ -357,7 +357,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.57874745130000005" green="0.32151988149999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" red="0.87843137250000003" green="0.77647058820000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -375,14 +375,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="favourite" width="24" height="24"/>
-        <image name="home" width="24" height="24"/>
+        <image name="ic_coffee" width="25" height="25"/>
+        <image name="ic_like" width="12" height="12"/>
         <image name="sugar_l_selected" width="26" height="24"/>
         <image name="sugar_m_selected" width="26" height="18"/>
         <image name="sugar_s_selected" width="12" height="13"/>
         <image name="sugar_zero_selected" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="chc-HT-CAk"/>
+        <segue reference="OhR-KP-6d3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -33,7 +33,7 @@
 		3A468BEB21346B2E0046DAFD /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3A468BEE21346B2E0046DAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A468BF021346B320046DAFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3A468BF521346B320046DAFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A468BF521346B320046DAFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = ../../Info.plist; sourceTree = "<group>"; };
 		3A468BFB213476AC0046DAFD /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		3A468BFD213478070046DAFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3A468BFF2134786C0046DAFD /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				3A468BE821346B2E0046DAFD /* CoffeeLovers */,
-				3A468BF521346B320046DAFD /* Info.plist */,
 				3A468BE721346B2E0046DAFD /* Products */,
 				E662BAFA8568133A69E11007 /* Pods */,
 				253F188A24C7CE8DFBFDB048 /* Frameworks */,
@@ -101,14 +100,11 @@
 		3A468BE821346B2E0046DAFD /* CoffeeLovers */ = {
 			isa = PBXGroup;
 			children = (
-				3A468BE921346B2E0046DAFD /* AppDelegate.swift */,
-				3A468BFB213476AC0046DAFD /* Launch Screen.storyboard */,
-				3A468BED21346B2E0046DAFD /* Main.storyboard */,
-				3A468BF021346B320046DAFD /* Assets.xcassets */,
+				ABEA48F4231821F500A655B1 /* SupportingFiles */,
+				ABEA48F3231821DD00A655B1 /* Storyboard */,
 				3A468C07213539430046DAFD /* Data Model */,
 				3A468C092135397A0046DAFD /* View */,
 				3A468C08213539710046DAFD /* Controllers */,
-				3AC4B87C2138FBB600052E9F /* CoffeeData.json */,
 				3A37E65A214B73AD00F35F57 /* Utils */,
 			);
 			path = CoffeeLovers;
@@ -143,6 +139,26 @@
 				3AF197C12144E4650087140F /* CoffeeAdditionsView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		ABEA48F3231821DD00A655B1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3A468BFB213476AC0046DAFD /* Launch Screen.storyboard */,
+				3A468BED21346B2E0046DAFD /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		ABEA48F4231821F500A655B1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				3A468BF521346B320046DAFD /* Info.plist */,
+				3A468BE921346B2E0046DAFD /* AppDelegate.swift */,
+				3A468BF021346B320046DAFD /* Assets.xcassets */,
+				3AC4B87C2138FBB600052E9F /* CoffeeData.json */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		E662BAFA8568133A69E11007 /* Pods */ = {
