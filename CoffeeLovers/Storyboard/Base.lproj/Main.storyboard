@@ -14,7 +14,7 @@
         <scene sceneID="z1e-C6-Z3J">
             <objects>
                 <navigationController id="rfc-ne-ZDv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_like" id="l7E-w5-0j8">
+                    <tabBarItem key="tabBarItem" title="" image="like" id="l7E-w5-0j8">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m0A-Ae-xf0">
@@ -77,7 +77,7 @@
         <scene sceneID="dxH-62-SgP">
             <objects>
                 <navigationController id="vWD-5S-ZEG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_coffee" id="gdi-U5-VEd">
+                    <tabBarItem key="tabBarItem" title="" image="coffee" id="gdi-U5-VEd">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zwX-Vy-onN">
@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="270" y="-260"/>
         </scene>
-        <!--Home-->
+        <!--Coffee-->
         <scene sceneID="yum-rW-V4L">
             <objects>
                 <collectionViewController id="WYP-Gy-cAY" customClass="HomeViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
@@ -132,7 +132,7 @@
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
-                    <navigationItem key="navigationItem" title="Home" id="Hee-LG-584"/>
+                    <navigationItem key="navigationItem" title="Coffee" id="Hee-LG-584"/>
                     <connections>
                         <segue destination="LLb-ie-lMj" kind="show" identifier="showCoffee" id="OhR-KP-6d3"/>
                     </connections>
@@ -375,8 +375,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_coffee" width="25" height="25"/>
-        <image name="ic_like" width="12" height="12"/>
+        <image name="coffee" width="24" height="24"/>
+        <image name="like" width="19" height="17"/>
         <image name="sugar_l_selected" width="26" height="24"/>
         <image name="sugar_m_selected" width="26" height="18"/>
         <image name="sugar_s_selected" width="12" height="13"/>
