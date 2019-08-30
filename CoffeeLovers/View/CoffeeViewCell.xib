@@ -60,6 +60,7 @@
             <connections>
                 <outlet property="coffeeImageView" destination="CuX-xJ-psw" id="9uv-jt-OXJ"/>
                 <outlet property="coffeeTitle" destination="b3i-XT-lCi" id="3uZ-vg-Eq2"/>
+                <outlet property="coffeeView" destination="tC5-J6-bLd" id="hjM-ub-Xag"/>
             </connections>
             <point key="canvasLocation" x="126.40000000000001" y="-42.728635682158924"/>
         </collectionViewCell>
