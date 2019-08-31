@@ -58,6 +58,8 @@ class CoffeeViewController: UIViewController, UIScrollViewDelegate, CoffeeAdditi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        hidesBottomBarWhenPushed = true
         additionsView.delegate = self
         
         guard let coffee = coffee else { fatalError("Coffee not found") }

@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import CoreData
 
-class HomeViewController: UICollectionViewController {
+class HomeViewController: CoffeeCollectionViewController {
     
     // MARK: - Properties
     
@@ -29,7 +28,6 @@ class HomeViewController: UICollectionViewController {
             let destination = segue.destination as? CoffeeViewController,
             let index = collectionView?.indexPathsForSelectedItems?.first?.row {
             
-            destination.hidesBottomBarWhenPushed = true
             destination.coffee = presenter.coffeeArray[index]
         }
     }
@@ -37,7 +35,7 @@ class HomeViewController: UICollectionViewController {
 
 // MARK: - Extension UICollectionViewController, UICollectionViewDelegateFlowLayout
 
-extension HomeViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.getNumberOfItemsInSection()
@@ -45,10 +43,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         return presenter.getCellForItemAt(indexPath: indexPath, of: collectionView)
-    }
-    
-    func collectionView(_ collectionView : UICollectionView, layout collectionViewLayout : UICollectionViewLayout, sizeForItemAt indexPath : IndexPath) -> CGSize {
-        return presenter.getSizeForCell(of: collectionView)
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -59,11 +53,6 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - Extension HomeView
 
 extension HomeViewController: HomeView {
-    
-    func setCollectionView() {
-        collectionView?.register(UINib(nibName: "\(CoffeeViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(CoffeeViewCell.self)")
-        collectionView?.collectionViewLayout = presenter.getFlowLayout()
-    }
     
     func reloadCollectionView() {
         collectionView?.reloadData()
