@@ -49,7 +49,7 @@ class BottomSheetViewController: UIViewController {
     }
     
     func setTabs() {
-        tabsControl = TabsControl(frame: tabsView.bounds, buttonTitles: ["Receipt", "Calories"])
+        tabsControl = TabsControl(frame: tabsView.bounds, buttonTitles: ["Receipt", "Calories"], delegate: self)
         tabsControl.backgroundColor = .clear
         tabsView.addSubview(tabsControl)
         
@@ -59,5 +59,12 @@ class BottomSheetViewController: UIViewController {
         tabsControl.bottomAnchor.constraint(equalTo: tabsView.bottomAnchor).isActive = true
         tabsControl.leftAnchor.constraint(equalTo: tabsView.leftAnchor).isActive = true
         tabsControl.rightAnchor.constraint(equalTo: tabsView.rightAnchor).isActive = true
+    }
+}
+
+extension BottomSheetViewController: TabsControlDelegate {
+    
+    func onTabClicked(index: Int) {
+        print(index)
     }
 }
