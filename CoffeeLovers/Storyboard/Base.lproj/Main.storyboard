@@ -134,7 +134,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Coffee" id="Hee-LG-584"/>
                     <connections>
-                        <segue destination="LLb-ie-lMj" kind="show" identifier="showCoffee" id="OhR-KP-6d3"/>
+                        <segue destination="sVS-Ez-L3q" kind="show" identifier="showCoffee" id="qsG-TQ-D5s"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX1-5V-7Wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -345,7 +345,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="677-oD-o8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2278" y="103"/>
+            <point key="canvasLocation" x="2282" y="421"/>
+        </scene>
+        <!--Coffee Controller-->
+        <scene sceneID="Hqy-lr-lEo">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="sVS-Ez-L3q" customClass="CoffeeController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rwb-We-SEz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.82745098039999998" green="0.1058823529" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="Tgu-ZZ-EpV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b97-Wg-vEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2535" y="-353"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ucb-SY-SEm">
@@ -382,7 +397,4 @@
         <image name="sugar_s_selected" width="12" height="13"/>
         <image name="sugar_zero_selected" width="22" height="22"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="OhR-KP-6d3"/>
-    </inferredMetricsTieBreakers>
 </document>
