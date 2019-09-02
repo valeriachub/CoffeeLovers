@@ -26,6 +26,8 @@
 		3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */; };
 		3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB02004231A693000AC0EC4 /* CoffeeDataService.swift */; };
 		3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
+		3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC54294231C369800E78AAE /* IngredientCell.swift */; };
+		3AC54297231C369800E78AAE /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC54295231C369800E78AAE /* IngredientCell.xib */; };
 		3AF197AF2138FFB40087140F /* CoffeeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
 		3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF197B7213BCB190087140F /* IngredientColor.swift */; };
 		3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF197BB213E678F0087140F /* ImageSlideView.swift */; };
@@ -54,6 +56,8 @@
 		3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeCollectionViewController.swift; path = CoffeeLovers/View/CoffeeCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		3AB02004231A693000AC0EC4 /* CoffeeDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDataService.swift; sourceTree = "<group>"; };
 		3AC4B87C2138FBB600052E9F /* CoffeeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoffeeData.json; sourceTree = "<group>"; };
+		3AC54294231C369800E78AAE /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		3AC54295231C369800E78AAE /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		3AF197B7213BCB190087140F /* IngredientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientColor.swift; sourceTree = "<group>"; };
 		3AF197BB213E678F0087140F /* ImageSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlideView.swift; sourceTree = "<group>"; };
 		3AF197BD213E67A70087140F /* ImageSlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSlideView.xib; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				3AF197BD213E67A70087140F /* ImageSlideView.xib */,
 				3AF197C12144E4650087140F /* CoffeeAdditionsView.swift */,
 				3AA1824F231BE8D1006ADC8A /* TabsControl.swift */,
+				3AC54294231C369800E78AAE /* IngredientCell.swift */,
+				3AC54295231C369800E78AAE /* IngredientCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				3AA1824E231BE09C006ADC8A /* BottomSheetViewController.xib in Resources */,
 				3A468BF121346B320046DAFD /* Assets.xcassets in Resources */,
 				3AF197BE213E67A70087140F /* ImageSlideView.xib in Resources */,
+				3AC54297231C369800E78AAE /* IngredientCell.xib in Resources */,
 				3A468BFC213476AC0046DAFD /* Launch Screen.storyboard in Resources */,
 				3A468BEF21346B2E0046DAFD /* Main.storyboard in Resources */,
 				3A468C1021371B570046DAFD /* CoffeeViewCell.xib in Resources */,
@@ -327,6 +334,7 @@
 				3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */,
 				3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */,
 				3AADE6C6231A6BD20099168C /* CoffeeViewController.swift in Sources */,
+				3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */,
 				3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */,
 				3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
