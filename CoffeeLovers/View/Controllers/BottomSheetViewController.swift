@@ -22,8 +22,8 @@ class BottomSheetViewController: UIViewController {
     
     let ingredients = ["Coffee", "Ice Cream"]
     
-    let fullView: CGFloat = 130
-    var partialView: CGFloat {
+    let fullViewHeight: CGFloat = 130
+    var partialViewHeight: CGFloat {
         return UIScreen.main.bounds.height - 130
     }
     
@@ -49,7 +49,7 @@ class BottomSheetViewController: UIViewController {
     func animView() {
         UIView.animate(withDuration: 0.3) { [weak self] in
             let frame = self?.view.frame
-            let y = self?.partialView ?? 0
+            let y = self?.partialViewHeight ?? 0
             self?.view.frame = CGRect(x: 0, y: y, width: frame!.width, height: frame!.height)
         }
     }
@@ -84,27 +84,26 @@ class BottomSheetViewController: UIViewController {
     
     @objc
     func onPanGesture(_ recognizer: UIPanGestureRecognizer) {
-        let translation = recognizer.translation(in: self.view)
-        let velocity = recognizer.velocity(in: self.view)
-        let y = self.view.frame.minY
-        if ( y + translation.y >= fullView) && (y + translation.y <= partialView ) {
-            self.view.frame = CGRect(x: 0, y: y + translation.y, width: view.frame.width, height: view.frame.height)
-            recognizer.setTranslation(CGPoint.zero, in: self.view)
+        let translation = recognizer.translation(in: view)
+        let viewY = view.frame.minY
+        
+        if (fullViewHeight...partialViewHeight).contains(viewY + translation.y) {
+            view.frame.origin.y = viewY + translation.y
+            recognizer.setTranslation(CGPoint.zero, in: view)
         }
         
         if recognizer.state == .ended {
-            var duration =  velocity.y < 0 ? Double((y - fullView) / -velocity.y) : Double((partialView - y) / velocity.y )
+            let velocity = recognizer.velocity(in: view)
+            
+            var duration = velocity.y < 0 ?
+                Double((viewY - fullViewHeight) / -velocity.y) :
+                Double((partialViewHeight - viewY) / velocity.y )
             
             duration = duration > 1.3 ? 1 : duration
             
             UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
-                if  velocity.y >= 0 {
-                    self.view.frame = CGRect(x: 0, y: self.partialView, width: self.view.frame.width, height: self.view.frame.height)
-                } else {
-                    self.view.frame = CGRect(x: 0, y: self.fullView, width: self.view.frame.width, height: self.view.frame.height)
-                }
-                
-            }, completion: nil)
+                self.view.frame.origin.y = velocity.y >= 0 ? self.partialViewHeight : self.fullViewHeight
+            })
         }
     }
 }
@@ -123,14 +122,11 @@ extension BottomSheetViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(IngredientCell.self)", for: indexPath) as? IngredientCell else {
-                fatalError()
+            fatalError()
         }
         
         cell.setIngredienTitle(ingredients[indexPath.row])
         
         return cell
     }
-    
-    
-    
 }
