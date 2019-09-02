@@ -134,7 +134,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Coffee" id="Hee-LG-584"/>
                     <connections>
-                        <segue destination="sVS-Ez-L3q" kind="show" identifier="showCoffee" id="qsG-TQ-D5s"/>
+                        <segue destination="sVS-Ez-L3q" kind="show" identifier="CoffeeSegue" id="qsG-TQ-D5s"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FX1-5V-7Wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -354,13 +354,44 @@
                     <view key="view" contentMode="scaleToFill" id="Rwb-We-SEz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.82745098039999998" green="0.1058823529" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kyT-5f-ERK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="444.5"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OU-fK-y0c">
+                                <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-4I-XgJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1OU-fK-y0c" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="0aJ-cU-Qs8"/>
+                            <constraint firstItem="NgX-4I-XgJ" firstAttribute="trailing" secondItem="Tgu-ZZ-EpV" secondAttribute="trailing" id="BfA-Yb-RAK"/>
+                            <constraint firstItem="NgX-4I-XgJ" firstAttribute="bottom" secondItem="Tgu-ZZ-EpV" secondAttribute="bottom" id="DQC-O0-Y9o"/>
+                            <constraint firstItem="NgX-4I-XgJ" firstAttribute="top" secondItem="Rwb-We-SEz" secondAttribute="top" id="E9S-Ch-m2D"/>
+                            <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="bottom" secondItem="1OU-fK-y0c" secondAttribute="bottom" id="I9o-g2-NN6"/>
+                            <constraint firstItem="1OU-fK-y0c" firstAttribute="height" secondItem="kyT-5f-ERK" secondAttribute="height" multiplier="0.5" id="IdO-3Z-Q73"/>
+                            <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="trailing" secondItem="kyT-5f-ERK" secondAttribute="trailing" id="MHe-5Q-9xx"/>
+                            <constraint firstItem="kyT-5f-ERK" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="PAO-kQ-Qaz"/>
+                            <constraint firstItem="kyT-5f-ERK" firstAttribute="top" secondItem="Rwb-We-SEz" secondAttribute="top" id="S0M-Kz-rHh"/>
+                            <constraint firstItem="1OU-fK-y0c" firstAttribute="top" secondItem="kyT-5f-ERK" secondAttribute="bottom" id="g9p-AG-tc4"/>
+                            <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="trailing" secondItem="1OU-fK-y0c" secondAttribute="trailing" id="hJS-dW-Vpo"/>
+                            <constraint firstItem="NgX-4I-XgJ" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="uuM-ZJ-lNn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Tgu-ZZ-EpV"/>
                     </view>
+                    <connections>
+                        <outlet property="coffeeImageView" destination="kyT-5f-ERK" id="afE-Bc-jwt"/>
+                        <outlet property="darkView" destination="NgX-4I-XgJ" id="lfk-ob-7gF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-Wg-vEd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="-353"/>
+            <point key="canvasLocation" x="2533.5999999999999" y="-353.07346326836586"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ucb-SY-SEm">

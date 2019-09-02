@@ -13,23 +13,21 @@ class HomeViewController: CoffeeCollectionViewController {
     // MARK: - Properties
     
     var presenter: HomeViewPresenter!
+    var configurator: HomeConfigurator!
     
     // MARK: - Lifecycle Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = HomeViewPresenter(view: self)
+        configurator = HomeConfigurator()
+        configurator.configure(controller: self)
+        
         presenter.viewDidLoad()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if
-            let destination = segue.destination as? CoffeeViewController,
-            let index = collectionView?.indexPathsForSelectedItems?.first?.row {
-            
-            destination.coffee = presenter.coffeeArray[index]
-        }
+        presenter.prepare(for: segue, sender: sender)
     }
 }
 
@@ -46,7 +44,7 @@ extension HomeViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showCoffee", sender: self)
+        presenter.showCoffee(indexPath.row)
     }
 }
 

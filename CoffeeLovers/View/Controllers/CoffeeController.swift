@@ -9,30 +9,54 @@
 import UIKit
 
 class CoffeeController: UIViewController {
-
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var coffeeImageView: UIImageView!
+    @IBOutlet weak var darkView: UIView!
+    
+    // MARK: - Properties
+    
+    var configurator: CoffeeConfigurator!
+    var presenter: CoffeeViewPresenter!
+    
+    // MARK: - Lifecycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        configurator.configure(controller: self)
+        presenter.viewDidLoad()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension CoffeeController: CoffeeDetailsDelegate {
+    func bottomSheetOpen(isOpen: Bool, duration: Double) {
+        
+        UIView.animate(withDuration: duration, delay: 0.0, animations: {
+            self.darkView.alpha = isOpen ? 0.4 : 0
+        })
+    }
+}
+
+extension CoffeeController: CoffeeView {
+    
+    func setCoffeeImage(imageTitle: String) {
+        coffeeImageView.image = UIImage(named: imageTitle)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+    func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator) {
+        let coffeeDetails = CoffeeDetailsController()
+        coffeeDetails.configurator = configurator
+        coffeeDetails.delegate = self
         
-        addBottomSheetView()
+        self.addChildViewController(coffeeDetails)
+        self.view.addSubview(coffeeDetails.view)
+        coffeeDetails.didMove(toParentViewController: self)
+        
+        let height = self.view.frame.height
+        let width = self.view.frame.width
+        
+        coffeeDetails.view.frame = CGRect(x: 0, y: height - (height / 3) - 100, width: width, height: height)
     }
-    
-    func addBottomSheetView() {
-        
-        let bottomSheet = BottomSheetViewController()
-        
-        self.addChildViewController(bottomSheet)
-        self.view.addSubview(bottomSheet.view)
-        bottomSheet.didMove(toParentViewController: self)
-        
-        let height = view.frame.height
-        let width = view.frame.width
-        bottomSheet.view.frame = CGRect(x: 0, y: view.frame.maxY, width: width, height: height)
-    }
-
 }

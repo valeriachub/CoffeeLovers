@@ -8,7 +8,11 @@
 
 import UIKit
 
-class BottomSheetViewController: UIViewController {
+protocol CoffeeDetailsDelegate: class {
+    func bottomSheetOpen(isOpen: Bool, duration: Double)
+}
+
+class CoffeeDetailsController: UIViewController {
     
     // MARK: - IBOutlets
     
@@ -22,9 +26,14 @@ class BottomSheetViewController: UIViewController {
     
     let ingredients = ["Coffee", "Ice Cream"]
     
+    weak var delegate: CoffeeDetailsDelegate?
+    
+    var configurator: CoffeeDetailsConfigurator!
+    var presenter: CoffeeDetailsPresenter!
+    
     let fullViewHeight: CGFloat = 130
     var partialViewHeight: CGFloat {
-        return UIScreen.main.bounds.height - 130
+        return UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 3) - 100 
     }
     
     // MARK: - Lifecycle Methods
@@ -32,26 +41,8 @@ class BottomSheetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setViews()
-        setTabs()
-        setTableView()
-        setGesture()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        
-        animView()
-    }
-    
-    // MARK: - Methods
-    
-    func animView() {
-        UIView.animate(withDuration: 0.3) { [weak self] in
-            let frame = self?.view.frame
-            let y = self?.partialViewHeight ?? 0
-            self?.view.frame = CGRect(x: 0, y: y, width: frame!.width, height: frame!.height)
-        }
+        configurator.configure(controller: self)
+        presenter.viewDidLoad()
     }
     
     func setViews() {
@@ -104,18 +95,20 @@ class BottomSheetViewController: UIViewController {
             UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
                 self.view.frame.origin.y = velocity.y >= 0 ? self.partialViewHeight : self.fullViewHeight
             })
+            
+            delegate?.bottomSheetOpen(isOpen: velocity.y < 0, duration: duration)
         }
     }
 }
 
-extension BottomSheetViewController: TabsControlDelegate {
+extension CoffeeDetailsController: TabsControlDelegate {
     
     func onTabClicked(index: Int) {
         print(index)
     }
 }
 
-extension BottomSheetViewController: UITableViewDataSource {
+extension CoffeeDetailsController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ingredients.count
     }
@@ -129,4 +122,18 @@ extension BottomSheetViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension CoffeeDetailsController: CoffeeDetailsView {
+    func setCoffeeTitle(title: String) {
+        
+        titleLabel.text = title
+        
+        setViews()
+        setTabs()
+        setTableView()
+        setGesture()
+    }
+    
+    
 }
