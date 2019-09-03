@@ -12,9 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoffeeDetailsController" customModule="CoffeeLovers" customModuleProvider="target">
             <connections>
+                <outlet property="caloriesLabelView" destination="KQw-Zt-7Jl" id="AOf-pW-03t"/>
+                <outlet property="caloriesView" destination="uSX-JK-hwZ" id="I5z-gH-BhG"/>
                 <outlet property="descLabel" destination="l5E-X7-5fA" id="YH0-M6-ncm"/>
                 <outlet property="ingredientsTableView" destination="tts-rO-Lwi" id="Mri-1u-8CO"/>
                 <outlet property="ingredientsTableViewHeight" destination="9y3-Kc-lhs" id="5Pb-HP-RB4"/>
+                <outlet property="mlView" destination="6yv-ML-wtR" id="IeC-WF-j1F"/>
                 <outlet property="receiptTextContainerView" destination="jL2-6d-Q1u" id="Ltf-mL-9HB"/>
                 <outlet property="receiptTextHeight" destination="ziv-7Y-u1b" id="Tzx-r7-9Eh"/>
                 <outlet property="receiptTextView" destination="eId-t5-ufx" id="Kjw-oM-MH7"/>
@@ -33,7 +36,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iLF-h9-OnH">
                     <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziG-cH-8ba">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ziG-cH-8ba" userLabel="grayView">
                             <rect key="frame" x="0.0" y="138" width="414" height="714"/>
                             <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </view>
@@ -84,7 +87,7 @@
                                 <constraint firstItem="l5E-X7-5fA" firstAttribute="leading" secondItem="hIY-O3-bV2" secondAttribute="leading" constant="20" id="vHg-Tz-0qW"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryj-Xb-vBU" userLabel="receiptView">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryj-Xb-vBU" userLabel="receiptView">
                             <rect key="frame" x="0.0" y="192" width="414" height="660"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPz-Yi-n7W">
@@ -109,13 +112,13 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jL2-6d-Q1u">
                                     <rect key="frame" x="0.0" y="242" width="414" height="418"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eId-t5-ufx">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eId-t5-ufx">
                                             <rect key="frame" x="20" y="17" width="374" height="150"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="150" id="ziv-7Y-u1b"/>
                                             </constraints>
-                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -140,11 +143,42 @@
                                 <constraint firstItem="yPz-Yi-n7W" firstAttribute="leading" secondItem="ryj-Xb-vBU" secondAttribute="leading" id="psz-cY-08M"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-JK-hwZ">
+                            <rect key="frame" x="0.0" y="192" width="414" height="660"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yv-ML-wtR">
+                                    <rect key="frame" x="20" y="40" width="374" height="40"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="nt1-UX-ABq"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQw-Zt-7Jl">
+                                    <rect key="frame" x="20" y="100" width="374" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="ANT-Pt-8NZ"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                    <color key="textColor" red="0.34324560889879457" green="0.35810048935771888" blue="0.37270484970637996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="6yv-ML-wtR" firstAttribute="leading" secondItem="uSX-JK-hwZ" secondAttribute="leading" constant="20" id="H5y-7d-U9N"/>
+                                <constraint firstItem="6yv-ML-wtR" firstAttribute="top" secondItem="uSX-JK-hwZ" secondAttribute="top" constant="40" id="J9N-7J-m2b"/>
+                                <constraint firstItem="KQw-Zt-7Jl" firstAttribute="leading" secondItem="uSX-JK-hwZ" secondAttribute="leading" constant="20" id="JHR-AY-wYv"/>
+                                <constraint firstAttribute="trailing" secondItem="6yv-ML-wtR" secondAttribute="trailing" constant="20" id="ifQ-68-iRI"/>
+                                <constraint firstItem="KQw-Zt-7Jl" firstAttribute="top" secondItem="6yv-ML-wtR" secondAttribute="bottom" constant="20" id="p3w-0y-uIg"/>
+                                <constraint firstAttribute="trailing" secondItem="KQw-Zt-7Jl" secondAttribute="trailing" constant="20" id="pVg-04-cAW"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="hIY-O3-bV2" firstAttribute="leading" secondItem="iLF-h9-OnH" secondAttribute="leading" id="1Nh-ot-qDo"/>
                         <constraint firstItem="ziG-cH-8ba" firstAttribute="top" secondItem="hIY-O3-bV2" secondAttribute="bottom" constant="-40" id="3BY-iA-7j5"/>
+                        <constraint firstAttribute="bottom" secondItem="uSX-JK-hwZ" secondAttribute="bottom" id="3zj-kV-vle"/>
                         <constraint firstAttribute="trailing" secondItem="ryj-Xb-vBU" secondAttribute="trailing" id="6ET-cP-r3Z"/>
                         <constraint firstAttribute="bottom" secondItem="ziG-cH-8ba" secondAttribute="bottom" id="KxK-R1-FoQ"/>
                         <constraint firstAttribute="trailing" secondItem="ziG-cH-8ba" secondAttribute="trailing" id="Mh7-Ff-Yth"/>
@@ -152,6 +186,9 @@
                         <constraint firstItem="ryj-Xb-vBU" firstAttribute="top" secondItem="hIY-O3-bV2" secondAttribute="bottom" constant="14" id="Oqg-UF-aYg"/>
                         <constraint firstItem="ziG-cH-8ba" firstAttribute="leading" secondItem="iLF-h9-OnH" secondAttribute="leading" id="Q6r-MA-DgY"/>
                         <constraint firstItem="hIY-O3-bV2" firstAttribute="top" secondItem="iLF-h9-OnH" secondAttribute="top" id="Uwr-0f-3tj"/>
+                        <constraint firstAttribute="trailing" secondItem="uSX-JK-hwZ" secondAttribute="trailing" id="cR4-J8-HFj"/>
+                        <constraint firstItem="uSX-JK-hwZ" firstAttribute="top" secondItem="hIY-O3-bV2" secondAttribute="bottom" constant="14" id="jxh-p4-Cvv"/>
+                        <constraint firstItem="uSX-JK-hwZ" firstAttribute="leading" secondItem="iLF-h9-OnH" secondAttribute="leading" id="uUD-kh-oJX"/>
                         <constraint firstAttribute="bottom" secondItem="ryj-Xb-vBU" secondAttribute="bottom" id="x6s-vl-TZo"/>
                         <constraint firstAttribute="trailing" secondItem="hIY-O3-bV2" secondAttribute="trailing" id="zMR-vQ-9lN"/>
                     </constraints>

@@ -16,6 +16,7 @@ protocol CoffeeDetailsView: class {
     func setGestures()
     func setReceiptText(text: String)
     func setReceiptTextHeight(height: CGFloat)
+    func setMLTabs(with titles: [String])
 }
 
 class CoffeeDetailsPresenter {
@@ -50,6 +51,7 @@ class CoffeeDetailsPresenter {
         setTabs()
         setGestures()
         setReceiptText()
+        setMLTabs()
     }
     
     func getNumberOfRowsIngredients() -> Int {
@@ -89,6 +91,10 @@ class CoffeeDetailsPresenter {
         let textHeight = controllerMaxY - (receiptViewOriginY + ingredientsTableViewHeight + (2 * ingredientsTableTopBottomSpace) + receiptTopSpace + receiptTextOriginY) - bottomSpace
         
         coffeeDetailsView.setReceiptTextHeight(height: textHeight)
+    }
+    
+    func setMLTabs() {
+        coffeeDetailsView.setMLTabs(with: ["250 ml", "350 ml", "500 ml"])
     }
 }
 

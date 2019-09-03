@@ -26,6 +26,9 @@ class CoffeeDetailsController: UIViewController {
     @IBOutlet weak var ingredientsTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var receiptTextHeight: NSLayoutConstraint!
     @IBOutlet weak var receiptTextContainerView: UIView!
+    @IBOutlet weak var caloriesView: UIView!
+    @IBOutlet weak var mlView: UIView!
+    @IBOutlet weak var caloriesLabelView: UILabel!
     
     // MARK: - Properties
     
@@ -44,11 +47,6 @@ class CoffeeDetailsController: UIViewController {
         presenter.setReceiptTextHeight(receiptViewOriginY: receiptView.frame.origin.y,
                                        receiptTextOriginY: receiptTextView.frame.origin.y,
                                        ingredientsTableViewHeight: ingredientsTableViewHeight.constant)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
     }
     
     // MARK: - Actions
@@ -86,7 +84,31 @@ class CoffeeDetailsController: UIViewController {
 extension CoffeeDetailsController: TabsControlDelegate {
     
     func onTabClicked(index: Int) {
-        print(index)
+        switch index {
+        case 0:
+            receiptView.isHidden = false
+            caloriesView.isHidden = true
+        case 1:
+            receiptView.isHidden = true
+            caloriesView.isHidden = false
+        default:
+            print(index)
+        }
+    }
+}
+
+// MARK: - Extension MLControlDelegate
+
+extension CoffeeDetailsController: MLControlDelegate {
+    
+    func onMLTabClicked(index: Int) {
+        switch index {
+        case 0: caloriesLabelView.text = "300"
+        case 1: caloriesLabelView.text = "340"
+        case 2: caloriesLabelView.text = "400"
+        default:
+            print(index)
+        }
     }
 }
 
@@ -135,6 +157,9 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         tabsControl.bottomAnchor.constraint(equalTo: tabsView.bottomAnchor).isActive = true
         tabsControl.leftAnchor.constraint(equalTo: tabsView.leftAnchor).isActive = true
         tabsControl.rightAnchor.constraint(equalTo: tabsView.rightAnchor).isActive = true
+        
+        receiptView.isHidden = false
+        caloriesView.isHidden = true
     }
     
     func setGestures() {
@@ -147,5 +172,18 @@ extension CoffeeDetailsController: CoffeeDetailsView {
     
     func setReceiptTextHeight(height: CGFloat) {
         receiptTextHeight.constant = height
+    }
+    
+    func setMLTabs(with titles: [String]) {
+        let mlControl = MLControl(frame: mlView.bounds, buttonTitles: titles, delegate: self)
+        mlControl.backgroundColor = .clear
+        mlView.addSubview(mlControl)
+        
+        mlControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        mlControl.topAnchor.constraint(equalTo: mlView.topAnchor).isActive = true
+        mlControl.bottomAnchor.constraint(equalTo: mlView.bottomAnchor).isActive = true
+        mlControl.leftAnchor.constraint(equalTo: mlView.leftAnchor).isActive = true
+        mlControl.rightAnchor.constraint(equalTo: mlView.rightAnchor).isActive = true
     }
 }
