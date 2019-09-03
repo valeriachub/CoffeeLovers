@@ -18,7 +18,7 @@ class CoffeeController: UIViewController {
     // MARK: - Properties
     
     var configurator: CoffeeConfigurator!
-    var presenter: CoffeeViewPresenter!
+    var presenter: CoffeePresenter!
     
     // MARK: - Lifecycle Methods
     

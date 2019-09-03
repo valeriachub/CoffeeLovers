@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14AC61E1D77949FF55389B1E /* Pods_CoffeeLovers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */; };
-		3A22931A2319146200CE30CD /* HomeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2293192319146200CE30CD /* HomeViewPresenter.swift */; };
+		3A22931A2319146200CE30CD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2293192319146200CE30CD /* HomePresenter.swift */; };
 		3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A468BE921346B2E0046DAFD /* AppDelegate.swift */; };
 		3A468BEF21346B2E0046DAFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A468BED21346B2E0046DAFD /* Main.storyboard */; };
 		3A468BF121346B320046DAFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A468BF021346B320046DAFD /* Assets.xcassets */; };
@@ -22,7 +22,7 @@
 		3AA18250231BE8D1006ADC8A /* TabsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1824F231BE8D1006ADC8A /* TabsControl.swift */; };
 		3AADE6C6231A6BD20099168C /* CoffeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6C3231A6BD10099168C /* CoffeeViewController.swift */; };
 		3AADE6C7231A6BD20099168C /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6C4231A6BD20099168C /* FavouriteViewController.swift */; };
-		3AADE6C8231A6BD20099168C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6C5231A6BD20099168C /* HomeViewController.swift */; };
+		3AADE6C8231A6BD20099168C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6C5231A6BD20099168C /* HomeController.swift */; };
 		3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */; };
 		3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB02004231A693000AC0EC4 /* CoffeeDataService.swift */; };
 		3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
@@ -33,7 +33,7 @@
 		3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF197BB213E678F0087140F /* ImageSlideView.swift */; };
 		3AF197BE213E67A70087140F /* ImageSlideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AF197BD213E67A70087140F /* ImageSlideView.xib */; };
 		3AF197C22144E4650087140F /* CoffeeAdditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF197C12144E4650087140F /* CoffeeAdditionsView.swift */; };
-		AB0355CA231D315600BE3D59 /* CoffeeViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0355C9231D315600BE3D59 /* CoffeeViewPresenter.swift */; };
+		AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */; };
 		AB26AAF8231D39FE00F2B92B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAF7231D39FE00F2B92B /* HomeRouter.swift */; };
 		AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */; };
 		AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */; };
@@ -44,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A2293192319146200CE30CD /* HomeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewPresenter.swift; sourceTree = "<group>"; };
+		3A2293192319146200CE30CD /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		3A468BE621346B2E0046DAFD /* CoffeeLovers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeLovers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A468BE921346B2E0046DAFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A468BEE21346B2E0046DAFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,9 +58,9 @@
 		3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CoffeeDetailsController.xib; path = CoffeeLovers/View/Controllers/CoffeeDetailsController.xib; sourceTree = SOURCE_ROOT; };
 		3AA1824F231BE8D1006ADC8A /* TabsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsControl.swift; sourceTree = "<group>"; };
 		3AADE6C1231A6B460099168C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AADE6C3231A6BD10099168C /* CoffeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeViewController.swift; path = CoffeeLovers/View/Controllers/CoffeeViewController.swift; sourceTree = SOURCE_ROOT; };
-		3AADE6C4231A6BD20099168C /* FavouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteViewController.swift; path = CoffeeLovers/View/Controllers/FavouriteViewController.swift; sourceTree = SOURCE_ROOT; };
-		3AADE6C5231A6BD20099168C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = CoffeeLovers/View/Controllers/HomeViewController.swift; sourceTree = SOURCE_ROOT; };
+		3AADE6C3231A6BD10099168C /* CoffeeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeViewController.swift; path = CoffeeLovers/View/CoffeeViewController.swift; sourceTree = SOURCE_ROOT; };
+		3AADE6C4231A6BD20099168C /* FavouriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavouriteViewController.swift; path = CoffeeLovers/View/FavouriteViewController.swift; sourceTree = SOURCE_ROOT; };
+		3AADE6C5231A6BD20099168C /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = CoffeeLovers/View/Controllers/HomeController.swift; sourceTree = SOURCE_ROOT; };
 		3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeCollectionViewController.swift; path = CoffeeLovers/View/CoffeeCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		3AB02004231A693000AC0EC4 /* CoffeeDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDataService.swift; sourceTree = "<group>"; };
 		3AC4B87C2138FBB600052E9F /* CoffeeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoffeeData.json; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		3AF197BD213E67A70087140F /* ImageSlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSlideView.xib; sourceTree = "<group>"; };
 		3AF197C12144E4650087140F /* CoffeeAdditionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeAdditionsView.swift; sourceTree = "<group>"; };
 		7B1969495835B20856A27964 /* Pods-CoffeeLovers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.release.xcconfig"; sourceTree = "<group>"; };
-		AB0355C9231D315600BE3D59 /* CoffeeViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewPresenter.swift; sourceTree = "<group>"; };
+		AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePresenter.swift; sourceTree = "<group>"; };
 		AB26AAF7231D39FE00F2B92B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeConfigurator.swift; sourceTree = "<group>"; };
 		AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		3A22931B2319153000CE30CD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				3A2293192319146200CE30CD /* HomeViewPresenter.swift */,
-				AB0355C9231D315600BE3D59 /* CoffeeViewPresenter.swift */,
+				3A2293192319146200CE30CD /* HomePresenter.swift */,
+				AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */,
 				AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */,
 			);
 			path = Presenter;
@@ -176,10 +176,7 @@
 		3A468C08213539710046DAFD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */,
-				3AADE6C3231A6BD10099168C /* CoffeeViewController.swift */,
-				3AADE6C4231A6BD20099168C /* FavouriteViewController.swift */,
-				3AADE6C5231A6BD20099168C /* HomeViewController.swift */,
+				3AADE6C5231A6BD20099168C /* HomeController.swift */,
 				3AA18249231AE2DE006ADC8A /* CoffeeController.swift */,
 				3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */,
 				3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */,
@@ -191,6 +188,9 @@
 		3A468C092135397A0046DAFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */,
+				3AADE6C3231A6BD10099168C /* CoffeeViewController.swift */,
+				3AADE6C4231A6BD20099168C /* FavouriteViewController.swift */,
 				3A468C08213539710046DAFD /* Controllers */,
 				3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */,
 				3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */,
@@ -378,7 +378,7 @@
 				AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */,
 				3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */,
 				3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */,
-				AB0355CA231D315600BE3D59 /* CoffeeViewPresenter.swift in Sources */,
+				AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */,
 				AB26AAF8231D39FE00F2B92B /* HomeRouter.swift in Sources */,
 				AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */,
 				AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */,
@@ -387,10 +387,10 @@
 				3AA18250231BE8D1006ADC8A /* TabsControl.swift in Sources */,
 				3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */,
 				3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */,
-				3AADE6C8231A6BD20099168C /* HomeViewController.swift in Sources */,
+				3AADE6C8231A6BD20099168C /* HomeController.swift in Sources */,
 				3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */,
 				AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */,
-				3A22931A2319146200CE30CD /* HomeViewPresenter.swift in Sources */,
+				3A22931A2319146200CE30CD /* HomePresenter.swift in Sources */,
 				3AADE6C7231A6BD20099168C /* FavouriteViewController.swift in Sources */,
 				AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */,
 				3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */,

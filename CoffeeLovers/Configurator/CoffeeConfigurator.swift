@@ -27,7 +27,7 @@ class CoffeeConfigurator: CoffeeConfiguratorProtocol {
     // MARK: - Methods
     
     func configure(controller: CoffeeController) {
-        let presenter = CoffeeViewPresenter(view: controller, coffee: coffee)
+        let presenter = CoffeePresenter(view: controller, coffee: coffee)
         
         controller.presenter = presenter
     }

@@ -13,7 +13,7 @@ protocol HomeView: class {
     func reloadCollectionView()
 }
 
-class HomeViewPresenter {
+class HomePresenter {
     
     // MARK: - Properties
     

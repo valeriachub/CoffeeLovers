@@ -9,16 +9,16 @@
 import Foundation
 
 protocol HomeConfiguratorProtocol: class {
-    func configure(controller: HomeViewController)
+    func configure(controller: HomeController)
 }
 
 class HomeConfigurator: HomeConfiguratorProtocol {
     
     // MARK: - Methods
     
-    func configure(controller: HomeViewController) {
+    func configure(controller: HomeController) {
         let router = HomeRouter(controller: controller)
-        let presenter = HomeViewPresenter(view: controller, router: router)
+        let presenter = HomePresenter(view: controller, router: router)
         controller.presenter = presenter
     }
 }

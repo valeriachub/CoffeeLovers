@@ -22,19 +22,17 @@ class CoffeeDetailsController: UIViewController {
     @IBOutlet weak var tabsView: UIView!
     @IBOutlet weak var receiptView: UIView!
     @IBOutlet weak var ingredientsTableView: UITableView!
+    @IBOutlet weak var receiptTextView: UITextView!
     @IBOutlet weak var ingredientsTableViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var receiptTextHeight: NSLayoutConstraint!
+    @IBOutlet weak var receiptTextContainerView: UIView!
     
-    let ingredients = ["Coffee", "Ice Cream"]
+    // MARK: - Properties
     
     weak var delegate: CoffeeDetailsDelegate?
     
     var configurator: CoffeeDetailsConfigurator!
     var presenter: CoffeeDetailsPresenter!
-    
-    let fullViewHeight: CGFloat = 130
-    var partialViewHeight: CGFloat {
-        return UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 3) - 100 
-    }
     
     // MARK: - Lifecycle Methods
     
@@ -43,14 +41,91 @@ class CoffeeDetailsController: UIViewController {
         
         configurator.configure(controller: self)
         presenter.viewDidLoad()
+        presenter.setReceiptTextHeight(receiptViewOriginY: receiptView.frame.origin.y,
+                                       receiptTextOriginY: receiptTextView.frame.origin.y,
+                                       ingredientsTableViewHeight: ingredientsTableViewHeight.constant)
     }
     
-    func setViews() {
-        topView.layer.cornerRadius = 30.0
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
     }
     
-    func setTabs() {
-        let tabsControl = TabsControl(frame: tabsView.bounds, buttonTitles: ["Receipt", "Calories"], delegate: self)
+    // MARK: - Actions
+    
+    @objc
+    func onPanGesture(_ recognizer: UIPanGestureRecognizer) {
+        let translation = recognizer.translation(in: view)
+        let viewY = view.frame.minY
+        
+        if (presenter.fullViewOriginY...presenter.partialViewOriginY).contains(viewY + translation.y) {
+            view.frame.origin.y = viewY + translation.y
+            recognizer.setTranslation(CGPoint.zero, in: view)
+        }
+        
+        if recognizer.state == .ended {
+            let velocity = recognizer.velocity(in: view)
+            
+            var duration = velocity.y < 0 ?
+                Double((viewY - presenter.fullViewOriginY) / -velocity.y) :
+                Double((presenter.partialViewOriginY - viewY) / velocity.y )
+            
+            duration = duration > 1.3 ? 1 : duration
+            
+            UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
+                self.view.frame.origin.y = velocity.y >= 0 ? self.presenter.partialViewOriginY : self.presenter.fullViewOriginY
+            })
+            
+            delegate?.bottomSheetOpen(isOpen: velocity.y < 0, duration: duration)
+        }
+    }
+}
+
+// MARK: - Extension TabsControlDelegate
+
+extension CoffeeDetailsController: TabsControlDelegate {
+    
+    func onTabClicked(index: Int) {
+        print(index)
+    }
+}
+
+// MARK: - Extension UITableViewDataSource
+
+extension CoffeeDetailsController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return presenter.getNumberOfRowsIngredients()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return presenter.getCellForIngredientRow(at: indexPath, of: tableView)
+    }
+}
+
+// MARK: - Extension CoffeeDetailsView
+
+extension CoffeeDetailsController: CoffeeDetailsView {
+    
+    func setCoffeeTitle(title: String) {
+        titleLabel.text = title
+    }
+    
+    func setCornerRadius(_ radius: CGFloat) {
+        topView.layer.cornerRadius = radius
+    }
+    
+    func setTableView(rowHeight: CGFloat, tableHeight: CGFloat) {
+        ingredientsTableView.register(UINib(nibName: "\(IngredientCell.self)", bundle: nil), forCellReuseIdentifier: "\(IngredientCell.self)")
+        
+        ingredientsTableView.dataSource = self
+        
+        ingredientsTableView.rowHeight = rowHeight
+        ingredientsTableViewHeight.constant = tableHeight
+    }
+    
+    func setTabs(with titles: [String]) {
+        let tabsControl = TabsControl(frame: tabsView.bounds, buttonTitles: titles, delegate: self)
         tabsControl.backgroundColor = .clear
         tabsView.addSubview(tabsControl)
         
@@ -62,78 +137,15 @@ class CoffeeDetailsController: UIViewController {
         tabsControl.rightAnchor.constraint(equalTo: tabsView.rightAnchor).isActive = true
     }
     
-    private func setTableView() {
-        ingredientsTableView.register(UINib(nibName: "\(IngredientCell.self)", bundle: nil), forCellReuseIdentifier: "\(IngredientCell.self)")
-        ingredientsTableView.rowHeight = 30
-        ingredientsTableView.dataSource = self
-        ingredientsTableViewHeight.constant = CGFloat(30 * ingredients.count)
-    }
-    
-    private func setGesture() {
+    func setGestures() {
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGesture(_:))))
     }
     
-    @objc
-    func onPanGesture(_ recognizer: UIPanGestureRecognizer) {
-        let translation = recognizer.translation(in: view)
-        let viewY = view.frame.minY
-        
-        if (fullViewHeight...partialViewHeight).contains(viewY + translation.y) {
-            view.frame.origin.y = viewY + translation.y
-            recognizer.setTranslation(CGPoint.zero, in: view)
-        }
-        
-        if recognizer.state == .ended {
-            let velocity = recognizer.velocity(in: view)
-            
-            var duration = velocity.y < 0 ?
-                Double((viewY - fullViewHeight) / -velocity.y) :
-                Double((partialViewHeight - viewY) / velocity.y )
-            
-            duration = duration > 1.3 ? 1 : duration
-            
-            UIView.animate(withDuration: duration, delay: 0.0, options: [.allowUserInteraction], animations: {
-                self.view.frame.origin.y = velocity.y >= 0 ? self.partialViewHeight : self.fullViewHeight
-            })
-            
-            delegate?.bottomSheetOpen(isOpen: velocity.y < 0, duration: duration)
-        }
-    }
-}
-
-extension CoffeeDetailsController: TabsControlDelegate {
-    
-    func onTabClicked(index: Int) {
-        print(index)
-    }
-}
-
-extension CoffeeDetailsController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredients.count
+    func setReceiptText(text: String) {
+        receiptTextView.text = text
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(IngredientCell.self)", for: indexPath) as? IngredientCell else {
-            fatalError()
-        }
-        
-        cell.setIngredienTitle(ingredients[indexPath.row])
-        
-        return cell
+    func setReceiptTextHeight(height: CGFloat) {
+        receiptTextHeight.constant = height
     }
-}
-
-extension CoffeeDetailsController: CoffeeDetailsView {
-    func setCoffeeTitle(title: String) {
-        
-        titleLabel.text = title
-        
-        setViews()
-        setTabs()
-        setTableView()
-        setGesture()
-    }
-    
-    
 }

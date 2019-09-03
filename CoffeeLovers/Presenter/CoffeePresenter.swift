@@ -13,7 +13,7 @@ protocol CoffeeView: class {
     func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator)
 }
 
-class CoffeeViewPresenter {
+class CoffeePresenter {
     
     // MARK: - Properties
     

@@ -16,12 +16,12 @@ class HomeRouter: HomeRouterProtocol {
     
     // MARK: - Properties
     
-    weak var homeController: HomeViewController?
+    weak var homeController: HomeController?
     var coffee: Coffee?
     
     // MARK: - Init Methods
     
-    init(controller: HomeViewController) {
+    init(controller: HomeController) {
         self.homeController = controller
     }
     

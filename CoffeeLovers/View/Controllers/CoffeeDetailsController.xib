@@ -14,7 +14,10 @@
             <connections>
                 <outlet property="descLabel" destination="l5E-X7-5fA" id="YH0-M6-ncm"/>
                 <outlet property="ingredientsTableView" destination="tts-rO-Lwi" id="Mri-1u-8CO"/>
-                <outlet property="ingredientsTableViewHeight" destination="9y3-Kc-lhs" id="4Hb-4l-FEr"/>
+                <outlet property="ingredientsTableViewHeight" destination="9y3-Kc-lhs" id="5Pb-HP-RB4"/>
+                <outlet property="receiptTextContainerView" destination="jL2-6d-Q1u" id="Ltf-mL-9HB"/>
+                <outlet property="receiptTextHeight" destination="ziv-7Y-u1b" id="Tzx-r7-9Eh"/>
+                <outlet property="receiptTextView" destination="eId-t5-ufx" id="Kjw-oM-MH7"/>
                 <outlet property="receiptView" destination="ryj-Xb-vBU" id="IAK-3h-hm3"/>
                 <outlet property="tabsView" destination="gns-Cy-rH6" id="jiM-5a-dei"/>
                 <outlet property="titleLabel" destination="Koh-PB-WO1" id="hVD-Rp-oqB"/>
@@ -106,19 +109,22 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jL2-6d-Q1u">
                                     <rect key="frame" x="0.0" y="242" width="414" height="418"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o1W-Dc-kcg">
-                                            <rect key="frame" x="20" y="17" width="374" height="306"/>
-                                            <string key="text">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</string>
-                                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                                            <color key="textColor" red="0.38039215686274508" green="0.40000000000000002" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eId-t5-ufx">
+                                            <rect key="frame" x="20" y="17" width="374" height="150"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="150" id="ziv-7Y-u1b"/>
+                                            </constraints>
+                                            <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="o1W-Dc-kcg" firstAttribute="leading" secondItem="jL2-6d-Q1u" secondAttribute="leading" constant="20" id="Klb-f0-nMY"/>
-                                        <constraint firstAttribute="trailing" secondItem="o1W-Dc-kcg" secondAttribute="trailing" constant="20" id="Nq3-9Z-5dt"/>
-                                        <constraint firstItem="o1W-Dc-kcg" firstAttribute="top" secondItem="jL2-6d-Q1u" secondAttribute="top" constant="17" id="UFx-f2-wXc"/>
+                                        <constraint firstAttribute="trailing" secondItem="eId-t5-ufx" secondAttribute="trailing" constant="20" id="0eH-M6-93a"/>
+                                        <constraint firstItem="eId-t5-ufx" firstAttribute="top" secondItem="jL2-6d-Q1u" secondAttribute="top" constant="17" id="1Ys-M5-6ul"/>
+                                        <constraint firstItem="eId-t5-ufx" firstAttribute="leading" secondItem="jL2-6d-Q1u" secondAttribute="leading" constant="20" id="XM2-hL-Qrf"/>
                                     </constraints>
                                 </view>
                             </subviews>

@@ -40,7 +40,7 @@
             <objects>
                 <collectionViewController id="jBV-3T-6nc" customClass="FavouriteViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="X3r-VN-n6w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="MMt-Pa-QOY">
@@ -101,9 +101,9 @@
         <!--Coffee-->
         <scene sceneID="yum-rW-V4L">
             <objects>
-                <collectionViewController id="WYP-Gy-cAY" customClass="HomeViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="WYP-Gy-cAY" customClass="HomeController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="UdD-tU-nI7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="bxt-lo-uIy">
@@ -113,7 +113,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CoffeeCell" id="zgk-Ur-ndq" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoffeeCell" id="zgk-Ur-ndq" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="71" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -146,7 +146,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="LLb-ie-lMj" customClass="CoffeeViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e2z-NL-6Ey">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-pz-xHN">
@@ -186,10 +186,10 @@
                                                 <rect key="frame" x="8" y="8" width="359" height="265"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="h3o-9F-u7S">
-                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="359" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Size" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVa-Ie-0cU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="GVa-Ie-0cU" secondAttribute="height" multiplier="3:1" id="2wg-C9-mdj"/>
                                                                 </constraints>
@@ -198,7 +198,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WlK-OA-PX7">
-                                                                <rect key="frame" x="101" y="0.0" width="258" height="29.5"/>
+                                                                <rect key="frame" x="88" y="0.0" width="271" height="25"/>
                                                                 <segments>
                                                                     <segment title="S"/>
                                                                     <segment title="M"/>
@@ -212,10 +212,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="jq0-9I-lDB">
-                                                        <rect key="frame" x="0.0" y="44.5" width="359" height="28"/>
+                                                        <rect key="frame" x="0.0" y="40" width="359" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rmE-bl-6ub">
-                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="28"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="rmE-bl-6ub" secondAttribute="height" multiplier="3:1" id="rHq-el-IWO"/>
                                                                 </constraints>
@@ -224,7 +224,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3rR-nv-i4g">
-                                                                <rect key="frame" x="101" y="0.0" width="258" height="29"/>
+                                                                <rect key="frame" x="88" y="0.0" width="271" height="25"/>
                                                                 <segments>
                                                                     <segment title="" image="sugar_zero_selected"/>
                                                                     <segment title="" image="sugar_s_selected"/>
@@ -239,10 +239,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Cc5-pB-0kt">
-                                                        <rect key="frame" x="0.0" y="88.5" width="359" height="28.5"/>
+                                                        <rect key="frame" x="0.0" y="80" width="359" height="24"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gia-UQ-PbD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="85" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="24"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="gia-UQ-PbD" secondAttribute="height" multiplier="3:1" id="2zH-dK-kGs"/>
                                                                 </constraints>
@@ -251,21 +251,21 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7xM-SV-TwJ" customClass="CoffeeAdditionsView" customModule="CoffeeLovers" customModuleProvider="target">
-                                                                <rect key="frame" x="101" y="0.0" width="258" height="28.5"/>
+                                                                <rect key="frame" x="88" y="0.0" width="271" height="24"/>
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ful-eA-t07">
-                                                        <rect key="frame" x="0.0" y="133" width="359" height="132"/>
+                                                        <rect key="frame" x="0.0" y="120" width="359" height="145"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calories:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZT9-NK-kup">
-                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="132"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="179.5" height="145"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                                 <color key="textColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJO-j9-GQP">
-                                                                <rect key="frame" x="179.5" y="0.0" width="179.5" height="132"/>
+                                                                <rect key="frame" x="179.5" y="0.0" width="179.5" height="145"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                                 <color key="textColor" red="0.54901960780000003" green="0.3294117647" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>

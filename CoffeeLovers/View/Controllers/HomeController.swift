@@ -8,11 +8,11 @@
 
 import UIKit
 
-class HomeViewController: CoffeeCollectionViewController {
+class HomeController: CoffeeCollectionViewController {
     
     // MARK: - Properties
     
-    var presenter: HomeViewPresenter!
+    var presenter: HomePresenter!
     var configurator: HomeConfigurator!
     
     // MARK: - Lifecycle Methods
@@ -33,7 +33,7 @@ class HomeViewController: CoffeeCollectionViewController {
 
 // MARK: - Extension UICollectionViewController, UICollectionViewDelegateFlowLayout
 
-extension HomeViewController {
+extension HomeController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.getNumberOfItemsInSection()
@@ -50,7 +50,7 @@ extension HomeViewController {
 
 // MARK: - Extension HomeView
 
-extension HomeViewController: HomeView {
+extension HomeController: HomeView {
     
     func reloadCollectionView() {
         collectionView?.reloadData()
