@@ -11,6 +11,8 @@ import Foundation
 protocol CoffeeView: class {
     func setCoffeeImage(imageTitle: String)
     func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator)
+    func setCrossView()
+    func goBack()
 }
 
 class CoffeePresenter {
@@ -33,6 +35,7 @@ class CoffeePresenter {
     func viewDidLoad() {
         setCoffeeImage()
         setCoffeeDetails()
+        setCrossView()
     }
     
     func setCoffeeImage() {
@@ -42,5 +45,13 @@ class CoffeePresenter {
     func setCoffeeDetails() {
         let coffeeDetailsConfigurator = CoffeeDetailsConfigurator(coffee: coffee)
         coffeeView.setCoffeeDetails(with: coffeeDetailsConfigurator)
+    }
+    
+    func setCrossView() {
+        coffeeView.setCrossView()
+    }
+    
+    func onCrossClicked() {
+        coffeeView.goBack()
     }
 }
