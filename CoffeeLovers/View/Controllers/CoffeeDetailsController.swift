@@ -29,6 +29,7 @@ class CoffeeDetailsController: UIViewController {
     @IBOutlet weak var caloriesView: UIView!
     @IBOutlet weak var mlView: UIView!
     @IBOutlet weak var caloriesLabelView: UILabel!
+    @IBOutlet weak var likeImageView: UIImageView!
     
     // MARK: - Properties
     
@@ -77,6 +78,11 @@ class CoffeeDetailsController: UIViewController {
             delegate?.bottomSheetOpen(isOpen: velocity.y < 0, duration: duration)
         }
     }
+    
+    @objc
+    func onLikeClicked() {
+        print("clicked")
+    }
 }
 
 // MARK: - Extension TabsControlDelegate
@@ -84,16 +90,7 @@ class CoffeeDetailsController: UIViewController {
 extension CoffeeDetailsController: TabsControlDelegate {
     
     func onTabClicked(index: Int) {
-        switch index {
-        case 0:
-            receiptView.isHidden = false
-            caloriesView.isHidden = true
-        case 1:
-            receiptView.isHidden = true
-            caloriesView.isHidden = false
-        default:
-            print(index)
-        }
+        showTab(index: index)
     }
 }
 
@@ -158,12 +155,17 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         tabsControl.leftAnchor.constraint(equalTo: tabsView.leftAnchor).isActive = true
         tabsControl.rightAnchor.constraint(equalTo: tabsView.rightAnchor).isActive = true
         
-        receiptView.isHidden = false
-        caloriesView.isHidden = true
+        showTab(index: 0)
+    }
+    
+    func showTab(index: Int) {
+        receiptView.isHidden = index != 0
+        caloriesView.isHidden = index != 1
     }
     
     func setGestures() {
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(onPanGesture(_:))))
+        likeImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onLikeClicked)))
     }
     
     func setReceiptText(text: String) {
