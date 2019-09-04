@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="z1e-C6-Z3J">
             <objects>
-                <navigationController navigationBarHidden="YES" id="rfc-ne-ZDv" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="rfc-ne-ZDv" customClass="MainNavigationController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="like" id="l7E-w5-0j8">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
@@ -73,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="1068" y="597"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Main Navigation Controller-->
         <scene sceneID="dxH-62-SgP">
             <objects>
-                <navigationController navigationBarHidden="YES" id="vWD-5S-ZEG" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="vWD-5S-ZEG" customClass="MainNavigationController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="coffee" id="gdi-U5-VEd">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
@@ -113,7 +113,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CoffeeCell" id="zgk-Ur-ndq" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="CoffeeCell" id="zgk-Ur-ndq" customClass="CoffeeViewCell" customModule="CoffeeLovers" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="71" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
