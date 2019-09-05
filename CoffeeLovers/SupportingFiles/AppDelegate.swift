@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func isDataBaseEmpty(context : NSManagedObjectContext) -> Bool {
         let testRequest : NSFetchRequest<Coffee> = Coffee.fetchRequest()
-        do{
+        do {
             let count = try context.fetch(testRequest).count
             return count == 0
         }catch{
@@ -76,7 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func preloadData(context : NSManagedObjectContext){
         guard let path = Bundle.main.path(forResource: "CoffeeData", ofType: "json") else { fatalError("No CoffeeData.json file") }
         
-        do{
+        do {
             let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
             let jsonObj = try JSON(data: data)
             

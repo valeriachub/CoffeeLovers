@@ -17,14 +17,18 @@ class CoffeeDataService {
     static let shared = CoffeeDataService()
     private init() {}
     
-    
     // MARK: - Methods
     
-    func getCoffeeArray() -> [Coffee] {
+    func getCoffeeArray(isFavouritesOnly: Bool = false) -> [Coffee] {
         var coffeeArray = [Coffee]()
         
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         let request: NSFetchRequest<Coffee> = Coffee.fetchRequest()
+        
+        if isFavouritesOnly {
+            request.predicate = NSPredicate(format: "isFavourite == YES")
+        }
+        
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
         do {
@@ -34,5 +38,10 @@ class CoffeeDataService {
         }
         
         return coffeeArray
+    }
+    
+    func setCoffeeFavourite(coffee: Coffee) {
+        coffee.setValue(!coffee.isFavourite, forKey: "isFavourite")
+        ((UIApplication.shared.delegate) as! AppDelegate).saveContext()
     }
 }

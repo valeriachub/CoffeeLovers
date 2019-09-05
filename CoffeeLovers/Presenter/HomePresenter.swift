@@ -10,6 +10,8 @@ import UIKit
 
 protocol HomeView: class {
     
+    func setPresenter(presenter: HomePresenter)
+    func performSegue(withIdentifier id: String)
     func reloadCollectionView()
 }
 
@@ -37,8 +39,12 @@ class HomePresenter {
         getCoffeeArray()
     }
     
-    func getCoffeeArray() {
-        coffeeArray = coffeeService.getCoffeeArray()
+    func viewWillAppear(isFavouriteTab: Bool = false) {
+        getCoffeeArray(isFavouritesOnly: isFavouriteTab)
+    }
+    
+    func getCoffeeArray(isFavouritesOnly: Bool = false) {
+        coffeeArray = coffeeService.getCoffeeArray(isFavouritesOnly: isFavouritesOnly)
         homeView.reloadCollectionView()
     }
     

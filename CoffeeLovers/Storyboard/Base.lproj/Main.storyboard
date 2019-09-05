@@ -38,7 +38,7 @@
         <!--Favourites-->
         <scene sceneID="S3e-eZ-hrt">
             <objects>
-                <collectionViewController id="jBV-3T-6nc" customClass="FavouriteViewController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="jBV-3T-6nc" customClass="FavouriteController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="X3r-VN-n6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -66,12 +66,12 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Favourites" id="uSC-dK-BFe"/>
                     <connections>
-                        <segue destination="LLb-ie-lMj" kind="show" identifier="showCoffee" id="chc-HT-CAk"/>
+                        <segue destination="sVS-Ez-L3q" kind="show" identifier="CoffeeSegue" id="Zty-hg-afT"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QIy-S1-5Aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="597"/>
+            <point key="canvasLocation" x="1190" y="541"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="dxH-62-SgP">
@@ -345,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="677-oD-o8d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2282" y="421"/>
+            <point key="canvasLocation" x="2374" y="779"/>
         </scene>
         <!--Coffee Controller-->
         <scene sceneID="Hqy-lr-lEo">
@@ -451,4 +451,7 @@
         <image name="sugar_s_selected" width="12" height="13"/>
         <image name="sugar_zero_selected" width="22" height="22"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Zty-hg-afT"/>
+    </inferredMetricsTieBreakers>
 </document>

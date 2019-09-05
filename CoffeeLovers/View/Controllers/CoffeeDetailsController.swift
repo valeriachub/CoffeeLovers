@@ -81,7 +81,7 @@ class CoffeeDetailsController: UIViewController {
     
     @objc
     func onLikeClicked() {
-        print("clicked")
+        presenter.onLikeClicked()
     }
 }
 
@@ -187,5 +187,9 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         mlControl.bottomAnchor.constraint(equalTo: mlView.bottomAnchor).isActive = true
         mlControl.leftAnchor.constraint(equalTo: mlView.leftAnchor).isActive = true
         mlControl.rightAnchor.constraint(equalTo: mlView.rightAnchor).isActive = true
+    }
+    
+    func updateLikeButton(isLike: Bool) {
+        
     }
 }

@@ -17,21 +17,23 @@ protocol CoffeeDetailsView: class {
     func setReceiptText(text: String)
     func setReceiptTextHeight(height: CGFloat)
     func setMLTabs(with titles: [String])
+    func updateLikeButton(isLike: Bool)
 }
 
 class CoffeeDetailsPresenter {
     
     // MARK: - Properties
     
+    let coffeeService = CoffeeDataService.shared
     let cornerRadius: CGFloat = 30.0
     let rowHeight: CGFloat = 30.0
     let fullViewOriginY: CGFloat = 130.0
-    var partialViewOriginY: CGFloat {
-        return UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 3) - 100
-    }
     
     var coffee: Coffee!
     var ingredients = ["Ice cream", "Coffee"]
+    var partialViewOriginY: CGFloat {
+        return UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 3) - 100
+    }
     
     weak var coffeeDetailsView: CoffeeDetailsView!
     
@@ -95,6 +97,11 @@ class CoffeeDetailsPresenter {
     
     func setMLTabs() {
         coffeeDetailsView.setMLTabs(with: ["250 ml", "350 ml", "500 ml"])
+    }
+    
+    func onLikeClicked() {
+        coffeeService.setCoffeeFavourite(coffee: coffee)
+        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite)
     }
 }
 

@@ -1,14 +1,14 @@
 //
-//  HomeViewController.swift
+//  FavouriteController.swift
 //  CoffeeLovers
 //
-//  Created by Valeria on 27.08.2018.
-//  Copyright © 2018 Valeria. All rights reserved.
+//  Created by Valeria on 9/5/19.
+//  Copyright © 2019 Valeria. All rights reserved.
 //
 
 import UIKit
 
-class HomeController: CoffeeCollectionViewController {
+class FavouriteController: CoffeeCollectionViewController {
     
     // MARK: - Properties
     
@@ -22,8 +22,12 @@ class HomeController: CoffeeCollectionViewController {
         
         configurator = HomeConfigurator()
         configurator.configure(controller: self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         
-        presenter.viewDidLoad()
+        presenter.viewWillAppear(isFavouriteTab: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,7 +37,7 @@ class HomeController: CoffeeCollectionViewController {
 
 // MARK: - Extension UICollectionViewController, UICollectionViewDelegateFlowLayout
 
-extension HomeController {
+extension FavouriteController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return presenter.getNumberOfItemsInSection()
@@ -48,9 +52,9 @@ extension HomeController {
     }
 }
 
-// MARK: - Extension CoffeeMainView
+// MARK: - Extension HomeView
 
-extension HomeController: HomeView {
+extension FavouriteController: HomeView {
     
     func setPresenter(presenter: HomePresenter) {
         self.presenter = presenter

@@ -16,12 +16,12 @@ class HomeRouter: HomeRouterProtocol {
     
     // MARK: - Properties
     
-    weak var homeController: HomeController?
+    weak var homeController: HomeView?
     var coffee: Coffee?
     
     // MARK: - Init Methods
     
-    init(controller: HomeController) {
+    init(controller: HomeView) {
         self.homeController = controller
     }
     
@@ -29,7 +29,7 @@ class HomeRouter: HomeRouterProtocol {
     
     func present(coffee: Coffee) {
         self.coffee = coffee
-        homeController?.performSegue(withIdentifier: SegueHelper.CoffeeSegue.rawValue, sender: nil)
+        homeController?.performSegue(withIdentifier: SegueHelper.CoffeeSegue.rawValue)
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
