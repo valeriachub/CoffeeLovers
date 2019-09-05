@@ -17,7 +17,7 @@ protocol CoffeeDetailsView: class {
     func setReceiptText(text: String)
     func setReceiptTextHeight(height: CGFloat)
     func setMLTabs(with titles: [String])
-    func updateLikeButton(isLike: Bool)
+    func updateLikeButton(isLike: Bool, isAnimate: Bool)
 }
 
 class CoffeeDetailsPresenter {
@@ -47,7 +47,7 @@ class CoffeeDetailsPresenter {
     // MARK: - Methods
     
     func viewDidLoad() {
-        coffeeDetailsView.setCoffeeTitle(title: coffee.title ?? "")
+        setCoffee()
         setCornerRadius()
         setTableView()
         setTabs()
@@ -62,6 +62,11 @@ class CoffeeDetailsPresenter {
     
     func getCellForIngredientRow(at indexPath: IndexPath, of tableView: UITableView) -> IngredientCell {
         return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: coffee)
+    }
+    
+    func setCoffee() {
+        coffeeDetailsView.setCoffeeTitle(title: coffee.title ?? "")
+        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite, isAnimate: false)
     }
     
     func setCornerRadius() {
@@ -101,7 +106,7 @@ class CoffeeDetailsPresenter {
     
     func onLikeClicked() {
         coffeeService.setCoffeeFavourite(coffee: coffee)
-        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite)
+        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite, isAnimate: true)
     }
 }
 

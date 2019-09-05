@@ -16,6 +16,7 @@
 		3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */; };
 		3A468C1021371B570046DAFD /* CoffeeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */; };
 		3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A468C392137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld */; };
+		3A8469AD2321611300CCC354 /* ImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8469AC2321611300CCC354 /* ImageView+Ext.swift */; };
 		3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA18249231AE2DE006ADC8A /* CoffeeController.swift */; };
 		3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */; };
 		3AA1824E231BE09C006ADC8A /* CoffeeDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */; };
@@ -54,6 +55,7 @@
 		3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewCell.swift; sourceTree = "<group>"; };
 		3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeViewCell.xib; sourceTree = "<group>"; };
 		3A468C3A2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeLoversDB.xcdatamodel; sourceTree = "<group>"; };
+		3A8469AC2321611300CCC354 /* ImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext.swift"; sourceTree = "<group>"; };
 		3AA18249231AE2DE006ADC8A /* CoffeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeController.swift; path = CoffeeLovers/View/Controllers/CoffeeController.swift; sourceTree = SOURCE_ROOT; };
 		3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeDetailsController.swift; path = CoffeeLovers/View/Controllers/CoffeeDetailsController.swift; sourceTree = SOURCE_ROOT; };
 		3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CoffeeDetailsController.xib; path = CoffeeLovers/View/Controllers/CoffeeDetailsController.xib; sourceTree = SOURCE_ROOT; };
@@ -129,6 +131,7 @@
 				3AF197B7213BCB190087140F /* IngredientColor.swift */,
 				AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */,
 				AB26AAFD231D3B2700F2B92B /* SegueHelper.swift */,
+				3A8469AC2321611300CCC354 /* ImageView+Ext.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */,
 				AB26AAF8231D39FE00F2B92B /* HomeRouter.swift in Sources */,
 				AB4A51C1231EA9B30097A849 /* MLControl.swift in Sources */,
+				3A8469AD2321611300CCC354 /* ImageView+Ext.swift in Sources */,
 				AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */,
 				3AE030A323210DE3009BED97 /* FavouriteController.swift in Sources */,
 				AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */,

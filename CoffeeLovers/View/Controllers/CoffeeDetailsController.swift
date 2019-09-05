@@ -189,7 +189,20 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         mlControl.rightAnchor.constraint(equalTo: mlView.rightAnchor).isActive = true
     }
     
-    func updateLikeButton(isLike: Bool) {
+    func updateLikeButton(isLike: Bool, isAnimate: Bool = false) {
         
+        if !isAnimate {
+            likeImageView.changeColor(on: isLike ? #colorLiteral(red: 0.9725490196, green: 0.1450980392, blue: 0.2901960784, alpha: 1) : #colorLiteral(red: 0.4431372549, green: 0.462745098, blue: 0.4784313725, alpha: 1))
+        } else {
+            UIView.animate(withDuration: 0.3, delay: 0, animations: {
+                self.likeImageView.transform = self.likeImageView.transform.scaledBy(x: 1.3, y: 1.3)
+                self.likeImageView.changeColor(on: isLike ? #colorLiteral(red: 0.9725490196, green: 0.1450980392, blue: 0.2901960784, alpha: 1) : #colorLiteral(red: 0.4431372549, green: 0.462745098, blue: 0.4784313725, alpha: 1))
+            }) { _ in
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.likeImageView.transform = .identity
+                })
+                
+            }
+        }
     }
 }

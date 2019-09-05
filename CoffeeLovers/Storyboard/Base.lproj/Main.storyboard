@@ -14,7 +14,7 @@
         <scene sceneID="z1e-C6-Z3J">
             <objects>
                 <navigationController navigationBarHidden="YES" id="rfc-ne-ZDv" customClass="MainNavigationController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="like" id="l7E-w5-0j8">
+                    <tabBarItem key="tabBarItem" title="" image="ic_favourite" id="l7E-w5-0j8">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
@@ -76,8 +76,8 @@
         <!--Main Navigation Controller-->
         <scene sceneID="dxH-62-SgP">
             <objects>
-                <navigationController navigationBarHidden="YES" id="vWD-5S-ZEG" customClass="MainNavigationController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="coffee" id="gdi-U5-VEd">
+                <navigationController hidesBottomBarWhenPushed="YES" navigationBarHidden="YES" id="vWD-5S-ZEG" customClass="MainNavigationController" customModule="CoffeeLovers" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_coffee" id="gdi-U5-VEd">
                         <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
                     </tabBarItem>
                     <nil key="simulatedTopBarMetrics"/>
@@ -359,21 +359,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="444.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oeQ-t0-FNk">
-                                <rect key="frame" x="20" y="40" width="30" height="30"/>
+                                <rect key="frame" x="20" y="40" width="40" height="40"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cross" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-Jv-wgg">
-                                        <rect key="frame" x="7" y="7" width="16" height="16"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cross" translatesAutoresizingMaskIntoConstraints="NO" id="3Rt-Jv-wgg">
+                                        <rect key="frame" x="14" y="12" width="12" height="16"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="16" id="oiL-fH-41I"/>
                                             <constraint firstAttribute="height" constant="16" id="szx-hI-S6e"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="JdD-DV-QXU"/>
+                                    <constraint firstAttribute="width" constant="40" id="JdD-DV-QXU"/>
                                     <constraint firstItem="3Rt-Jv-wgg" firstAttribute="centerX" secondItem="oeQ-t0-FNk" secondAttribute="centerX" id="OBG-M4-P8o"/>
-                                    <constraint firstAttribute="height" constant="30" id="r6i-vX-DWc"/>
+                                    <constraint firstAttribute="height" constant="40" id="r6i-vX-DWc"/>
                                     <constraint firstItem="3Rt-Jv-wgg" firstAttribute="centerY" secondItem="oeQ-t0-FNk" secondAttribute="centerY" id="zGJ-9G-pZj"/>
                                 </constraints>
                             </view>
@@ -425,7 +424,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.97254901960784312" green="0.14509803921568626" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="unselectedItemTintColor">
                                 <color key="value" red="0.87843137250000003" green="0.77647058820000003" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -443,15 +442,15 @@
         </scene>
     </scenes>
     <resources>
-        <image name="coffee" width="24" height="24"/>
-        <image name="cross" width="25" height="25"/>
-        <image name="like" width="19" height="17"/>
+        <image name="ic_coffee" width="24" height="24"/>
+        <image name="ic_cross" width="12" height="12"/>
+        <image name="ic_favourite" width="20" height="17"/>
         <image name="sugar_l_selected" width="26" height="24"/>
         <image name="sugar_m_selected" width="26" height="18"/>
         <image name="sugar_s_selected" width="12" height="13"/>
         <image name="sugar_zero_selected" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zty-hg-afT"/>
+        <segue reference="qsG-TQ-D5s"/>
     </inferredMetricsTieBreakers>
 </document>

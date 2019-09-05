@@ -31,8 +31,8 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7ib-Dm-FEm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="0.21568627450980393" green="0.22745098039215686" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
