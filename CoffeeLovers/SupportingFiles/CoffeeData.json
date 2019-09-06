@@ -43,11 +43,18 @@
                "imageSet" : ["flat_white1", "flat_white2"]
                },
                {
-               "title" : "Frappe",
-               "imageOfIngredients" : "c_frappe",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["frappe1", "frappe2"]
+                   "title" : "Glace",
+                   "imageOfIngredients" : "c_glace",
+                   "isFavourite" : "No",
+                   "calories" : 300,
+                   "imageSet" : ["flat_white1", "flat_white2"]
+               },
+               {
+                   "title" : "Hot Chocolate",
+                   "imageOfIngredients" : "c_chocolate",
+                   "isFavourite" : "No",
+                   "calories" : 300,
+                   "imageSet" : ["flat_white1", "flat_white2"]
                },
                {
                "title" : "Irish Coffee",
@@ -64,13 +71,6 @@
                "imageSet" : ["latte1", "latte2"]
                },
                {
-               "title" : "Lungo",
-               "imageOfIngredients" : "c_lungo",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["lungo1", "lungo2"]
-               },
-               {
                "title" : "Macchiato",
                "imageOfIngredients" : "c_macchiato",
                "isFavourite" : "No",
@@ -83,13 +83,6 @@
                "isFavourite" : "No",
                "calories" : 300,
                "imageSet" : ["mocha1", "mocha2"]
-               },
-               {
-               "title" : "Vienna",
-               "imageOfIngredients" : "c_vienna",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["vienna1", "vienna2"]
                }
                ]
 }

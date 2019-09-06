@@ -201,7 +201,6 @@ extension CoffeeDetailsController: CoffeeDetailsView {
                 UIView.animate(withDuration: 0.2, animations: {
                     self.likeImageView.transform = .identity
                 })
-                
             }
         }
     }
