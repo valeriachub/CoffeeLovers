@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Coffee" representedClassName=".Coffee" syncable="YES" codeGenerationType="class">
-        <attribute name="calories" attributeType="Double" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="imageOfIngredients" attributeType="String" syncable="YES"/>
-        <attribute name="isFavourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="title" attributeType="String" syncable="YES"/>
-        <relationship name="imageSet" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ImageSet" inverseName="coffee" inverseEntity="ImageSet" syncable="YES"/>
-    </entity>
-    <entity name="ImageSet" representedClassName="ImageSet" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CaloriesSize" representedClassName="CaloriesSize" syncable="YES">
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="coffee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coffee" inverseName="imageSet" inverseEntity="Coffee" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="coffee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coffee" inverseName="calories_size" inverseEntity="Coffee" syncable="YES"/>
+    </entity>
+    <entity name="CaloriesSolo" representedClassName="CaloriesSolo" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="coffee" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coffee" inverseName="calories_solo" inverseEntity="Coffee" syncable="YES"/>
+    </entity>
+    <entity name="Coffee" representedClassName=".Coffee" syncable="YES">
+        <attribute name="descriptions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ingredients" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="is_favourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="recipe" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="calories_size" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CaloriesSize" inverseName="coffee" inverseEntity="CaloriesSize" syncable="YES"/>
+        <relationship name="calories_solo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CaloriesSolo" inverseName="coffee" inverseEntity="CaloriesSolo" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Coffee" positionX="-423" positionY="9" width="128" height="120"/>
-        <element name="ImageSet" positionX="-207" positionY="18" width="128" height="73"/>
+        <element name="Coffee" positionX="-423" positionY="9" width="128" height="165"/>
+        <element name="CaloriesSize" positionX="-315" positionY="81" width="128" height="90"/>
+        <element name="CaloriesSolo" positionX="-360" positionY="90" width="128" height="90"/>
     </elements>
 </model>

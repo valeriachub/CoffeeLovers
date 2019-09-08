@@ -31,7 +31,7 @@ class CoffeeViewCell: UICollectionViewCell {
             fatalError("Error with CollectionViewCell")
         }
         
-        cell.setCell(image: UIImage(named: data.imageOfIngredients ?? "") ?? UIImage(named: "c_americano")!, title: data.title ?? "")
+        cell.setCell(image: UIImage(named: data.image ?? "") ?? UIImage(named: "c_americano")!, title: data.title ?? "")
         
         return cell
     }

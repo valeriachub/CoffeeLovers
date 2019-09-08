@@ -94,16 +94,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         for (_, coffee) in coffeeArray {
             let newCoffee = Coffee(context: context)
-            newCoffee.setValue(coffee["title"].stringValue, forKey: "title")
-            newCoffee.setValue(coffee["imageOfIngredients"].stringValue, forKey: "imageOfIngredients")
-            newCoffee.setValue(coffee["isFavourite"].boolValue, forKey: "isFavourite")
-            newCoffee.setValue(coffee["calories"].doubleValue, forKey: "calories")
+            newCoffee.title = coffee["title"].stringValue
+            newCoffee.image = coffee["image"].stringValue
+            newCoffee.descriptions = coffee["descriptions"].stringValue
+            newCoffee.is_favourite = false
             
-            for (_, imageTitle) in coffee["imageSet"] {
-                let newImage = ImageSet(context: context)
-                newImage.setValue(imageTitle.stringValue, forKey: "title")
-                newImage.coffee = newCoffee
+            for (_, ingredient) in coffee["ingredients"] {
+                newCoffee.ingredients?.append(ingredient.stringValue)
             }
+            
+            for (_, item) in coffee["recipes"] {
+                newCoffee.recipe?.append(item.stringValue)
+            }
+            
+            print(newCoffee)
+            
+//            for (_, imageTitle) in coffee["imageSet"] {
+//                let newImage = ImageSet(context: context)
+//                newImage.setValue(imageTitle.stringValue, forKey: "title")
+//                newImage.coffee = newCoffee
+//            }
         }
     }
 }

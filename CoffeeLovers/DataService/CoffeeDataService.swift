@@ -41,7 +41,7 @@ class CoffeeDataService {
     }
     
     func setCoffeeFavourite(coffee: Coffee) {
-        coffee.setValue(!coffee.isFavourite, forKey: "isFavourite")
+        coffee.is_favourite = !coffee.is_favourite
         ((UIApplication.shared.delegate) as! AppDelegate).saveContext()
     }
 }

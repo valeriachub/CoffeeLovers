@@ -66,7 +66,7 @@ class CoffeeDetailsPresenter {
     
     func setCoffee() {
         coffeeDetailsView.setCoffeeTitle(title: coffee.title ?? "")
-        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite, isAnimate: false)
+        coffeeDetailsView.updateLikeButton(isLike: coffee.is_favourite, isAnimate: false)
     }
     
     func setCornerRadius() {
@@ -106,7 +106,7 @@ class CoffeeDetailsPresenter {
     
     func onLikeClicked() {
         coffeeService.setCoffeeFavourite(coffee: coffee)
-        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite, isAnimate: true)
+        coffeeDetailsView.updateLikeButton(isLike: coffee.is_favourite, isAnimate: true)
     }
 }
 

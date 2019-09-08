@@ -39,7 +39,7 @@ class CoffeePresenter {
     }
     
     func setCoffeeImage() {
-        coffeeView.setCoffeeImage(imageTitle:  coffee.imageOfIngredients ?? "ic_latte")
+        coffeeView.setCoffeeImage(imageTitle:  coffee.image ?? "c_latte")
     }
     
     func setCoffeeDetails() {

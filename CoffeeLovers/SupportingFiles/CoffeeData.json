@@ -1,90 +1,177 @@
 {
     "coffee": [
-               {
-               "title" : "Americano",
-               "imageOfIngredients" : "c_americano",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["americano1", "americano2"]
-               },
-               {
-               "title" : "Bon Bon",
-               "imageOfIngredients" : "c_bonbon",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["bonbon1", "bonbon2"]
-               },
-               {
-               "title" : "Borgia",
-               "imageOfIngredients" : "c_borgia",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["borgia1", "borgia2"]
-               },
-               {
-               "title" : "Cappuccino",
-               "imageOfIngredients" : "c_cappuccino",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["cappuccino1", "cappuccino2"]
-               },
-               {
-               "title" : "Espresso",
-               "imageOfIngredients" : "c_espresso",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["espresso1"]
-               },
-               {
-               "title" : "Flat White",
-               "imageOfIngredients" : "c_flat",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["flat_white1", "flat_white2"]
-               },
-               {
-                   "title" : "Glace",
-                   "imageOfIngredients" : "c_glace",
-                   "isFavourite" : "No",
-                   "calories" : 300,
-                   "imageSet" : ["flat_white1", "flat_white2"]
-               },
-               {
-                   "title" : "Hot Chocolate",
-                   "imageOfIngredients" : "c_chocolate",
-                   "isFavourite" : "No",
-                   "calories" : 300,
-                   "imageSet" : ["flat_white1", "flat_white2"]
-               },
-               {
-               "title" : "Irish Coffee",
-               "imageOfIngredients" : "c_irish",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["irish1", "irish2", "irish3"]
-               },
-               {
-               "title" : "Latte",
-               "imageOfIngredients" : "c_latte",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["latte1", "latte2"]
-               },
-               {
-               "title" : "Macchiato",
-               "imageOfIngredients" : "c_macchiato",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["macchiato1"]
-               },
-               {
-               "title" : "Mocha",
-               "imageOfIngredients" : "c_mocha",
-               "isFavourite" : "No",
-               "calories" : 300,
-               "imageSet" : ["mocha1", "mocha2"]
-               }
-               ]
+        {
+            "title" : "Americano",
+            "image" : "c_americano",
+            "isFavourite" : "No",
+            "descriptions": "A shot of espresso that is diluted with hot water.",
+            "ingredients" : ["14-18 grams espresso coffee beans",
+                "hot or almost boiling water",
+            "espresso machine"],
+            "recipe" : ["Measure out the beans for a double shot. Grind them.",
+                "Tamp the beans, then put the portafilter into its spot on the machine.",
+                "Make the espresso.", "Heat up the water to 160-170 degrees Fahrenheit.",
+            "Pour the espresso into the hot water, mix 1 part espresso to 2 parts water."],
+            "calories_size" : "s": 4,
+                "m": 7,
+                "l": 9],
+            "calories_solo" : [""]
+        },
+        {
+            "title" : "Bon Bon",
+            "image" : "c_bonbon",
+            "is_favourite" : "No",
+            "descriptions": "A Spanish-style café drink that layers espresso over dulce de leche, also known as sweetened condensed milk.",
+            "ingredients" : ["2 oz Espresso",
+                "2 oz Condensed Milk",
+                "Whipping cream heavy",
+                "1/4 tsp Vanilla extract",
+            "2 tsp Cocoa Powder"],
+            "recipe" : ["Whip cream and vanilla extract with hand mixer until peaks form.",
+                "Pull 2 oz of espresso.",
+                "Pour espresso into a glass cup.",
+                "Pour the condensed milk into cup, the ratio of espresso and milk is 1:1.",
+                "Top with whipped cream.",
+            "Sprinkle cocoa powder over the top."],
+            "calories_solo" : ["": 166]
+        },
+        {
+            "title" : "Borgia",
+            "image" : "c_borgia",
+            "is_favourite" : "No",
+            "descriptions": "The Café Borgia is a small deviation to the Mocha entailing an espresso, hot chocolate and topped with whipped cream.",
+            "ingredients" : ["Hot Espresso coffee",
+                "Hot chocolate",
+                "Whipped cream",
+            "Grated orange rind"],
+            "recipe" : ["Combine equal parts of hot Espresso coffee and hot chocolate.",
+            "Top with whipped cream and sprinkle with grated orange rind."],
+            "calories_solo" : ["": 615]
+        },
+        {
+            "title" : "Cappuccino",
+            "image" : "c_cappuccino",
+            "is_favourite" : "No",
+            "descriptions": "A shot of espresso is topped with a pillowy layer of foamy steamed milk.",
+            "ingredients" : ["2 shots espresso (a double shot)",
+            "4 oz milk"],
+            "recipe" : ["Gather the ingredients.",
+                "Pull a double shot of espresso into a cappuccino cup.",
+            "Foam the milk to double its original volume., Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known."],
+            "calories_size" : ["s": 87,
+                "m": 104,
+                "l": 129]
+        },
+        {
+            "title" : "Espresso",
+            "image" : "c_espresso",
+            "is_favourite" : "No",
+            "descriptions": "Highly concentrated coffee that is made when hot water is forced at pressure through incredibly fine grounds.",
+            "ingredients" : ["7 g finely ground Espresso beans",
+            "1 1/2 oz water"],
+            "recipe" : ["Add coffee.",
+                "Compact well with a tamper.",
+                "Brew 20-25 seconds.",
+            "Look for a hazelnut-caramel color."],
+            "calories_solo" : ["": 3]
+        },
+        {
+            "title" : "Flat White",
+            "image" : "c_flat",
+            "is_favourite" : "No",
+            "descriptions": "An espresso with steamed milk totaling about five to seven ounces. A flat white is like the cappuccino’s sister, as they are basically the same drink, but one has foam (the cappuccino) and the other (the flat white) does not.",
+            "ingredients" : ["18g ground espresso, or 1 espresso pod",
+            "100 ml milk"],
+            "recipe" : ["Make around 35ml espresso using your coffee machine and pour into the base of your cup.",
+            "Steam the milk with the steamer attachment so that it has around 1-2cm of foam on top. Hold the jug so that the spout is about 3-4cm above the cup and pour the milk in steadily. As the volume within the cup increases, bring the jug as close to the surface of the drink as possible whilst aiming to pour into the centre. Once the milk jug is almost touching the surface of the coffee, tilt the jug to speed up the rate of pour. As you accelerate, the milk will hit the back of the cup and start naturally folding in on itself to create a pattern on the top."],
+            "calories_solo" : ["": 64]
+        },
+        {
+            "title" : "Tart hot black coffee with a sweet freshness of vanilla ice cream.",
+            "image" : "c_glace",
+            "is_favourite" : "No",
+            "descriptions": "A shot of espresso that is diluted with hot water.",
+            "ingredients" : ["2 teaspoons instant coffee",
+                "1 teaspoon sugar",
+                "1/2 cup cold milk",
+                "3-4 scoops vanilla ice-cream",
+            "cocoa powder for garnish (optional)"],
+            "recipe" : ["Mix the instant coffee, cold milk and sugar. Set the mixture aside."
+            "Place scoops of vanilla ice cream in a glass, pour the mixture (be careful to pour slowly as it froths) and garnish with cocoa powder."],
+            "calories_solo" : ["": 120]
+        },
+        {
+            "title" : "Hot Chocolate",
+            "image" : "c_chocolate",
+            "is_favourite" : "No",
+            "descriptions": "Melted chocolate mixed with either hot water or milk.",
+            "ingredients" : ["2 cups whole milk",
+                "2 tbsp sugar",
+                "4 oz bittersweet chocolate chopped (just under 1 cup measured)",
+                "splash of vanilla extract optional",
+                "whipped cream optional",
+            "marshmallows optional"],
+            "recipe" : ["Combine milk and sugar in a small saucepan and place on the stovetop over medium heat.",
+                "While the milk is heating place the chopped chocolate in the microwave and heat for 30 seconds. Take the chocolate out and stir it. Return to microwave and heat for another thirty seconds, remove and stir. Continue to heat and stir the chocolate in 30 second intervals until just melted.",
+            "When the milk reaches the scalding point (180 degrees F, with bubbles on the side), turn off the heat and add the melted chocolate, whisking to combine. Add the vanilla extract now, if desired. Top with whipped cream or marshmallows if using."],
+            "calories_size" : ["s": 335,
+                "m": 418,
+                "l": 546]
+        },
+        {
+            "title" : "Irish Coffee",
+            "image" : "c_irish",
+            "is_favourite" : "No",
+            "descriptions": "A cocktail consisting of hot coffee, Irish whiskey, and sugar, stirred, and topped with cream. The coffee is drunk through the cream",
+            "ingredients" : ["1 cup freshly brewed Britt coffee",
+                "1 tbsp brown sugar",
+                "3 tbsp Irish whiskey",
+            "Heavy cream"],
+            "recipe" : ["Fill a coffee mug or cup with hot water to pre-heat it, then empty."
+                "Pour ¾ full with hot coffee.",
+                "Add the brown sugar and stir until dissolved.",
+            "Blend in the whiskey and top by floating on the cream by pouring it over the back of a spoon."],
+            "calories_solo" : ["": 205]
+        },
+        {
+            "title" : "Latte",
+            "image" : "c_latte",
+            "is_favourite" : "No",
+            "descriptions": "A shot of espresso that is served with at least one cup (or more) of steamed milk.",
+            "ingredients" : ["7 g of Café Britt Espresso",
+            "6 oz of warm milk"],
+            "recipe" : ["Prepare 1 Café Britt Espresso and add the hot milk."],
+            "calories_size" : ["s": 104,
+                "m": 136,
+                "l": 184]
+        },
+        {
+            "title" : "Macchiato",
+            "image" : "c_macchiato",
+            "is_favourite" : "No",
+            "descriptions": "An espresso topped with a mark of foamy milk.",
+            "ingredients" : ["7 g of Café Britt Espresso",
+            "1/2 oz of frothed milk"],
+            "recipe" : ["Place 7g of ground coffee in the filter holder of one exit for preparing an espresso directly into the miqueta (small cup) and add frothed milk."],
+            "calories_size" : ["s": 100,
+                "m": 131,
+                "l": 175]
+        },
+        {
+            "title" : "Mocha",
+            "image" : "c_mocha",
+            "is_favourite" : "No",
+            "descriptions": "An espresso mixed with steamed milk and some sort of chocolate, syrup, or flavoring.",
+            "ingredients" : ["1 cup of brewed coffee",
+                "4 tablespoons of your favorite chocolate bar shavings or cocoa powder (roughly 1/4 cup)",
+            "1/2 cup of cream or milk"],
+            "recipe" : ["Brew 8 oz. of coffee with your regular brew method. Add your chocolate into your milk and heat it up slowly using a double broiler or microwave. If melting in a microwave, heat the mixture for 30 second intervals and stir, until creamy and fully combined.",
+            "Add the warm chocolate and milk mixture to your coffee."],
+            "calories_size" : ["s": 264,
+                "m": 317,
+                "l": 380]
+        }
+    ]
 }
 
 
