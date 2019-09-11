@@ -11,7 +11,6 @@ import UIKit
 protocol CoffeeDetailsView: class {
     func setCoffeeTitle(title: String)
     func setCoffeeDescription(description: String)
-    func setCoffeeIngredients(ingredients: [String])
     func setCornerRadius(_ radius: CGFloat)
     func setTableView(rowHeight: CGFloat, tableHeight: CGFloat)
     func setTabs(with titles: [String])
@@ -20,20 +19,24 @@ protocol CoffeeDetailsView: class {
     func setReceiptTextHeight(height: CGFloat)
     func setMLTabs(with titles: [String])
     func updateLikeButton(isLike: Bool, isAnimate: Bool)
+    func setSoloCalories(value: Double)
 }
 
 class CoffeeDetailsPresenter {
     
     // MARK: - Properties
     
-    let coffeeService = CoffeeDataService.shared
-    let cornerRadius: CGFloat = 30.0
-    let rowHeight: CGFloat = 30.0
+    private let coffeeService = CoffeeDataService.shared
+    private let cornerRadius: CGFloat = 30.0
+    private let rowHeight: CGFloat = 30.0
     let fullViewOriginY: CGFloat = 130.0
     
-    var coffee: Coffee!
-    var ingredients: [String]
-    var recipe: [String]
+    private var coffee: Coffee!
+    private var ingredients: [String]
+    private var recipe: [String]
+    private var caloriesSize: CaloriesSize!
+    private var caloriesSolo: Double = 0
+    
     var partialViewOriginY: CGFloat {
         return UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 3) - 100
     }
@@ -47,6 +50,8 @@ class CoffeeDetailsPresenter {
         self.coffee = coffee
         self.ingredients = coffee.ingredients ?? [String]()
         self.recipe = coffee.recipe ?? [String]()
+        self.caloriesSize = coffee.calories_size
+        self.caloriesSolo = coffee.calories_solo
     }
     
     // MARK: - Methods
@@ -113,7 +118,24 @@ class CoffeeDetailsPresenter {
     }
     
     func setMLTabs() {
-        coffeeDetailsView.setMLTabs(with: ["250 ml", "350 ml", "500 ml"])
+        if caloriesSolo > 0 {
+            coffeeDetailsView.setMLTabs(with: ["250 ml", "350 ml", "500 ml"])
+        } else {
+            coffeeDetailsView.setSoloCalories(value: caloriesSolo)
+        }
+    }
+    
+    func getCaloriesFor(index: Int) -> Double {
+        switch index {
+        case 0:
+            return caloriesSize.s
+        case 1:
+            return caloriesSize.m
+        case 2:
+            return caloriesSize.l
+        default:
+            return 0
+        }
     }
     
     func onLikeClicked() {

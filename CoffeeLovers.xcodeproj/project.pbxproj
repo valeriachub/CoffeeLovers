@@ -43,8 +43,8 @@
 		AB4A51C1231EA9B30097A849 /* MLControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A51C0231EA9B30097A849 /* MLControl.swift */; };
 		AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */; };
 		AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */; };
-		ABF145432328E114009F5468 /* Coffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1453F2328E114009F5468 /* Coffee+CoreDataClass.swift */; };
-		ABF145442328E114009F5468 /* Coffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF145402328E114009F5468 /* Coffee+CoreDataProperties.swift */; };
+		AB7AAFC8232940C800B8B549 /* Coffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7AAFC6232940C800B8B549 /* Coffee+CoreDataClass.swift */; };
+		AB7AAFC9232940C800B8B549 /* Coffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7AAFC7232940C800B8B549 /* Coffee+CoreDataProperties.swift */; };
 		ABF145452328E114009F5468 /* CaloriesSize+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF145412328E114009F5468 /* CaloriesSize+CoreDataClass.swift */; };
 		ABF145462328E114009F5468 /* CaloriesSize+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF145422328E114009F5468 /* CaloriesSize+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -87,8 +87,8 @@
 		AB4A51C0231EA9B30097A849 /* MLControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLControl.swift; sourceTree = "<group>"; };
 		AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsPresenter.swift; sourceTree = "<group>"; };
 		AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsConfigurator.swift; sourceTree = "<group>"; };
-		ABF1453F2328E114009F5468 /* Coffee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataClass.swift"; sourceTree = "<group>"; };
-		ABF145402328E114009F5468 /* Coffee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AB7AAFC6232940C800B8B549 /* Coffee+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Coffee+CoreDataClass.swift"; path = "/Users/valeriachub/Developer/CoffeeLovers/CoffeeLovers/Data Model/Coffee+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		AB7AAFC7232940C800B8B549 /* Coffee+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Coffee+CoreDataProperties.swift"; path = "/Users/valeriachub/Developer/CoffeeLovers/CoffeeLovers/Data Model/Coffee+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		ABF145412328E114009F5468 /* CaloriesSize+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataClass.swift"; sourceTree = "<group>"; };
 		ABF145422328E114009F5468 /* CaloriesSize+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeLovers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,8 +184,8 @@
 				3A468C392137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld */,
 				ABF145412328E114009F5468 /* CaloriesSize+CoreDataClass.swift */,
 				ABF145422328E114009F5468 /* CaloriesSize+CoreDataProperties.swift */,
-				ABF1453F2328E114009F5468 /* Coffee+CoreDataClass.swift */,
-				ABF145402328E114009F5468 /* Coffee+CoreDataProperties.swift */,
+				AB7AAFC6232940C800B8B549 /* Coffee+CoreDataClass.swift */,
+				AB7AAFC7232940C800B8B549 /* Coffee+CoreDataProperties.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -388,7 +388,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABF145442328E114009F5468 /* Coffee+CoreDataProperties.swift in Sources */,
 				AB4419F6231FFF8800530C08 /* MainNavigationController.swift in Sources */,
 				3AF197C22144E4650087140F /* CoffeeAdditionsView.swift in Sources */,
 				3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */,
@@ -402,12 +401,14 @@
 				AB4A51C1231EA9B30097A849 /* MLControl.swift in Sources */,
 				3A8469AD2321611300CCC354 /* ImageView+Ext.swift in Sources */,
 				AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */,
+				AB7AAFC8232940C800B8B549 /* Coffee+CoreDataClass.swift in Sources */,
 				3AE030A323210DE3009BED97 /* FavouriteController.swift in Sources */,
 				AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */,
 				ABF145462328E114009F5468 /* CaloriesSize+CoreDataProperties.swift in Sources */,
 				AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
 				3AA18250231BE8D1006ADC8A /* TabsControl.swift in Sources */,
+				AB7AAFC9232940C800B8B549 /* Coffee+CoreDataProperties.swift in Sources */,
 				3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */,
 				3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */,
 				3AADE6C8231A6BD20099168C /* HomeController.swift in Sources */,
@@ -416,7 +417,6 @@
 				ABF145452328E114009F5468 /* CaloriesSize+CoreDataClass.swift in Sources */,
 				3A22931A2319146200CE30CD /* HomePresenter.swift in Sources */,
 				AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */,
-				ABF145432328E114009F5468 /* Coffee+CoreDataClass.swift in Sources */,
 				3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */,
 				3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */,
 			);

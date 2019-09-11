@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             newCoffee.is_favourite = false
             newCoffee.ingredients = [String]()
             newCoffee.recipe = [String]()
-            newCoffee.calories_solo = coffee["calories_solo"].int16Value
+            newCoffee.calories_solo = coffee["calories_solo"].doubleValue
             
             for (_, ingredient) in coffee["ingredients"] {
                 newCoffee.ingredients?.append(ingredient.stringValue)
@@ -112,21 +112,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             let caloriesSize = CaloriesSize(context: context)
             if let caloriesSizeDict = coffee["calories_size"].dictionary {
-                caloriesSize.s = caloriesSizeDict["s"]?.int16Value ?? 0
-                caloriesSize.m = caloriesSizeDict["m"]?.int16Value ?? 0
-                caloriesSize.l = caloriesSizeDict["l"]?.int16Value ?? 0
+                caloriesSize.s = caloriesSizeDict["s"]?.doubleValue ?? 0
+                caloriesSize.m = caloriesSizeDict["m"]?.doubleValue ?? 0
+                caloriesSize.l = caloriesSizeDict["l"]?.doubleValue ?? 0
             }
            newCoffee.addToCalories_size(caloriesSize)
             
             
             print(newCoffee)
             print(caloriesSize)
-            
-//            for (_, imageTitle) in coffee["imageSet"] {
-//                let newImage = ImageSet(context: context)
-//                newImage.setValue(imageTitle.stringValue, forKey: "title")
-//                newImage.coffee = newCoffee
-//            }
         }
     }
 }

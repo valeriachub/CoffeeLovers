@@ -22,8 +22,8 @@ extension Coffee {
     @NSManaged public var is_favourite: Bool
     @NSManaged public var recipe: [String]?
     @NSManaged public var title: String?
-    @NSManaged public var calories_solo: Int16
-    @NSManaged public var calories_size: NSSet?
+    @NSManaged public var calories_solo: Double
+    @NSManaged public var calories_size: CaloriesSize?
 
 }
 

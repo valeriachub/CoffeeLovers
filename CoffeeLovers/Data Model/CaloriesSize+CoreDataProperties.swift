@@ -16,9 +16,9 @@ extension CaloriesSize {
         return NSFetchRequest<CaloriesSize>(entityName: "CaloriesSize")
     }
 
-    @NSManaged public var s: Int16
-    @NSManaged public var m: Int16
-    @NSManaged public var l: Int16
+    @NSManaged public var s: Double
+    @NSManaged public var m: Double
+    @NSManaged public var l: Double
     @NSManaged public var coffee: Coffee?
 
 }

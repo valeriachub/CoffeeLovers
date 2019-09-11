@@ -99,13 +99,8 @@ extension CoffeeDetailsController: TabsControlDelegate {
 extension CoffeeDetailsController: MLControlDelegate {
     
     func onMLTabClicked(index: Int) {
-        switch index {
-        case 0: caloriesLabelView.text = "300"
-        case 1: caloriesLabelView.text = "340"
-        case 2: caloriesLabelView.text = "400"
-        default:
-            print(index)
-        }
+        let calories = presenter.getCaloriesFor(index: index)
+        caloriesLabelView.text = "\(calories) calories"
     }
 }
 
@@ -136,8 +131,8 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         descLabel.text = description
     }
     
-    func setCoffeeIngredients(ingredients: [String]) {
-        
+    func setSoloCalories(value: Double) {
+        caloriesLabelView.text = "Solo shot = \(value) calories"
     }
     
     func setCornerRadius(_ radius: CGFloat) {

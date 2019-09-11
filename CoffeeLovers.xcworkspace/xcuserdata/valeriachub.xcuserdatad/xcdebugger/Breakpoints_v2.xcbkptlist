@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/View/Controllers/CoffeeDetailsController.swift"
-            timestampString = "589904447.751843"
+            timestampString = "589908120.416846"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "CoffeeDetailsController"
             landmarkType = "21">
          </BreakpointContent>
@@ -80,6 +80,38 @@
             startingLineNumber = "40"
             endingLineNumber = "40"
             landmarkName = "getCoffeeArray(isFavouritesOnly:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoffeeLovers/Presenter/CoffeeDetailsPresenter.swift"
+            timestampString = "589908120.416997"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "getCaloriesFor(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoffeeLovers/View/Controllers/CoffeeDetailsController.swift"
+            timestampString = "589908168.649822"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "onMLTabClicked(index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
