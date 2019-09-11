@@ -26,7 +26,7 @@ class CoffeeDataService {
         let request: NSFetchRequest<Coffee> = Coffee.fetchRequest()
         
         if isFavouritesOnly {
-            request.predicate = NSPredicate(format: "isFavourite == YES")
+            request.predicate = NSPredicate(format: "is_favourite == 1")
         }
         
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]

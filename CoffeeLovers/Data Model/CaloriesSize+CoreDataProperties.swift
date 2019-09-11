@@ -2,7 +2,7 @@
 //  CaloriesSize+CoreDataProperties.swift
 //  
 //
-//  Created by Valeria on 9/8/19.
+//  Created by Valeria Chub on 9/11/19.
 //
 //
 
@@ -16,8 +16,9 @@ extension CaloriesSize {
         return NSFetchRequest<CaloriesSize>(entityName: "CaloriesSize")
     }
 
-    @NSManaged public var title: String?
-    @NSManaged public var value: Int16
+    @NSManaged public var s: Int16
+    @NSManaged public var m: Int16
+    @NSManaged public var l: Int16
     @NSManaged public var coffee: Coffee?
 
 }

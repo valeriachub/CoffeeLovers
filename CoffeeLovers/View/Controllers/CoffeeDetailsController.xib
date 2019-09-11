@@ -95,7 +95,7 @@
                                 <constraint firstAttribute="height" constant="50" id="wur-Z9-FDo"/>
                             </constraints>
                         </imageView>
-                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryj-Xb-vBU" userLabel="receiptView">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryj-Xb-vBU" userLabel="receiptView">
                             <rect key="frame" x="0.0" y="232" width="414" height="620"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPz-Yi-n7W">
@@ -151,7 +151,7 @@
                                 <constraint firstItem="yPz-Yi-n7W" firstAttribute="leading" secondItem="ryj-Xb-vBU" secondAttribute="leading" id="psz-cY-08M"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-JK-hwZ">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uSX-JK-hwZ">
                             <rect key="frame" x="0.0" y="232" width="414" height="620"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6yv-ML-wtR">

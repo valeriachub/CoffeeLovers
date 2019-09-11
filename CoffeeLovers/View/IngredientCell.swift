@@ -29,12 +29,12 @@ class IngredientCell: UITableViewCell {
         dotView.layer.cornerRadius = dotView.bounds.width / 2
     }
     
-    static func getCellForRowAt(indexPath: IndexPath, of tableView: UITableView, for coffee: Coffee) -> IngredientCell {
+    static func getCellForRowAt(indexPath: IndexPath, of tableView: UITableView, for ingredient: String) -> IngredientCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(IngredientCell.self)", for: indexPath) as? IngredientCell else {
             fatalError()
         }
         
-        cell.setTitle(title: coffee.title ?? "")
+        cell.setTitle(title: ingredient)
         
         return cell
     }

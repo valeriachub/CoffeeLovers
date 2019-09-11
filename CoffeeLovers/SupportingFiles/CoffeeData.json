@@ -12,10 +12,9 @@
                 "Tamp the beans, then put the portafilter into its spot on the machine.",
                 "Make the espresso.", "Heat up the water to 160-170 degrees Fahrenheit.",
             "Pour the espresso into the hot water, mix 1 part espresso to 2 parts water."],
-            "calories_size" : "s": 4,
+            "calories_size" : { "s": 4,
                 "m": 7,
-                "l": 9],
-            "calories_solo" : [""]
+                "l": 9}
         },
         {
             "title" : "Bon Bon",
@@ -33,7 +32,7 @@
                 "Pour the condensed milk into cup, the ratio of espresso and milk is 1:1.",
                 "Top with whipped cream.",
             "Sprinkle cocoa powder over the top."],
-            "calories_solo" : ["": 166]
+            "calories_solo" : 166
         },
         {
             "title" : "Borgia",
@@ -46,7 +45,7 @@
             "Grated orange rind"],
             "recipe" : ["Combine equal parts of hot Espresso coffee and hot chocolate.",
             "Top with whipped cream and sprinkle with grated orange rind."],
-            "calories_solo" : ["": 615]
+            "calories_solo" : 615
         },
         {
             "title" : "Cappuccino",
@@ -58,9 +57,9 @@
             "recipe" : ["Gather the ingredients.",
                 "Pull a double shot of espresso into a cappuccino cup.",
             "Foam the milk to double its original volume., Top the espresso with foamed milk right after foaming. When initially poured, cappuccinos are only espresso and foam, but the liquid milk quickly settles out of the foam to create the (roughly) equal parts foam, steamed milk, and espresso for which cappuccino is known."],
-            "calories_size" : ["s": 87,
+            "calories_size" : {"s": 87,
                 "m": 104,
-                "l": 129]
+                "l": 129}
         },
         {
             "title" : "Espresso",
@@ -73,7 +72,7 @@
                 "Compact well with a tamper.",
                 "Brew 20-25 seconds.",
             "Look for a hazelnut-caramel color."],
-            "calories_solo" : ["": 3]
+            "calories_solo" : 3
         },
         {
             "title" : "Flat White",
@@ -84,21 +83,21 @@
             "100 ml milk"],
             "recipe" : ["Make around 35ml espresso using your coffee machine and pour into the base of your cup.",
             "Steam the milk with the steamer attachment so that it has around 1-2cm of foam on top. Hold the jug so that the spout is about 3-4cm above the cup and pour the milk in steadily. As the volume within the cup increases, bring the jug as close to the surface of the drink as possible whilst aiming to pour into the centre. Once the milk jug is almost touching the surface of the coffee, tilt the jug to speed up the rate of pour. As you accelerate, the milk will hit the back of the cup and start naturally folding in on itself to create a pattern on the top."],
-            "calories_solo" : ["": 64]
+            "calories_solo" : 64
         },
         {
-            "title" : "Tart hot black coffee with a sweet freshness of vanilla ice cream.",
+            "title" : "Glace",
             "image" : "c_glace",
             "is_favourite" : "No",
-            "descriptions": "A shot of espresso that is diluted with hot water.",
+            "descriptions": "Tart hot black coffee with a sweet freshness of vanilla ice cream.",
             "ingredients" : ["2 teaspoons instant coffee",
                 "1 teaspoon sugar",
                 "1/2 cup cold milk",
                 "3-4 scoops vanilla ice-cream",
             "cocoa powder for garnish (optional)"],
-            "recipe" : ["Mix the instant coffee, cold milk and sugar. Set the mixture aside."
+            "recipe" : ["Mix the instant coffee, cold milk and sugar. Set the mixture aside.",
             "Place scoops of vanilla ice cream in a glass, pour the mixture (be careful to pour slowly as it froths) and garnish with cocoa powder."],
-            "calories_solo" : ["": 120]
+            "calories_solo" : 120
         },
         {
             "title" : "Hot Chocolate",
@@ -114,9 +113,9 @@
             "recipe" : ["Combine milk and sugar in a small saucepan and place on the stovetop over medium heat.",
                 "While the milk is heating place the chopped chocolate in the microwave and heat for 30 seconds. Take the chocolate out and stir it. Return to microwave and heat for another thirty seconds, remove and stir. Continue to heat and stir the chocolate in 30 second intervals until just melted.",
             "When the milk reaches the scalding point (180 degrees F, with bubbles on the side), turn off the heat and add the melted chocolate, whisking to combine. Add the vanilla extract now, if desired. Top with whipped cream or marshmallows if using."],
-            "calories_size" : ["s": 335,
+            "calories_size" : {"s": 335,
                 "m": 418,
-                "l": 546]
+                "l": 546}
         },
         {
             "title" : "Irish Coffee",
@@ -127,11 +126,11 @@
                 "1 tbsp brown sugar",
                 "3 tbsp Irish whiskey",
             "Heavy cream"],
-            "recipe" : ["Fill a coffee mug or cup with hot water to pre-heat it, then empty."
-                "Pour ¾ full with hot coffee.",
+            "recipe" : ["Fill a coffee mug or cup with hot water to pre-heat it, then empty.",
+                "Pour 3/4 full with hot coffee.",
                 "Add the brown sugar and stir until dissolved.",
             "Blend in the whiskey and top by floating on the cream by pouring it over the back of a spoon."],
-            "calories_solo" : ["": 205]
+            "calories_solo" : 205
         },
         {
             "title" : "Latte",
@@ -141,9 +140,9 @@
             "ingredients" : ["7 g of Café Britt Espresso",
             "6 oz of warm milk"],
             "recipe" : ["Prepare 1 Café Britt Espresso and add the hot milk."],
-            "calories_size" : ["s": 104,
+            "calories_size" : {"s": 104,
                 "m": 136,
-                "l": 184]
+                "l": 184}
         },
         {
             "title" : "Macchiato",
@@ -153,9 +152,9 @@
             "ingredients" : ["7 g of Café Britt Espresso",
             "1/2 oz of frothed milk"],
             "recipe" : ["Place 7g of ground coffee in the filter holder of one exit for preparing an espresso directly into the miqueta (small cup) and add frothed milk."],
-            "calories_size" : ["s": 100,
+            "calories_size" : {"s": 100,
                 "m": 131,
-                "l": 175]
+                "l": 175}
         },
         {
             "title" : "Mocha",
@@ -167,17 +166,9 @@
             "1/2 cup of cream or milk"],
             "recipe" : ["Brew 8 oz. of coffee with your regular brew method. Add your chocolate into your milk and heat it up slowly using a double broiler or microwave. If melting in a microwave, heat the mixture for 30 second intervals and stir, until creamy and fully combined.",
             "Add the warm chocolate and milk mixture to your coffee."],
-            "calories_size" : ["s": 264,
+            "calories_size" : {"s": 264,
                 "m": 317,
-                "l": 380]
+                "l": 380}
         }
     ]
 }
-
-
-
-
-
-
-
-

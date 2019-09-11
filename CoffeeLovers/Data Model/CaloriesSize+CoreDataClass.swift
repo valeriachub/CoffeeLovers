@@ -2,7 +2,7 @@
 //  CaloriesSize+CoreDataClass.swift
 //  
 //
-//  Created by Valeria on 9/8/19.
+//  Created by Valeria Chub on 9/11/19.
 //
 //
 

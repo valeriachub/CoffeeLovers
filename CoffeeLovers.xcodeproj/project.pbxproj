@@ -16,12 +16,6 @@
 		3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */; };
 		3A468C1021371B570046DAFD /* CoffeeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */; };
 		3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3A468C392137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld */; };
-		3A624B0B232584080044D812 /* CaloriesSize+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A624B05232584080044D812 /* CaloriesSize+CoreDataProperties.swift */; };
-		3A624B0C232584080044D812 /* CaloriesSize+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A624B06232584080044D812 /* CaloriesSize+CoreDataClass.swift */; };
-		3A624B0D232584080044D812 /* Coffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A624B07232584080044D812 /* Coffee+CoreDataClass.swift */; };
-		3A624B0E232584080044D812 /* CaloriesSolo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A624B08232584080044D812 /* CaloriesSolo+CoreDataClass.swift */; };
-		3A624B0F232584080044D812 /* CaloriesSolo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A624B09232584080044D812 /* CaloriesSolo+CoreDataProperties.swift */; };
-		3A624B10232584080044D812 /* Coffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A624B0A232584080044D812 /* Coffee+CoreDataProperties.swift */; };
 		3A8469AD2321611300CCC354 /* ImageView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8469AC2321611300CCC354 /* ImageView+Ext.swift */; };
 		3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA18249231AE2DE006ADC8A /* CoffeeController.swift */; };
 		3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */; };
@@ -49,6 +43,10 @@
 		AB4A51C1231EA9B30097A849 /* MLControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A51C0231EA9B30097A849 /* MLControl.swift */; };
 		AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */; };
 		AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */; };
+		ABF145432328E114009F5468 /* Coffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF1453F2328E114009F5468 /* Coffee+CoreDataClass.swift */; };
+		ABF145442328E114009F5468 /* Coffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF145402328E114009F5468 /* Coffee+CoreDataProperties.swift */; };
+		ABF145452328E114009F5468 /* CaloriesSize+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF145412328E114009F5468 /* CaloriesSize+CoreDataClass.swift */; };
+		ABF145462328E114009F5468 /* CaloriesSize+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF145422328E114009F5468 /* CaloriesSize+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,12 +59,6 @@
 		3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeViewCell.swift; sourceTree = "<group>"; };
 		3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoffeeViewCell.xib; sourceTree = "<group>"; };
 		3A468C3A2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoffeeLoversDB.xcdatamodel; sourceTree = "<group>"; };
-		3A624B05232584080044D812 /* CaloriesSize+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3A624B06232584080044D812 /* CaloriesSize+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3A624B07232584080044D812 /* Coffee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3A624B08232584080044D812 /* CaloriesSolo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSolo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3A624B09232584080044D812 /* CaloriesSolo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSolo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		3A624B0A232584080044D812 /* Coffee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3A8469AC2321611300CCC354 /* ImageView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+Ext.swift"; sourceTree = "<group>"; };
 		3AA18249231AE2DE006ADC8A /* CoffeeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeController.swift; path = CoffeeLovers/View/Controllers/CoffeeController.swift; sourceTree = SOURCE_ROOT; };
 		3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CoffeeDetailsController.swift; path = CoffeeLovers/View/Controllers/CoffeeDetailsController.swift; sourceTree = SOURCE_ROOT; };
@@ -95,6 +87,10 @@
 		AB4A51C0231EA9B30097A849 /* MLControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLControl.swift; sourceTree = "<group>"; };
 		AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsPresenter.swift; sourceTree = "<group>"; };
 		AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsConfigurator.swift; sourceTree = "<group>"; };
+		ABF1453F2328E114009F5468 /* Coffee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABF145402328E114009F5468 /* Coffee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		ABF145412328E114009F5468 /* CaloriesSize+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataClass.swift"; sourceTree = "<group>"; };
+		ABF145422328E114009F5468 /* CaloriesSize+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeLovers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D166E95D079EC521A3BBBCF9 /* Pods-CoffeeLovers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,12 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				3A468C392137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld */,
-				3A624B07232584080044D812 /* Coffee+CoreDataClass.swift */,
-				3A624B0A232584080044D812 /* Coffee+CoreDataProperties.swift */,
-				3A624B06232584080044D812 /* CaloriesSize+CoreDataClass.swift */,
-				3A624B05232584080044D812 /* CaloriesSize+CoreDataProperties.swift */,
-				3A624B08232584080044D812 /* CaloriesSolo+CoreDataClass.swift */,
-				3A624B09232584080044D812 /* CaloriesSolo+CoreDataProperties.swift */,
+				ABF145412328E114009F5468 /* CaloriesSize+CoreDataClass.swift */,
+				ABF145422328E114009F5468 /* CaloriesSize+CoreDataProperties.swift */,
+				ABF1453F2328E114009F5468 /* Coffee+CoreDataClass.swift */,
+				ABF145402328E114009F5468 /* Coffee+CoreDataProperties.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -394,27 +388,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF145442328E114009F5468 /* Coffee+CoreDataProperties.swift in Sources */,
 				AB4419F6231FFF8800530C08 /* MainNavigationController.swift in Sources */,
 				3AF197C22144E4650087140F /* CoffeeAdditionsView.swift in Sources */,
 				3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */,
-				3A624B10232584080044D812 /* Coffee+CoreDataProperties.swift in Sources */,
 				3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */,
 				3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */,
-				3A624B0C232584080044D812 /* CaloriesSize+CoreDataClass.swift in Sources */,
 				AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */,
 				3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */,
 				3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */,
 				AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */,
-				3A624B0F232584080044D812 /* CaloriesSolo+CoreDataProperties.swift in Sources */,
 				AB26AAF8231D39FE00F2B92B /* HomeRouter.swift in Sources */,
 				AB4A51C1231EA9B30097A849 /* MLControl.swift in Sources */,
 				3A8469AD2321611300CCC354 /* ImageView+Ext.swift in Sources */,
-				3A624B0D232584080044D812 /* Coffee+CoreDataClass.swift in Sources */,
 				AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */,
 				3AE030A323210DE3009BED97 /* FavouriteController.swift in Sources */,
 				AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */,
+				ABF145462328E114009F5468 /* CaloriesSize+CoreDataProperties.swift in Sources */,
 				AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */,
-				3A624B0B232584080044D812 /* CaloriesSize+CoreDataProperties.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
 				3AA18250231BE8D1006ADC8A /* TabsControl.swift in Sources */,
 				3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */,
@@ -422,9 +413,10 @@
 				3AADE6C8231A6BD20099168C /* HomeController.swift in Sources */,
 				3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */,
 				AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */,
-				3A624B0E232584080044D812 /* CaloriesSolo+CoreDataClass.swift in Sources */,
+				ABF145452328E114009F5468 /* CaloriesSize+CoreDataClass.swift in Sources */,
 				3A22931A2319146200CE30CD /* HomePresenter.swift in Sources */,
 				AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */,
+				ABF145432328E114009F5468 /* Coffee+CoreDataClass.swift in Sources */,
 				3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */,
 				3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */,
 			);

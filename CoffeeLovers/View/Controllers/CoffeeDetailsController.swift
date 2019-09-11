@@ -125,9 +125,19 @@ extension CoffeeDetailsController: UITableViewDataSource {
 // MARK: - Extension CoffeeDetailsView
 
 extension CoffeeDetailsController: CoffeeDetailsView {
+   
+    
     
     func setCoffeeTitle(title: String) {
         titleLabel.text = title
+    }
+    
+    func setCoffeeDescription(description: String) {
+        descLabel.text = description
+    }
+    
+    func setCoffeeIngredients(ingredients: [String]) {
+        
     }
     
     func setCornerRadius(_ radius: CGFloat) {
@@ -170,6 +180,7 @@ extension CoffeeDetailsController: CoffeeDetailsView {
     
     func setReceiptText(text: String) {
         receiptTextView.text = text
+        receiptTextView.contentOffset = .zero
     }
     
     func setReceiptTextHeight(height: CGFloat) {

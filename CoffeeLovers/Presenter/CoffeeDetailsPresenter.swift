@@ -10,6 +10,8 @@ import UIKit
 
 protocol CoffeeDetailsView: class {
     func setCoffeeTitle(title: String)
+    func setCoffeeDescription(description: String)
+    func setCoffeeIngredients(ingredients: [String])
     func setCornerRadius(_ radius: CGFloat)
     func setTableView(rowHeight: CGFloat, tableHeight: CGFloat)
     func setTabs(with titles: [String])
@@ -30,7 +32,8 @@ class CoffeeDetailsPresenter {
     let fullViewOriginY: CGFloat = 130.0
     
     var coffee: Coffee!
-    var ingredients = ["Ice cream", "Coffee"]
+    var ingredients: [String]
+    var recipe: [String]
     var partialViewOriginY: CGFloat {
         return UIScreen.main.bounds.height - (UIScreen.main.bounds.height / 3) - 100
     }
@@ -42,6 +45,8 @@ class CoffeeDetailsPresenter {
     init(view: CoffeeDetailsView, coffee: Coffee) {
         self.coffeeDetailsView = view
         self.coffee = coffee
+        self.ingredients = coffee.ingredients ?? [String]()
+        self.recipe = coffee.recipe ?? [String]()
     }
     
     // MARK: - Methods
@@ -61,11 +66,13 @@ class CoffeeDetailsPresenter {
     }
     
     func getCellForIngredientRow(at indexPath: IndexPath, of tableView: UITableView) -> IngredientCell {
-        return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: coffee)
+        return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: ingredients[indexPath.row])
     }
     
     func setCoffee() {
         coffeeDetailsView.setCoffeeTitle(title: coffee.title ?? "")
+        coffeeDetailsView.setCoffeeDescription(description: coffee.descriptions ?? "")
+        
         coffeeDetailsView.updateLikeButton(isLike: coffee.is_favourite, isAnimate: false)
     }
     
@@ -86,7 +93,12 @@ class CoffeeDetailsPresenter {
     }
     
     func setReceiptText() {
-        coffeeDetailsView.setReceiptText(text: "Lorem ipsum — dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.[1] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum — dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.[1] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum — dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.[1] Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+        var recipeString = ""
+        for (index, step) in recipe.enumerated() {
+            recipeString.append("\(index + 1). \(step) \n\n")
+        }
+        
+        coffeeDetailsView.setReceiptText(text: recipeString)
     }
     
     func setReceiptTextHeight(receiptViewOriginY: CGFloat, receiptTextOriginY: CGFloat, ingredientsTableViewHeight: CGFloat) {

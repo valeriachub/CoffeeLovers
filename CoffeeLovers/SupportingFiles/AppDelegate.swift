@@ -89,7 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func preloadCoffee(context : NSManagedObjectContext, jsonObj : JSON){
+    func preloadCoffee(context : NSManagedObjectContext, jsonObj : JSON) {
         let coffeeArray = jsonObj["coffee"]
         
         for (_, coffee) in coffeeArray {
@@ -98,16 +98,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             newCoffee.image = coffee["image"].stringValue
             newCoffee.descriptions = coffee["descriptions"].stringValue
             newCoffee.is_favourite = false
+            newCoffee.ingredients = [String]()
+            newCoffee.recipe = [String]()
+            newCoffee.calories_solo = coffee["calories_solo"].int16Value
             
             for (_, ingredient) in coffee["ingredients"] {
                 newCoffee.ingredients?.append(ingredient.stringValue)
             }
             
-            for (_, item) in coffee["recipes"] {
+            for (_, item) in coffee["recipe"] {
                 newCoffee.recipe?.append(item.stringValue)
             }
             
+            let caloriesSize = CaloriesSize(context: context)
+            if let caloriesSizeDict = coffee["calories_size"].dictionary {
+                caloriesSize.s = caloriesSizeDict["s"]?.int16Value ?? 0
+                caloriesSize.m = caloriesSizeDict["m"]?.int16Value ?? 0
+                caloriesSize.l = caloriesSizeDict["l"]?.int16Value ?? 0
+            }
+           newCoffee.addToCalories_size(caloriesSize)
+            
+            
             print(newCoffee)
+            print(caloriesSize)
             
 //            for (_, imageTitle) in coffee["imageSet"] {
 //                let newImage = ImageSet(context: context)
