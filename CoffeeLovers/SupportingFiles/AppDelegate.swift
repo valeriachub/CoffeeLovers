@@ -116,11 +116,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 caloriesSize.m = caloriesSizeDict["m"]?.doubleValue ?? 0
                 caloriesSize.l = caloriesSizeDict["l"]?.doubleValue ?? 0
             }
-           newCoffee.addToCalories_size(caloriesSize)
+           newCoffee.calories_size = caloriesSize
             
             
             print(newCoffee)
-            print(caloriesSize)
         }
     }
 }

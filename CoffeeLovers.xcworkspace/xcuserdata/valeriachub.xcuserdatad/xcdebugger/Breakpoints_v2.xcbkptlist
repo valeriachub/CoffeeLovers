@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/View/Controllers/CoffeeDetailsController.swift"
-            timestampString = "589908120.416846"
+            timestampString = "589979248.817268"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
-            landmarkName = "CoffeeDetailsController"
-            landmarkType = "21">
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "setReceiptText(text:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/Presenter/HomePresenter.swift"
-            timestampString = "589882971.451197"
+            timestampString = "589979248.817342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "39"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/DataService/CoffeeDataService.swift"
-            timestampString = "589904447.7519701"
+            timestampString = "589976604.663715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/DataService/CoffeeDataService.swift"
-            timestampString = "589904447.752046"
+            timestampString = "589976604.663772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/DataService/CoffeeDataService.swift"
-            timestampString = "589904447.75211"
+            timestampString = "589976604.663813"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "40"
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/Presenter/CoffeeDetailsPresenter.swift"
-            timestampString = "589908120.416997"
+            timestampString = "589979248.817459"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "getCaloriesFor(index:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -106,12 +106,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoffeeLovers/View/Controllers/CoffeeDetailsController.swift"
-            timestampString = "589908168.649822"
+            timestampString = "589979248.81752"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
             landmarkName = "onMLTabClicked(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CoffeeLovers/Presenter/CoffeeDetailsPresenter.swift"
+            timestampString = "589979248.817574"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "getCaloriesFor(index:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

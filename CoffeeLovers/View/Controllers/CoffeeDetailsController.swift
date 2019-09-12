@@ -100,7 +100,7 @@ extension CoffeeDetailsController: MLControlDelegate {
     
     func onMLTabClicked(index: Int) {
         let calories = presenter.getCaloriesFor(index: index)
-        caloriesLabelView.text = "\(calories) calories"
+        setCaloriesLabel(with: calories, isSolo: false)
     }
 }
 
@@ -120,7 +120,7 @@ extension CoffeeDetailsController: UITableViewDataSource {
 // MARK: - Extension CoffeeDetailsView
 
 extension CoffeeDetailsController: CoffeeDetailsView {
-   
+    
     
     
     func setCoffeeTitle(title: String) {
@@ -131,8 +131,12 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         descLabel.text = description
     }
     
-    func setSoloCalories(value: Double) {
-        caloriesLabelView.text = "Solo shot = \(value) calories"
+    func setCaloriesLabel(with value: Double, isSolo: Bool) {
+        if isSolo {
+            caloriesLabelView.text = "Solo shot = \(value) calories"
+        } else {
+            caloriesLabelView.text = "\(value) calories"
+        }
     }
     
     func setCornerRadius(_ radius: CGFloat) {
@@ -149,6 +153,8 @@ extension CoffeeDetailsController: CoffeeDetailsView {
     }
     
     func setTabs(with titles: [String]) {
+        
+        print("setTabs")
         let tabsControl = TabsControl(frame: tabsView.bounds, buttonTitles: titles, delegate: self)
         tabsControl.backgroundColor = .clear
         tabsView.addSubview(tabsControl)

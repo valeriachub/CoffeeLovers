@@ -19,7 +19,7 @@ protocol CoffeeDetailsView: class {
     func setReceiptTextHeight(height: CGFloat)
     func setMLTabs(with titles: [String])
     func updateLikeButton(isLike: Bool, isAnimate: Bool)
-    func setSoloCalories(value: Double)
+    func setCaloriesLabel(with value: Double, isSolo: Bool)
 }
 
 class CoffeeDetailsPresenter {
@@ -118,10 +118,11 @@ class CoffeeDetailsPresenter {
     }
     
     func setMLTabs() {
-        if caloriesSolo > 0 {
+        if caloriesSolo <= 0 {
             coffeeDetailsView.setMLTabs(with: ["250 ml", "350 ml", "500 ml"])
+            coffeeDetailsView.setCaloriesLabel(with: getCaloriesFor(index: 0), isSolo: false)
         } else {
-            coffeeDetailsView.setSoloCalories(value: caloriesSolo)
+            coffeeDetailsView.setCaloriesLabel(with: caloriesSolo, isSolo: true)
         }
     }
     
