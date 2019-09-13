@@ -56,6 +56,7 @@ class TabsControl: UIView {
         setButtons()
         setSelector()
         setStackView()
+        setIndex(index: selectedIndex)
     }
     
     
