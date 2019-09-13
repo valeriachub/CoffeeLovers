@@ -20,6 +20,7 @@ protocol CoffeeDetailsView: class {
     func setMLTabs(with titles: [String])
     func updateLikeButton(isLike: Bool, isAnimate: Bool)
     func setCaloriesLabel(with value: Double, isSolo: Bool)
+    func setCalorieLabelTopConstraint(_ value: CGFloat)
 }
 
 class CoffeeDetailsPresenter {
@@ -29,6 +30,7 @@ class CoffeeDetailsPresenter {
     private let coffeeService = CoffeeDataService.shared
     private let cornerRadius: CGFloat = 30.0
     private let rowHeight: CGFloat = 30.0
+    private let topConstraint: CGFloat = 24.0
     let fullViewOriginY: CGFloat = 130.0
     
     private var coffee: Coffee!
@@ -122,6 +124,7 @@ class CoffeeDetailsPresenter {
             coffeeDetailsView.setMLTabs(with: ["250 ml", "350 ml", "500 ml"])
             coffeeDetailsView.setCaloriesLabel(with: getCaloriesFor(index: 0), isSolo: false)
         } else {
+            coffeeDetailsView.setCalorieLabelTopConstraint(topConstraint)
             coffeeDetailsView.setCaloriesLabel(with: caloriesSolo, isSolo: true)
         }
     }

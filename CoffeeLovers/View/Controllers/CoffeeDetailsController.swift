@@ -30,6 +30,8 @@ class CoffeeDetailsController: UIViewController {
     @IBOutlet weak var mlView: UIView!
     @IBOutlet weak var caloriesLabelView: UILabel!
     @IBOutlet weak var likeImageView: UIImageView!
+    @IBOutlet weak var caloriesLabelTopConstraint: NSLayoutConstraint!
+    
     
     // MARK: - Properties
     
@@ -199,6 +201,10 @@ extension CoffeeDetailsController: CoffeeDetailsView {
         mlControl.bottomAnchor.constraint(equalTo: mlView.bottomAnchor).isActive = true
         mlControl.leftAnchor.constraint(equalTo: mlView.leftAnchor).isActive = true
         mlControl.rightAnchor.constraint(equalTo: mlView.rightAnchor).isActive = true
+    }
+    
+    func setCalorieLabelTopConstraint(_ value: CGFloat) {
+        caloriesLabelTopConstraint.constant = value
     }
     
     func updateLikeButton(isLike: Bool, isAnimate: Bool = false) {

@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CoffeeDetailsController" customModule="CoffeeLovers" customModuleProvider="target">
             <connections>
+                <outlet property="caloriesLabelTopConstraint" destination="keZ-2i-zpm" id="790-hj-B4p"/>
                 <outlet property="caloriesLabelView" destination="KQw-Zt-7Jl" id="AOf-pW-03t"/>
                 <outlet property="caloriesView" destination="uSX-JK-hwZ" id="I5z-gH-BhG"/>
                 <outlet property="descLabel" destination="l5E-X7-5fA" id="YH0-M6-ncm"/>
@@ -177,7 +178,7 @@
                                 <constraint firstItem="6yv-ML-wtR" firstAttribute="top" secondItem="uSX-JK-hwZ" secondAttribute="top" constant="24" id="J9N-7J-m2b"/>
                                 <constraint firstItem="KQw-Zt-7Jl" firstAttribute="leading" secondItem="uSX-JK-hwZ" secondAttribute="leading" constant="20" id="JHR-AY-wYv"/>
                                 <constraint firstAttribute="trailing" secondItem="6yv-ML-wtR" secondAttribute="trailing" constant="20" id="ifQ-68-iRI"/>
-                                <constraint firstItem="KQw-Zt-7Jl" firstAttribute="top" secondItem="6yv-ML-wtR" secondAttribute="bottom" constant="30" id="p3w-0y-uIg"/>
+                                <constraint firstItem="KQw-Zt-7Jl" firstAttribute="top" secondItem="uSX-JK-hwZ" secondAttribute="top" constant="94" id="keZ-2i-zpm"/>
                                 <constraint firstAttribute="trailing" secondItem="KQw-Zt-7Jl" secondAttribute="trailing" constant="20" id="pVg-04-cAW"/>
                             </constraints>
                         </view>
