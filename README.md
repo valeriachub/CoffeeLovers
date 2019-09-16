@@ -7,10 +7,7 @@ Technologies and Frameworks:
 - Swift 4
 - Core Data
 - SwiftyJSON
-- ChameleonFramework
 - Preloaded coffee json data
 - Custom views
 - UICollectionView
-- Tab Bar
-- Navigation Bar
-- ScrollView, Page Control 
+- Tab Bar Controller
