@@ -7,6 +7,5 @@ target 'CoffeeLovers' do
   # Pods for CoffeeLovers
 
 pod 'SwiftyJSON'
-pod 'ChameleonFramework'
 
 end

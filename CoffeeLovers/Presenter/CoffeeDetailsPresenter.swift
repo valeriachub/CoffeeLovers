@@ -92,7 +92,7 @@ class CoffeeDetailsPresenter {
     }
     
     func setTabs() {
-        coffeeDetailsView.setTabs(with: ["Receipt", "Calories"])
+        coffeeDetailsView.setTabs(with: ["Recipe", "Calories"])
     }
     
     func setGestures() {
