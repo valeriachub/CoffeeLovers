@@ -1,22 +1,16 @@
 PODS:
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
-  - ChameleonFramework/Default (2.1.0)
   - SwiftyJSON (4.1.0)
 
 DEPENDENCIES:
-  - ChameleonFramework
   - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - ChameleonFramework
     - SwiftyJSON
 
 SPEC CHECKSUMS:
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
 
-PODFILE CHECKSUM: e1003ce379eb6111ec55c879041efd97b0fc6148
+PODFILE CHECKSUM: f7ece472c57f09c8d89a17b156fcfc657862b444
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

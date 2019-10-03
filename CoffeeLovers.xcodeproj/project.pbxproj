@@ -349,18 +349,16 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AB1080842F816C62B6AF50A3 /* [CP] Check Pods Manifest.lock */ = {
@@ -556,13 +554,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65BT94VC7B;
+				DEVELOPMENT_TEAM = AVJG4WW9RV;
 				INFOPLIST_FILE = "$(SRCROOT)/CoffeeLovers/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.valeria.CoffeeLovers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.valeriachub.CoffeeLovers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -575,13 +573,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 65BT94VC7B;
+				DEVELOPMENT_TEAM = AVJG4WW9RV;
 				INFOPLIST_FILE = "$(SRCROOT)/CoffeeLovers/SupportingFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.valeria.CoffeeLovers;
+				PRODUCT_BUNDLE_IDENTIFIER = com.valeriachub.CoffeeLovers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
