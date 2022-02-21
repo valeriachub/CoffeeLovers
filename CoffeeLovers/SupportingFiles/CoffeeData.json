@@ -3,7 +3,7 @@
         {
             "title" : "Americano",
             "image" : "c_americano",
-            "isFavourite" : "No",
+            "is_favourite" : "No",
             "descriptions": "A shot of espresso that is diluted with hot water.",
             "ingredients" : ["14-18 grams espresso coffee beans",
                 "hot or almost boiling water",
