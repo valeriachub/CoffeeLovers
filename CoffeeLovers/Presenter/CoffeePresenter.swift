@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol CoffeeView: class {
+protocol CoffeeView: AnyObject {
     func setCoffeeImage(imageTitle: String)
     func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator)
     func setCrossView()

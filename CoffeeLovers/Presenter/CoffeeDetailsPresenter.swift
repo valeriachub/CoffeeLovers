@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CoffeeDetailsView: class {
+protocol CoffeeDetailsView: AnyObject {
     func setCoffeeTitle(title: String)
     func setCoffeeDescription(description: String)
     func setCornerRadius(_ radius: CGFloat)
