@@ -64,9 +64,9 @@ extension CoffeeController: CoffeeView {
         coffeeDetails.configurator = configurator
         coffeeDetails.delegate = self
         
-        self.addChildViewController(coffeeDetails)
+        self.addChild(coffeeDetails)
         self.view.addSubview(coffeeDetails.view)
-        coffeeDetails.didMove(toParentViewController: self)
+        coffeeDetails.didMove(toParent: self)
         
         let height = self.view.frame.height
         let width = self.view.frame.width

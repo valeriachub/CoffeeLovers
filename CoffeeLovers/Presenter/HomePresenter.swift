@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HomeView: class {
+protocol HomeView: AnyObject {
     
     func setPresenter(presenter: HomePresenter)
     func performSegue(withIdentifier id: String)
