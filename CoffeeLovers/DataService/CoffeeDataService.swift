@@ -12,11 +12,6 @@ import CoreData
 
 class CoffeeDataService {
     
-    // MARK: - Singleton init
-    
-    static let shared = CoffeeDataService()
-    private init() {}
-    
     // MARK: - Methods
     
     func getCoffeeArray(isFavouritesOnly: Bool = false) -> [Coffee] {

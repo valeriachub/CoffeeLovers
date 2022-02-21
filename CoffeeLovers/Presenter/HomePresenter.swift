@@ -21,7 +21,7 @@ class HomePresenter {
     
     var coffeeArray = [Coffee]()
     
-    let coffeeService = CoffeeDataService.shared
+    let coffeeService = CoffeeDataService()
     let homeRouter: HomeRouter!
     
     weak var homeView: HomeView!

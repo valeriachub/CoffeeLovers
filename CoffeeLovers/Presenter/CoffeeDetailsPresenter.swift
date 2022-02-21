@@ -27,7 +27,7 @@ class CoffeeDetailsPresenter {
     
     // MARK: - Properties
     
-    private let coffeeService = CoffeeDataService.shared
+    private let coffeeService = CoffeeDataService()
     private let cornerRadius: CGFloat = 30.0
     private let rowHeight: CGFloat = 30.0
     private let topConstraint: CGFloat = 24.0
