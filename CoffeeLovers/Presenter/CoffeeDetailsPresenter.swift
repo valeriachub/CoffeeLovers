@@ -131,6 +131,7 @@ class CoffeeDetailsPresenter {
     }
     
     func getCaloriesFor(index: Int) -> Double {
+        return 0
         switch index {
         case 0:
             return caloriesSize.s

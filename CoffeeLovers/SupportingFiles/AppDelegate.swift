@@ -61,6 +61,7 @@ extension AppDelegate {
         
         for (index, tab) in tabs.enumerated() {
             let navViewController = UINavigationController(rootViewController: tab.controller)
+            navViewController.isNavigationBarHidden = true
             navViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: tab.imageName), tag: index)
             tabControllers.append(navViewController)
         }

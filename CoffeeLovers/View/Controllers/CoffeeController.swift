@@ -18,7 +18,7 @@ class CoffeeController: UIViewController {
     
     // MARK: - Properties
     
-    var configurator: CoffeeConfigurator!
+    var configurator: CoffeeConfigurator?
     var presenter: CoffeePresenter!
     
     // MARK: - Lifecycle Methods
@@ -26,7 +26,7 @@ class CoffeeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configurator.configure(controller: self)
+//        configurator.configure(controller: self)
         presenter.viewDidLoad()
     }
     

@@ -16,6 +16,11 @@ protocol CoffeeCollectionView {
 public class CoffeeCollectionPresenter {
     
     private let localCoffee: [LocalCoffee]
+    private var filtered: [LocalCoffee] {
+        get {
+            return isFavourite ? localCoffee.filter { $0.isFavourite } : localCoffee
+        }
+    }
     private let view: CoffeeCollectionView
     private let isFavourite: Bool
     
@@ -26,15 +31,19 @@ public class CoffeeCollectionPresenter {
     }
     
     func image(for indexPath: IndexPath) -> String {
-        return localCoffee[indexPath.item].image
+        return filtered[indexPath.item].image
     }
     
     func title(for indexPath: IndexPath) -> String {
-        return localCoffee[indexPath.item].title
+        return filtered[indexPath.item].title
     }
     
     var count: Int {
-        return isFavourite ? localCoffee.filter { $0.isFavourite }.count : localCoffee.count
+        return filtered.count
+    }
+    
+    func selected(at indexPath: IndexPath) -> LocalCoffee {
+        return filtered[indexPath.item]
     }
 }
 
