@@ -3,7 +3,7 @@
         {
             "title" : "Americano",
             "image" : "c_americano",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "A shot of espresso that is diluted with hot water.",
             "ingredients" : ["14-18 grams espresso coffee beans",
                 "hot or almost boiling water",
@@ -19,7 +19,7 @@
         {
             "title" : "Bon Bon",
             "image" : "c_bonbon",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "A Spanish-style café drink that layers espresso over dulce de leche, also known as sweetened condensed milk.",
             "ingredients" : ["2 oz Espresso",
                 "2 oz Condensed Milk",
@@ -37,7 +37,7 @@
         {
             "title" : "Borgia",
             "image" : "c_borgia",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "The Café Borgia is a small deviation to the Mocha entailing an espresso, hot chocolate and topped with whipped cream.",
             "ingredients" : ["Hot Espresso coffee",
                 "Hot chocolate",
@@ -50,7 +50,7 @@
         {
             "title" : "Cappuccino",
             "image" : "c_cappuccino",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "A shot of espresso is topped with a pillowy layer of foamy steamed milk.",
             "ingredients" : ["2 shots espresso (a double shot)",
             "4 oz milk"],
@@ -64,7 +64,7 @@
         {
             "title" : "Espresso",
             "image" : "c_espresso",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "Highly concentrated coffee that is made when hot water is forced at pressure through incredibly fine grounds.",
             "ingredients" : ["7 g finely ground Espresso beans",
             "1 1/2 oz water"],
@@ -77,7 +77,7 @@
         {
             "title" : "Flat White",
             "image" : "c_flat",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "An espresso with steamed milk totaling about five to seven ounces. A flat white is like the cappuccino’s sister, as they are basically the same drink, but one has foam (the cappuccino) and the other (the flat white) does not.",
             "ingredients" : ["18g ground espresso, or 1 espresso pod",
             "100 ml milk"],
@@ -88,7 +88,7 @@
         {
             "title" : "Glace",
             "image" : "c_glace",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "Tart hot black coffee with a sweet freshness of vanilla ice cream.",
             "ingredients" : ["2 teaspoons instant coffee",
                 "1 teaspoon sugar",
@@ -102,7 +102,7 @@
         {
             "title" : "Hot Chocolate",
             "image" : "c_chocolate",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "Melted chocolate mixed with either hot water or milk.",
             "ingredients" : ["2 cups whole milk",
                 "2 tbsp sugar",
@@ -120,7 +120,7 @@
         {
             "title" : "Irish Coffee",
             "image" : "c_irish",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "A cocktail consisting of hot coffee, Irish whiskey, and sugar, stirred, and topped with cream. The coffee is drunk through the cream",
             "ingredients" : ["1 cup freshly brewed Britt coffee",
                 "1 tbsp brown sugar",
@@ -135,7 +135,7 @@
         {
             "title" : "Latte",
             "image" : "c_latte",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "A shot of espresso that is served with at least one cup (or more) of steamed milk.",
             "ingredients" : ["7 g of Café Britt Espresso",
             "6 oz of warm milk"],
@@ -147,7 +147,7 @@
         {
             "title" : "Macchiato",
             "image" : "c_macchiato",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "An espresso topped with a mark of foamy milk.",
             "ingredients" : ["7 g of Café Britt Espresso",
             "1/2 oz of frothed milk"],
@@ -159,7 +159,7 @@
         {
             "title" : "Mocha",
             "image" : "c_mocha",
-            "is_favourite" : "No",
+            "is_favourite" : false,
             "descriptions": "An espresso mixed with steamed milk and some sort of chocolate, syrup, or flavoring.",
             "ingredients" : ["1 cup of brewed coffee",
                 "4 tablespoons of your favorite chocolate bar shavings or cocoa powder (roughly 1/4 cup)",
