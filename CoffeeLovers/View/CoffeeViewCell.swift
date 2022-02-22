@@ -26,16 +26,6 @@ class CoffeeViewCell: UICollectionViewCell {
         contentView.layer.masksToBounds = true
     }
     
-    static func getCellForItemAt(indexPath: IndexPath, of collectionView: UICollectionView, with data: LocalCoffee) -> CoffeeViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CoffeeViewCell.self)", for: indexPath) as? CoffeeViewCell else {
-            fatalError("Error with CollectionViewCell")
-        }
-        
-        cell.setCell(image: UIImage(named: data.image)!, title: data.title)
-        
-        return cell
-    }
-    
     func setCell(image: UIImage, title: String) {
         coffeeTitle.text = title
         coffeeImageView.image = image
