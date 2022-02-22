@@ -68,15 +68,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-private class OrangeViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.backgroundColor = .orange
-    }
-}
-
 public final class MainUIComposer {
     
     public static func composedWith(storeURL: URL) -> MainController {
