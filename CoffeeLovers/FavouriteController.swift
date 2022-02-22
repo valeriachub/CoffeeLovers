@@ -8,62 +8,21 @@
 
 import UIKit
 
-class FavouriteController: CoffeeCollectionViewController {
-    
-    // MARK: - Properties
+public class FavouriteController: CoffeeCollectionViewController, MainView {
     
     var presenter: MainPresenter!
     
-    // MARK: - Lifecycle Methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        configurator = HomeConfigurator()
-        configurator.configure(controller: self)
+    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return presenter.favouriteCoffeeCount
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        
-        presenter.viewWillAppear(isFavouriteTab: true)
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CoffeeViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setCell(image: UIImage(named: presenter.image(for: indexPath))!, title: presenter.title(for: indexPath))
+        return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        presenter.prepare(for: segue, sender: sender)
-    }
-}
-
-// MARK: - Extension UICollectionViewController, UICollectionViewDelegateFlowLayout
-
-extension FavouriteController {
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.getNumberOfItemsInSection()
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return presenter.getCellForItemAt(indexPath: indexPath, of: collectionView)
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.showCoffee(indexPath.row)
-    }
-}
-
-// MARK: - Extension HomeView
-
-extension FavouriteController: HomeView {
-    
-    func setPresenter(presenter: HomePresenter) {
-        self.presenter = presenter
-    }
-    
-    func performSegue(withIdentifier id: String) {
-        performSegue(withIdentifier: id, sender: nil)
-    }
-    
-    func reloadCollectionView() {
-        collectionView?.reloadData()
+    public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //        presenter.showCoffee(indexPath.row)
     }
 }

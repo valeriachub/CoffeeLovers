@@ -15,8 +15,13 @@ protocol MainView {
 
 public class MainPresenter {
     
-    let localCoffee: [LocalCoffee]
-    let view: MainView
+    private let localCoffee: [LocalCoffee]
+    private let view: MainView
+    
+    init(localCoffee: [LocalCoffee], view: MainView) {
+        self.localCoffee = localCoffee
+        self.view = view
+    }
     
     func image(for indexPath: IndexPath) -> String {
         return localCoffee[indexPath.item].image
@@ -26,10 +31,14 @@ public class MainPresenter {
         return localCoffee[indexPath.item].title
     }
     
-    init(localCoffee: [LocalCoffee], view: MainView) {
-        self.localCoffee = localCoffee
-        self.view = view
+    var mainCoffeeCount: Int {
+        return localCoffee.count
     }
+    
+    var favouriteCoffeeCount: Int {
+        return localCoffee.filter { $0.isFavourite }.count
+    }
+    
 }
 
 public class MainController: CoffeeCollectionViewController, MainView {
@@ -42,7 +51,7 @@ public class MainController: CoffeeCollectionViewController, MainView {
     }
     
     public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter.localCoffee.count
+        presenter.mainCoffeeCount
     }
     
     public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

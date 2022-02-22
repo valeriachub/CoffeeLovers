@@ -40,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func getRootViewController() -> UITabBarController {
-        let mainController = MainUIComposer.mainComposedWith(storeURL: storeURL)
+        let mainController = MainUIComposer.composedWith(storeURL: storeURL)
         let mainImageTitle = "ic_coffee"
         
-        let favouriteController = MainUIComposer.mainComposedWith(storeURL: storeURL)
+        let favouriteController = FavouriteUIComposer.composedWith(storeURL: storeURL)
         let favouriteImageTitle = "ic_favourite"
         
         return getTabBarController(for: [
@@ -79,9 +79,20 @@ private class OrangeViewController: UIViewController {
 
 public final class MainUIComposer {
     
-    public static func mainComposedWith(storeURL: URL) -> MainController {
+    public static func composedWith(storeURL: URL) -> MainController {
         let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
         let controller = MainController()
+        let presenter = MainPresenter(localCoffee: localCoffee, view: WeakWrapper(controller))
+        controller.presenter = presenter
+        return controller
+    }
+}
+
+public final class FavouriteUIComposer {
+    
+    public static func composedWith(storeURL: URL) -> FavouriteController {
+        let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
+        let controller = FavouriteController()
         let presenter = MainPresenter(localCoffee: localCoffee, view: WeakWrapper(controller))
         controller.presenter = presenter
         return controller

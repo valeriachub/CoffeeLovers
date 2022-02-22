@@ -21,7 +21,6 @@
 		3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */; };
 		3AA1824E231BE09C006ADC8A /* CoffeeDetailsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */; };
 		3AA18250231BE8D1006ADC8A /* TabsControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA1824F231BE8D1006ADC8A /* TabsControl.swift */; };
-		3AADE6C8231A6BD20099168C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6C5231A6BD20099168C /* HomeController.swift */; };
 		3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */; };
 		3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB02004231A693000AC0EC4 /* CoffeeDataService.swift */; };
 		3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
@@ -40,7 +39,6 @@
 		AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */; };
 		AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */; };
 		AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFD231D3B2700F2B92B /* SegueHelper.swift */; };
-		AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFF231D49C000F2B92B /* HomeConfigurator.swift */; };
 		AB3791B527C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */; };
 		AB3791BA27C51DB30000B0A4 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B927C51DB30000B0A4 /* MainController.swift */; };
 		AB4419F6231FFF8800530C08 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4419F5231FFF8800530C08 /* MainNavigationController.swift */; };
@@ -65,13 +63,12 @@
 		3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CoffeeDetailsController.xib; path = CoffeeLovers/View/Controllers/CoffeeDetailsController.xib; sourceTree = SOURCE_ROOT; };
 		3AA1824F231BE8D1006ADC8A /* TabsControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsControl.swift; sourceTree = "<group>"; };
 		3AADE6C1231A6B460099168C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AADE6C5231A6BD20099168C /* HomeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeController.swift; path = CoffeeLovers/View/Controllers/HomeController.swift; sourceTree = SOURCE_ROOT; };
 		3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoffeeCollectionViewController.swift; path = CoffeeLovers/Controllers/CoffeeCollectionViewController.swift; sourceTree = SOURCE_ROOT; };
 		3AB02004231A693000AC0EC4 /* CoffeeDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeDataService.swift; sourceTree = "<group>"; };
 		3AC4B87C2138FBB600052E9F /* CoffeeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoffeeData.json; sourceTree = "<group>"; };
 		3AC54294231C369800E78AAE /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		3AC54295231C369800E78AAE /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
-		3AE030A223210DE3009BED97 /* FavouriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteController.swift; path = CoffeeLovers/View/Controllers/FavouriteController.swift; sourceTree = SOURCE_ROOT; };
+		3AE030A223210DE3009BED97 /* FavouriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteController.swift; path = CoffeeLovers/FavouriteController.swift; sourceTree = SOURCE_ROOT; };
 		3AF197B7213BCB190087140F /* IngredientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientColor.swift; sourceTree = "<group>"; };
 		3AF197BB213E678F0087140F /* ImageSlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSlideView.swift; sourceTree = "<group>"; };
 		3AF197BD213E67A70087140F /* ImageSlideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageSlideView.xib; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 		AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeConfigurator.swift; sourceTree = "<group>"; };
 		AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		AB26AAFD231D3B2700F2B92B /* SegueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHelper.swift; sourceTree = "<group>"; };
-		AB26AAFF231D49C000F2B92B /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		AB3791B227C3E8B90000B0A4 /* CoffeeLoversUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeLoversUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLoversUnitTests.swift; sourceTree = "<group>"; };
 		AB3791B927C51DB30000B0A4 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -185,6 +181,7 @@
 				3A22931B2319153000CE30CD /* Presenter */,
 				3A37E65A214B73AD00F35F57 /* Helper */,
 				AB3791B927C51DB30000B0A4 /* MainController.swift */,
+				3AE030A223210DE3009BED97 /* FavouriteController.swift */,
 			);
 			path = CoffeeLovers;
 			sourceTree = "<group>";
@@ -204,11 +201,9 @@
 			children = (
 				AB4419F5231FFF8800530C08 /* MainNavigationController.swift */,
 				3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */,
-				3AADE6C5231A6BD20099168C /* HomeController.swift */,
 				3AA18249231AE2DE006ADC8A /* CoffeeController.swift */,
 				3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */,
 				3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */,
-				3AE030A223210DE3009BED97 /* FavouriteController.swift */,
 			);
 			name = Controllers;
 			path = ../Controllers;
@@ -235,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */,
-				AB26AAFF231D49C000F2B92B /* HomeConfigurator.swift */,
 				AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */,
 			);
 			path = Configurator;
@@ -448,13 +442,11 @@
 				AB0B2D43232A5C0B00D65D96 /* Coffee+CoreDataClass.swift in Sources */,
 				AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */,
 				3AE030A323210DE3009BED97 /* FavouriteController.swift in Sources */,
-				AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */,
 				AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
 				3AA18250231BE8D1006ADC8A /* TabsControl.swift in Sources */,
 				3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */,
 				3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */,
-				3AADE6C8231A6BD20099168C /* HomeController.swift in Sources */,
 				3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */,
 				AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */,
 				3A22931A2319146200CE30CD /* HomePresenter.swift in Sources */,

@@ -36,7 +36,7 @@ class HomeRouter: HomeRouterProtocol {
         if
             let controller = segue.destination as? CoffeeController,
             let coffee = coffee {
-            controller.configurator = CoffeeConfigurator(coffee: coffee)
+//            controller.configurator = CoffeeConfigurator(coffee: coffee)
         }
     }
 }
