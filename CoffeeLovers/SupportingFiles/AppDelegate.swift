@@ -43,10 +43,10 @@ extension AppDelegate {
     }
     
     private func getRootViewController() -> UITabBarController {
-        let mainController = MainUIComposer.composedWith(storeURL: storeURL)
+        let mainController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: false)
         let mainImageTitle = "ic_coffee"
         
-        let favouriteController = FavouriteUIComposer.composedWith(storeURL: storeURL)
+        let favouriteController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: true)
         let favouriteImageTitle = "ic_favourite"
         
         return getTabBarController(for: [
@@ -71,23 +71,12 @@ extension AppDelegate {
     }
 }
 
-public final class MainUIComposer {
+public final class CollectionUIComposer {
     
-    public static func composedWith(storeURL: URL) -> MainController {
+    public static func composedWith(storeURL: URL, isFavouriteTab: Bool) -> CoffeeCollectionViewController {
         let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
-        let controller = MainController()
-        let presenter = MainPresenter(localCoffee: localCoffee, view: WeakWrapper(controller))
-        controller.presenter = presenter
-        return controller
-    }
-}
-
-public final class FavouriteUIComposer {
-    
-    public static func composedWith(storeURL: URL) -> FavouriteController {
-        let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
-        let controller = FavouriteController()
-        let presenter = MainPresenter(localCoffee: localCoffee, view: WeakWrapper(controller))
+        let controller = CoffeeCollectionViewController()
+        let presenter = CoffeeCollectionPresenter(localCoffee: localCoffee, view: WeakWrapper(controller), isFavourite: isFavouriteTab)
         controller.presenter = presenter
         return controller
     }
@@ -101,6 +90,6 @@ public class WeakWrapper<T: AnyObject> {
     }
 }
 
-extension WeakWrapper: MainView where T: MainView {
+extension WeakWrapper: CoffeeCollectionView where T: CoffeeCollectionView {
     
 }

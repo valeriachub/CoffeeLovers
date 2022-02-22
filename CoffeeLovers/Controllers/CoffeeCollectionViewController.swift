@@ -8,49 +8,45 @@
 
 import UIKit
 
-public class CoffeeCollectionViewController: UICollectionViewController {
+public class CoffeeCollectionViewController: UICollectionViewController, CoffeeCollectionView {
     
-    // MARK: - Properties
-    
-    let sideSpacing: CGFloat = 16.0
-    let itemsInRow: CGFloat = 2.0
-    
-    // MARK: - Lifecycle Methods
-    
-    init() {
+    private let sideSpacing: CGFloat = 16.0
+    private let itemsInRow: CGFloat = 2.0
+    private lazy var layout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: sideSpacing, left: sideSpacing, bottom: sideSpacing, right: sideSpacing)
         layout.minimumLineSpacing = sideSpacing
         layout.minimumInteritemSpacing = sideSpacing
-        
-        super.init(collectionViewLayout: layout)
+        return layout
+    }()
+    
+    var presenter: CoffeeCollectionPresenter!
+    
+    init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.collectionViewLayout = layout
+        collectionView.register(UINib(nibName: "\(CoffeeViewCell.self)", bundle: nil),
+                                forCellWithReuseIdentifier: "\(CoffeeViewCell.self)")
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-//        fatalError("init(coder:) has not been implemented")
-    }
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        collectionView?.register(UINib(nibName: "\(CoffeeViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(CoffeeViewCell.self)")
-        collectionView?.collectionViewLayout = getFlowLayout()
-    }
-    
-    // MARK: - Methods
-    
-    func getFlowLayout() -> UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: sideSpacing, left: sideSpacing, bottom: sideSpacing, right: sideSpacing)
-        layout.minimumLineSpacing = sideSpacing
-        layout.minimumInteritemSpacing = sideSpacing
-        
-        return layout
+        fatalError("init(coder:) has not been implemented")
     }
 }
 
-// MARK: - Extension UICollectionViewDelegateFlowLayout
+extension CoffeeCollectionViewController {
+    
+    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        presenter.count
+    }
+    
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: CoffeeViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setCell(image: UIImage(named: presenter.image(for: indexPath))!,
+                     title: presenter.title(for: indexPath))
+        return cell
+    }
+}
 
 extension CoffeeCollectionViewController: UICollectionViewDelegateFlowLayout {
     
