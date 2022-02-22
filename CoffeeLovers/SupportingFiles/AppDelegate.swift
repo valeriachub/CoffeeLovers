@@ -27,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
+}
+
+extension AppDelegate {
     
     private func simulatePreloadDataForFirstLaunch() {
         let service = try! CoreDataStore(storeURL: storeURL)
