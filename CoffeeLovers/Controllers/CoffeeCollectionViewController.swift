@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CoffeeCollectionViewController: UICollectionViewController {
+public class CoffeeCollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     
@@ -17,7 +17,21 @@ class CoffeeCollectionViewController: UICollectionViewController {
     
     // MARK: - Lifecycle Methods
     
-    override func viewDidLoad() {
+    init() {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: sideSpacing, left: sideSpacing, bottom: sideSpacing, right: sideSpacing)
+        layout.minimumLineSpacing = sideSpacing
+        layout.minimumInteritemSpacing = sideSpacing
+        
+        super.init(collectionViewLayout: layout)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+//        fatalError("init(coder:) has not been implemented")
+    }
+    
+    public override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView?.register(UINib(nibName: "\(CoffeeViewCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(CoffeeViewCell.self)")
@@ -40,7 +54,7 @@ class CoffeeCollectionViewController: UICollectionViewController {
 
 extension CoffeeCollectionViewController: UICollectionViewDelegateFlowLayout {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let allSpacing = (2 * sideSpacing) + ( sideSpacing * (itemsInRow - 1))
         let width = (collectionView.bounds.width - CGFloat(allSpacing)) / itemsInRow
         let height = width

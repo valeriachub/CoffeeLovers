@@ -57,7 +57,7 @@ class HomePresenter {
     }
     
     func getCellForItemAt(indexPath: IndexPath, of collectionView: UICollectionView) -> CoffeeViewCell {
-        return CoffeeViewCell.getCellForItemAt(indexPath: indexPath, of: collectionView, with: filteredCoffee[indexPath.row])
+        return collectionView.dequeueReusableCell(for: indexPath)
     }
     
     func showCoffee(_ index: Int) {

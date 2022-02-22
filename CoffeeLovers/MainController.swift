@@ -13,7 +13,7 @@ protocol MainView {
     
 }
 
-class MainPresenter {
+public class MainPresenter {
     
     let localCoffee: [LocalCoffee]
     let view: MainView
@@ -32,11 +32,20 @@ class MainPresenter {
     }
 }
 
-class MainController: CoffeeCollectionViewController, MainView {
+public class MainController: CoffeeCollectionViewController, MainView {
     
     var presenter: MainPresenter!
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
+    public override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        presenter.localCoffee.count
+    }
+    
+    public override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CoffeeViewCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.setCell(image: UIImage(named: presenter.image(for: indexPath))!, title: presenter.title(for: indexPath))
         return cell
