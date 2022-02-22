@@ -23,11 +23,13 @@ public class CoffeeCollectionPresenter {
     }
     private let view: CoffeeCollectionView
     private let isFavourite: Bool
+    private let select: (LocalCoffee) -> Void
     
-    init(localCoffee: [LocalCoffee], view: CoffeeCollectionView, isFavourite: Bool) {
+    init(localCoffee: [LocalCoffee], view: CoffeeCollectionView, isFavourite: Bool, select: @escaping (LocalCoffee) -> Void) {
         self.localCoffee = localCoffee
         self.view = view
         self.isFavourite = isFavourite
+        self.select = select
     }
     
     func image(for indexPath: IndexPath) -> String {
@@ -42,8 +44,8 @@ public class CoffeeCollectionPresenter {
         return filtered.count
     }
     
-    func selected(at indexPath: IndexPath) -> LocalCoffee {
-        return filtered[indexPath.item]
+    func selectItemAt(_ indexPath: IndexPath) {
+        select(filtered[indexPath.row])
     }
 }
 

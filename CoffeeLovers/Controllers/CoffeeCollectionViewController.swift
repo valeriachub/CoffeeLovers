@@ -48,11 +48,7 @@ extension CoffeeCollectionViewController {
     }
     
     public override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "CoffeeController") as! CoffeeController
-        let presenter = CoffeePresenter(view: vc, coffee: presenter.selected(at: indexPath))
-        vc.presenter = presenter
-        self.navigationController?.pushViewController(vc, animated: true)
+        presenter.selectItemAt(indexPath)
     }
 }
 

@@ -138,7 +138,7 @@ struct CoffeeModel: Codable {
     let descriptions: String
     
 }
-struct LocalCoffee {
+public struct LocalCoffee {
     let title: String
     let image: String
     let isFavourite: Bool

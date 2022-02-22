@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     var window: UIWindow?
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         simulatePreloadDataForFirstLaunch()
@@ -43,41 +43,52 @@ extension AppDelegate {
     }
     
     private func getRootViewController() -> UITabBarController {
-        let mainController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: false)
-        let mainImageTitle = "ic_coffee"
         
-        let favouriteController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: true)
-        let favouriteImageTitle = "ic_favourite"
-        
-        return getTabBarController(for: [
-            (mainController, mainImageTitle),
-            (favouriteController, favouriteImageTitle),
-        ])
-    }
-    
-    private func getTabBarController(for tabs: [(controller: UIViewController, imageName: String)]) -> UITabBarController {
-        
-        var tabControllers = [UINavigationController]()
-        
-        for (index, tab) in tabs.enumerated() {
-            let navViewController = UINavigationController(rootViewController: tab.controller)
-            navViewController.isNavigationBarHidden = true
-            navViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: tab.imageName), tag: index)
-            tabControllers.append(navViewController)
-        }
+        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
+        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = tabControllers
+        tabBarController.viewControllers = [mainCollectionTabNavigationController, favouriteCollectionTabNavigationController]
+        
         return tabBarController
+    }
+}
+
+public class CollectionTabNavigationController: UINavigationController {
+    
+    var selection: ((LocalCoffee) -> Void)?
+    
+    init(rootViewController: UIViewController, imageName: String, tag: Int) {
+        super.init(rootViewController: rootViewController)
+        isNavigationBarHidden = true
+        tabBarItem = UITabBarItem(title: nil, image: UIImage(named: imageName)!, tag: tag)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
 }
 
 public final class CollectionUIComposer {
     
-    public static func composedWith(storeURL: URL, isFavouriteTab: Bool) -> CoffeeCollectionViewController {
+    public static func composedWith(storeURL: URL, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
         let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
         let controller = CoffeeCollectionViewController()
-        let presenter = CoffeeCollectionPresenter(localCoffee: localCoffee, view: WeakWrapper(controller), isFavourite: isFavouriteTab)
+        let navigationController = CollectionTabNavigationController(rootViewController: controller, imageName: imageName, tag: tag)
+        let selection: (LocalCoffee) -> Void = { [weak navigationController] coffee in
+            let controller = CollectionUIComposer.getCoffeeController(for: coffee)
+            navigationController?.pushViewController(controller, animated: true)
+        }
+        
+        let presenter = CoffeeCollectionPresenter(localCoffee: localCoffee, view: WeakWrapper(controller), isFavourite: isFavouriteTab, select: selection)
+        controller.presenter = presenter
+        return navigationController
+    }
+    
+    private static func getCoffeeController(for coffee: LocalCoffee) -> CoffeeController {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "CoffeeController") as! CoffeeController
+        let presenter = CoffeePresenter(view: controller, coffee: coffee)
         controller.presenter = presenter
         return controller
     }
