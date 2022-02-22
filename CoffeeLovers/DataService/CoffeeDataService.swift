@@ -7,31 +7,61 @@
 //
 
 import CoreData
-import SwiftyJSON
 
-class CoffeeDataService {
+public final class CoreDataStore {
+    private static let modelName = "CoffeeLoversDB"
+    private static let model: NSManagedObjectModel? = Bundle(for: Coffee.self)
+        .url(forResource: modelName, withExtension: "momd")
+        .flatMap { NSManagedObjectModel(contentsOf: $0) }
     
-    // MARK: - Methods
+    enum StoreError: Swift.Error {
+        case modelNotFound
+        case failedLoadPersistentContainer(Error)
+    }
     
-    lazy var persistentContainer: NSPersistentContainer = {
+    private let container: NSPersistentContainer
+    private let context: NSManagedObjectContext
+    
+    init(storeURL: URL) throws {
+        guard let model = CoreDataStore.model else {
+            throw StoreError.modelNotFound
+        }
         
-        let container = NSPersistentContainer(name: "CoffeeLoversDB")
-        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
-            if let error = error as NSError? {
-                fatalError("Unresolved error \(error), \(error.userInfo)")
-            }
-        })
-        return container
-    }()
+        do {
+            container = try NSPersistentContainer.load(name: CoreDataStore.modelName, model: model, from: storeURL)
+            context = container.newBackgroundContext()
+            
+        } catch {
+            throw StoreError.failedLoadPersistentContainer(error)
+        }
+    }
+}
+
+extension CoreDataStore {
     
-    lazy var context: NSManagedObjectContext = {
-        return persistentContainer.viewContext
-    }()
+    func setCoffeeFavourite(coffee: LocalCoffee) {
+//        coffee.isFavourite = !coffee.isFavourite
+        try? context.save()
+    }
     
-    func getCoffeeArray(isFavouritesOnly: Bool = false) -> [Coffee] {
-        var coffeeArray = [Coffee]()
-        
-        let request: NSFetchRequest<Coffee> = Coffee.fetchRequest()
+    func saveCoffeeModels(_ models: [CoffeeModel]) {
+        for model in models {
+            let coffee = Coffee(context: context)
+            coffee.title = model.title
+            coffee.image = model.image
+            coffee.descriptions = model.descriptions
+            coffee.is_favourite = model.is_favourite
+            
+            try? context.save()
+        }
+    }
+}
+
+extension CoreDataStore {
+    func getCoffeeData(isFavouritesOnly: Bool = false) -> [LocalCoffee]? {
+                
+        let request = NSFetchRequest<Coffee>(entityName: "Coffee")
+        request.returnsObjectsAsFaults = false
         
         if isFavouritesOnly {
             request.predicate = NSPredicate(format: "is_favourite == 1")
@@ -40,97 +70,77 @@ class CoffeeDataService {
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
         do {
-            coffeeArray = try context.fetch(request)
+            let local = try context.fetch(request).map { $0.localCoffee }
+            return local
+            
         } catch {
-            print("Error Load Coffee Data")
+            return nil
         }
-        
-        return coffeeArray
     }
     
-    func setCoffeeFavourite(coffee: Coffee) {
-        coffee.is_favourite = !coffee.is_favourite
-        saveContext()
-    }
+    struct FailedLoadJson: Swift.Error {}
+    struct FailedMapJson: Swift.Error {}
     
-    func preloadIfNeeded() {
-        guard isDataBaseEmpty(context: context) else {
+    func preloadData() {
+        guard UserDefaults.standard.bool(forKey: "isDataPreloaded") == false else {
             return
         }
-        preloadData(context: context)
+        
+        loadDataFromJson { result in
+            if let models = try? result.get() {
+                saveCoffeeModels(models)
+                UserDefaults.standard.set(true, forKey: "isDataPreloaded")
+            } else {
+                print(result.mapError { $0 })
+            }
+        }
     }
     
-    func preloadData(context : NSManagedObjectContext){
-        guard let path = Bundle.main.path(forResource: "CoffeeData", ofType: "json") else { fatalError("No CoffeeData.json file") }
+    private func loadDataFromJson(completion: (Result<[CoffeeModel], Error>) -> Void) {
+        guard let url = Bundle.main.url(forResource: "CoffeeData", withExtension: "json") else {
+            completion(.failure(FailedLoadJson()))
+            return
+        }
         
         do {
-            let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
-            let jsonObj = try JSON(data: data)
-            
-            preloadCoffee(context : context, jsonObj: jsonObj)
-            
-            saveContext()
-            
-        } catch let error {
-            print("parse error: \(error.localizedDescription)")
+            let data = try Data(contentsOf: url)
+            let root = try JSONDecoder().decode(Root.self, from: data)
+            completion(.success(root.coffee))
+        } catch {
+            completion(.failure(FailedMapJson()))
         }
     }
-    
-    func preloadCoffee(context : NSManagedObjectContext, jsonObj : JSON) {
-        let coffeeArray = jsonObj["coffee"]
-        
-        for (_, coffee) in coffeeArray {
-            let newCoffee = Coffee(context: context)
-            newCoffee.title = coffee["title"].stringValue
-            newCoffee.image = coffee["image"].stringValue
-            newCoffee.descriptions = coffee["descriptions"].stringValue
-            newCoffee.is_favourite = false
-            newCoffee.ingredients = [String]()
-            newCoffee.recipe = [String]()
-            newCoffee.calories_solo = coffee["calories_solo"].doubleValue
-            
-            for (_, ingredient) in coffee["ingredients"] {
-                newCoffee.ingredients?.append(ingredient.stringValue)
-            }
-            
-            for (_, item) in coffee["recipe"] {
-                newCoffee.recipe?.append(item.stringValue)
-            }
-            
-            let caloriesSize = CaloriesSize(context: context)
-            if let caloriesSizeDict = coffee["calories_size"].dictionary {
-                caloriesSize.s = caloriesSizeDict["s"]?.doubleValue ?? 0
-                caloriesSize.m = caloriesSizeDict["m"]?.doubleValue ?? 0
-                caloriesSize.l = caloriesSizeDict["l"]?.doubleValue ?? 0
-            }
-           newCoffee.calories_size = caloriesSize
-            
-            
-            print(newCoffee)
-        }
-    }
-    
-    func isDataBaseEmpty(context : NSManagedObjectContext) -> Bool {
-        let testRequest : NSFetchRequest<Coffee> = Coffee.fetchRequest()
-        do {
-            let count = try context.fetch(testRequest).count
-            return count == 0
-        }catch{
-            print("Error fetching database")
-        }
-        return true
-    }
-    
-    
-    func saveContext () {
+}
 
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
+private extension NSPersistentContainer {
+    
+    static func load(name: String, model: NSManagedObjectModel, from url: URL) throws -> NSPersistentContainer {
+        let description = NSPersistentStoreDescription(url: url)
+        let container = NSPersistentContainer(name: name, managedObjectModel: model)
+        container.persistentStoreDescriptions = [description]
+        
+        var error: Swift.Error?
+        container.loadPersistentStores { error = $1 }
+        try error.map { throw $0 }
+        
+        return container
     }
+}
+
+struct Root: Codable {
+    let coffee: [CoffeeModel]
+}
+
+struct CoffeeModel: Codable {
+    let title: String
+    let image: String
+    let is_favourite: Bool
+    let descriptions: String
+    
+}
+struct LocalCoffee {
+    let title: String
+    let image: String
+    let isFavourite: Bool
+    let descriptions: String
 }
