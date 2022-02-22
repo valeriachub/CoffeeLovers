@@ -12,8 +12,7 @@ class FavouriteController: CoffeeCollectionViewController {
     
     // MARK: - Properties
     
-    var presenter: HomePresenter!
-    var configurator: HomeConfigurator!
+    var presenter: MainPresenter!
     
     // MARK: - Lifecycle Methods
     
