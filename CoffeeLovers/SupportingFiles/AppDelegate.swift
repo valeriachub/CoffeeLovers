@@ -7,21 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
-    let service = CoffeeDataService()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        service.preloadIfNeeded()
+        let service = try! CoreDataStore(storeURL: NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("coffee-store.sqlite"))
+        service.preloadData()
         return true
-    }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        service.saveContext()
     }
 }
 
