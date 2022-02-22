@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 protocol CoffeeDetailsView: AnyObject {
     func setCoffeeTitle(title: String)
@@ -27,15 +28,15 @@ class CoffeeDetailsPresenter {
     
     // MARK: - Properties
     
-    private let coffeeService = CoffeeDataService()
+    let service = try! CoreDataStore(storeURL: NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("coffee-store.sqlite"))
     private let cornerRadius: CGFloat = 30.0
     private let rowHeight: CGFloat = 30.0
     private let topConstraint: CGFloat = 24.0
     let fullViewOriginY: CGFloat = 130.0
     
-    private var coffee: Coffee!
-    private var ingredients: [String]
-    private var recipe: [String]
+    private var coffee: LocalCoffee!
+//    private var ingredients: [String]
+//    private var recipe: [String]
     private var caloriesSize: CaloriesSize!
     private var caloriesSolo: Double = 0
     
@@ -47,13 +48,13 @@ class CoffeeDetailsPresenter {
     
     // MARK: - Init Methods
     
-    init(view: CoffeeDetailsView, coffee: Coffee) {
+    init(view: CoffeeDetailsView, coffee: LocalCoffee) {
         self.coffeeDetailsView = view
         self.coffee = coffee
-        self.ingredients = coffee.ingredients ?? [String]()
-        self.recipe = coffee.recipe ?? [String]()
-        self.caloriesSize = coffee.calories_size
-        self.caloriesSolo = coffee.calories_solo
+//        self.ingredients = coffee.ingredients ?? [String]()
+//        self.recipe = coffee.recipe ?? [String]()
+//        self.caloriesSize = coffee.calories_size
+//        self.caloriesSolo = coffee.calories_solo
     }
     
     // MARK: - Methods
@@ -69,18 +70,18 @@ class CoffeeDetailsPresenter {
     }
     
     func getNumberOfRowsIngredients() -> Int {
-        return ingredients.count
+        return 0 //ingredients.count
     }
     
     func getCellForIngredientRow(at indexPath: IndexPath, of tableView: UITableView) -> IngredientCell {
-        return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: ingredients[indexPath.row])
+        return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: "")//ingredients[indexPath.row])
     }
     
     func setCoffee() {
         coffeeDetailsView.setCoffeeTitle(title: coffee.title ?? "")
         coffeeDetailsView.setCoffeeDescription(description: coffee.descriptions ?? "")
         
-        coffeeDetailsView.updateLikeButton(isLike: coffee.is_favourite, isAnimate: false)
+        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite, isAnimate: false)
     }
     
     func setCornerRadius() {
@@ -88,7 +89,7 @@ class CoffeeDetailsPresenter {
     }
     
     func setTableView() {
-        coffeeDetailsView.setTableView(rowHeight: rowHeight, tableHeight: rowHeight * CGFloat(ingredients.count))
+        coffeeDetailsView.setTableView(rowHeight: rowHeight, tableHeight: rowHeight * CGFloat(1))//ingred.count
     }
     
     func setTabs() {
@@ -100,12 +101,12 @@ class CoffeeDetailsPresenter {
     }
     
     func setReceiptText() {
-        var recipeString = ""
-        for (index, step) in recipe.enumerated() {
-            recipeString.append("\(index + 1). \(step) \n\n")
-        }
-        
-        coffeeDetailsView.setReceiptText(text: recipeString)
+//        var recipeString = ""
+//        for (index, step) in recipe.enumerated() {
+//            recipeString.append("\(index + 1). \(step) \n\n")
+//        }
+//
+//        coffeeDetailsView.setReceiptText(text: recipeString)
     }
     
     func setReceiptTextHeight(receiptViewOriginY: CGFloat, receiptTextOriginY: CGFloat, ingredientsTableViewHeight: CGFloat) {
@@ -143,8 +144,8 @@ class CoffeeDetailsPresenter {
     }
     
     func onLikeClicked() {
-        coffeeService.setCoffeeFavourite(coffee: coffee)
-        coffeeDetailsView.updateLikeButton(isLike: coffee.is_favourite, isAnimate: true)
+        service.setCoffeeFavourite(coffee: coffee)
+        coffeeDetailsView.updateLikeButton(isLike: coffee.isFavourite, isAnimate: true)
     }
 }
 

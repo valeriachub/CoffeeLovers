@@ -19,13 +19,13 @@ class CoffeePresenter {
     
     // MARK: - Properties
     
-    var coffee: Coffee!
+    var coffee: LocalCoffee!
     
     weak var coffeeView: CoffeeView!
     
     // MARK: - Init Methods
     
-    init(view: CoffeeView, coffee: Coffee) {
+    init(view: CoffeeView, coffee: LocalCoffee) {
         self.coffeeView = view
         self.coffee = coffee
     }

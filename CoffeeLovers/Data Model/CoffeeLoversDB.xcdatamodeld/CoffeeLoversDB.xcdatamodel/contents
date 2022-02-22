@@ -10,14 +10,12 @@
         <attribute name="calories_solo" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="descriptions" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
-        <attribute name="ingredients" attributeType="Transformable"/>
         <attribute name="is_favourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
-        <attribute name="recipe" attributeType="Transformable"/>
         <attribute name="title" attributeType="String"/>
         <relationship name="calories_size" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CaloriesSize" inverseName="coffee" inverseEntity="CaloriesSize"/>
     </entity>
     <elements>
         <element name="CaloriesSize" positionX="-315" positionY="81" width="128" height="105"/>
-        <element name="Coffee" positionX="-565.559326171875" positionY="105.4716186523438" width="128" height="163"/>
+        <element name="Coffee" positionX="-565.559326171875" positionY="105.4716186523438" width="128" height="133"/>
     </elements>
 </model>

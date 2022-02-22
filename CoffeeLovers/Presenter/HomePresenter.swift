@@ -19,18 +19,23 @@ class HomePresenter {
     
     // MARK: - Properties
     
-    var coffeeArray = [Coffee]()
+    private var coffeeArray = [LocalCoffee]()
+    var filteredCoffee = [LocalCoffee]() {
+        didSet {
+            homeView.reloadCollectionView()
+        }
+    }
     
-    let coffeeService = CoffeeDataService()
     let homeRouter: HomeRouter!
     
     weak var homeView: HomeView!
     
     // MARK: - Init Methods
     
-    init(view: HomeView, router: HomeRouter) {
+    init(coffeeArray: [LocalCoffee], view: HomeView, router: HomeRouter) {
         self.homeView = view
         self.homeRouter = router
+        self.coffeeArray = coffeeArray
     }
     
     // MARK: - Methods
@@ -44,20 +49,19 @@ class HomePresenter {
     }
     
     func getCoffeeArray(isFavouritesOnly: Bool = false) {
-        coffeeArray = coffeeService.getCoffeeArray(isFavouritesOnly: isFavouritesOnly)
-        homeView.reloadCollectionView()
+        filteredCoffee = coffeeArray.filter { $0.isFavourite == isFavouritesOnly }
     }
     
     func getNumberOfItemsInSection() -> Int {
-        return coffeeArray.count
+        return filteredCoffee.count
     }
     
     func getCellForItemAt(indexPath: IndexPath, of collectionView: UICollectionView) -> CoffeeViewCell {
-        return CoffeeViewCell.getCellForItemAt(indexPath: indexPath, of: collectionView, with: coffeeArray[indexPath.row])
+        return CoffeeViewCell.getCellForItemAt(indexPath: indexPath, of: collectionView, with: filteredCoffee[indexPath.row])
     }
     
     func showCoffee(_ index: Int) {
-        homeRouter.present(coffee: coffeeArray[index])
+        homeRouter.present(coffee: filteredCoffee[index])
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {

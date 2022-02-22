@@ -35,9 +35,7 @@
 		3AF197C22144E4650087140F /* CoffeeAdditionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF197C12144E4650087140F /* CoffeeAdditionsView.swift */; };
 		AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */; };
 		AB0B2D41232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D3D232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift */; };
-		AB0B2D42232A5C0B00D65D96 /* Coffee+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D3E232A5C0B00D65D96 /* Coffee+CoreDataProperties.swift */; };
 		AB0B2D43232A5C0B00D65D96 /* Coffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D3F232A5C0B00D65D96 /* Coffee+CoreDataClass.swift */; };
-		AB0B2D44232A5C0B00D65D96 /* CaloriesSize+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D40232A5C0B00D65D96 /* CaloriesSize+CoreDataProperties.swift */; };
 		AB26AAF8231D39FE00F2B92B /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAF7231D39FE00F2B92B /* HomeRouter.swift */; };
 		AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */; };
 		AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */; };
@@ -80,9 +78,7 @@
 		7B1969495835B20856A27964 /* Pods-CoffeeLovers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.release.xcconfig"; sourceTree = "<group>"; };
 		AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePresenter.swift; sourceTree = "<group>"; };
 		AB0B2D3D232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AB0B2D3E232A5C0B00D65D96 /* Coffee+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB0B2D3F232A5C0B00D65D96 /* Coffee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AB0B2D40232A5C0B00D65D96 /* CaloriesSize+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AB26AAF7231D39FE00F2B92B /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		AB26AAF9231D3A3E00F2B92B /* CoffeeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoffeeConfigurator.swift; sourceTree = "<group>"; };
 		AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
@@ -195,9 +191,7 @@
 			children = (
 				3A468C392137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld */,
 				AB0B2D3D232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift */,
-				AB0B2D40232A5C0B00D65D96 /* CaloriesSize+CoreDataProperties.swift */,
 				AB0B2D3F232A5C0B00D65D96 /* Coffee+CoreDataClass.swift */,
-				AB0B2D3E232A5C0B00D65D96 /* Coffee+CoreDataProperties.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -435,7 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB0B2D42232A5C0B00D65D96 /* Coffee+CoreDataProperties.swift in Sources */,
 				AB4419F6231FFF8800530C08 /* MainNavigationController.swift in Sources */,
 				3AF197C22144E4650087140F /* CoffeeAdditionsView.swift in Sources */,
 				3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */,
@@ -451,7 +444,6 @@
 				AB0B2D43232A5C0B00D65D96 /* Coffee+CoreDataClass.swift in Sources */,
 				AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */,
 				3AE030A323210DE3009BED97 /* FavouriteController.swift in Sources */,
-				AB0B2D44232A5C0B00D65D96 /* CaloriesSize+CoreDataProperties.swift in Sources */,
 				AB26AB00231D49C000F2B92B /* HomeConfigurator.swift in Sources */,
 				AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,

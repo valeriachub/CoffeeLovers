@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import CoreData
 
-protocol HomeConfiguratorProtocol: class {
+protocol HomeConfiguratorProtocol {
     func configure(controller: HomeView)
 }
 
@@ -18,7 +19,10 @@ class HomeConfigurator: HomeConfiguratorProtocol {
     
     func configure(controller: HomeView) {
         let router = HomeRouter(controller: controller)
-        let presenter = HomePresenter(view: controller, router: router)
+        let storeURL = NSPersistentContainer.defaultDirectoryURL().appendingPathComponent("coffee-store.sqlite")
+        let coffeeArray = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
+
+        let presenter = HomePresenter(coffeeArray: coffeeArray, view: controller, router: router)
         controller.setPresenter(presenter: presenter)
     }
 }

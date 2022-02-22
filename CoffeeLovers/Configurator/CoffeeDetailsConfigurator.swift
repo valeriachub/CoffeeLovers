@@ -16,11 +16,11 @@ class CoffeeDetailsConfigurator: CoffeeDetailsConfiguratorProtocol {
     
     // MARK: - Properties
     
-    var coffee: Coffee!
+    var coffee: LocalCoffee!
     
     // MARK: - Init Methods
     
-    init(coffee: Coffee) {
+    init(coffee: LocalCoffee) {
         self.coffee = coffee
     }
     

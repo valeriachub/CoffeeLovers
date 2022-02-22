@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeRouterProtocol: ViewRouter {
-    func present(coffee: Coffee)
+    func present(coffee: LocalCoffee)
 }
 
 class HomeRouter: HomeRouterProtocol {
@@ -17,7 +17,7 @@ class HomeRouter: HomeRouterProtocol {
     // MARK: - Properties
     
     weak var homeController: HomeView?
-    var coffee: Coffee?
+    var coffee: LocalCoffee?
     
     // MARK: - Init Methods
     
@@ -27,7 +27,7 @@ class HomeRouter: HomeRouterProtocol {
     
     // MARK: - Methods
     
-    func present(coffee: Coffee) {
+    func present(coffee: LocalCoffee) {
         self.coffee = coffee
         homeController?.performSegue(withIdentifier: SegueHelper.CoffeeSegue.rawValue)
     }
