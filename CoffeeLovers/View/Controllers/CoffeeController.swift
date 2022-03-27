@@ -9,32 +9,23 @@
 import UIKit
 
 class CoffeeController: UIViewController {
-    
-    // MARK: - IBOutlets
-    
+        
     @IBOutlet weak var coffeeImageView: UIImageView!
     @IBOutlet weak var darkView: UIView!
-    @IBOutlet weak var crossView: UIView!
-    
-    // MARK: - Properties
+    @IBOutlet weak var closeButton: UIButton!
     
     var configurator: CoffeeConfigurator?
     var presenter: CoffeePresenter!
-    
-    // MARK: - Lifecycle Methods
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        configurator.configure(controller: self)
-        presenter.viewDidLoad()
+        closeButton.setTitle("", for: .normal)
+        presenter.setViews()
     }
     
-    // MARK: - Actions
-    
-    @objc
-    func onCrossClicked() {
-        presenter.onCrossClicked()
+    @IBAction func closeAction(_ sender: UIButton) {
+        presenter.closeAction()
     }
 }
 
@@ -55,10 +46,6 @@ extension CoffeeController: CoffeeDetailsDelegate {
 
 extension CoffeeController: CoffeeView {
     
-    func setCoffeeImage(imageTitle: String) {
-        coffeeImageView.image = UIImage(named: imageTitle)
-    }
-    
     func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator) {
         let coffeeDetails = CoffeeDetailsController()
         coffeeDetails.configurator = configurator
@@ -74,9 +61,8 @@ extension CoffeeController: CoffeeView {
         coffeeDetails.view.frame = CGRect(x: 0, y: height - (height / 3) - 100, width: width, height: height)
     }
     
-    func setCrossView() {
-        crossView.layer.cornerRadius = crossView.frame.height / 2.0
-        crossView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onCrossClicked)))
+    func setImage(title: String) {
+        coffeeImageView.image = UIImage(named: title)
     }
     
     func goBack() {

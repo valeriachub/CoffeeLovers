@@ -9,9 +9,8 @@
 import Foundation
 
 protocol CoffeeView: AnyObject {
-    func setCoffeeImage(imageTitle: String)
     func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator)
-    func setCrossView()
+    func setImage(title: String)
     func goBack()
 }
 
@@ -19,7 +18,11 @@ class CoffeePresenter {
     
     // MARK: - Properties
     
-    var coffee: LocalCoffee!
+    private var coffee: LocalCoffee!
+    
+    var imageName: String {
+        return coffee.image
+    }
     
     weak var coffeeView: CoffeeView!
     
@@ -32,14 +35,13 @@ class CoffeePresenter {
     
     // MARK: - Methods
     
-    func viewDidLoad() {
+    func setViews() {
         setCoffeeImage()
         setCoffeeDetails()
-        setCrossView()
     }
     
     func setCoffeeImage() {
-        coffeeView.setCoffeeImage(imageTitle:  coffee.image ?? "c_latte")
+        coffeeView.setImage(title: coffee.image)
     }
     
     func setCoffeeDetails() {
@@ -47,11 +49,8 @@ class CoffeePresenter {
         coffeeView.setCoffeeDetails(with: coffeeDetailsConfigurator)
     }
     
-    func setCrossView() {
-        coffeeView.setCrossView()
-    }
     
-    func onCrossClicked() {
+    func closeAction() {
         coffeeView.goBack()
     }
 }
