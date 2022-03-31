@@ -136,21 +136,6 @@ class CoffeeController: UIViewController {
     }
 }
 
-extension CoffeeController: CoffeeDetailsDelegate {
-    
-    func bottomSheetOpen(isOpen: Bool, duration: Double) {
-        if isOpen {
-            self.dimmedView.isHidden = !isOpen
-        }
-        
-        UIView.animate(withDuration: duration, delay: 0.0, animations: {
-            self.dimmedView.alpha = isOpen ? 0.4 : 0
-        }) { _ in
-            self.dimmedView.isHidden = !isOpen
-        }
-    }
-}
-
 extension CoffeeController: CoffeeView {
     func display(viewModel: CoffeeViewModel) {
         coffeeImageView.image = UIImage(named: viewModel.imageTitle)

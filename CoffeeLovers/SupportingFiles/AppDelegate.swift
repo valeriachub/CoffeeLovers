@@ -54,21 +54,6 @@ extension AppDelegate {
     }
 }
 
-public class CollectionTabNavigationController: UINavigationController {
-    
-    var selection: ((LocalCoffee) -> Void)?
-    
-    init(rootViewController: UIViewController, imageName: String, tag: Int) {
-        super.init(rootViewController: rootViewController)
-        isNavigationBarHidden = true
-        tabBarItem = UITabBarItem(title: nil, image: UIImage(named: imageName)!, tag: tag)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-}
-
 public final class CollectionUIComposer {
     
     public static func composedWith(storeURL: URL, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
