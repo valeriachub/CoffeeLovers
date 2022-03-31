@@ -37,7 +37,6 @@ class CoffeeDetailsController: UIViewController {
     
     weak var delegate: CoffeeDetailsDelegate?
     
-    var configurator: CoffeeDetailsConfigurator!
     var presenter: CoffeeDetailsPresenter!
     
     // MARK: - Lifecycle Methods
@@ -45,7 +44,6 @@ class CoffeeDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configurator.configure(controller: self)
         presenter.viewDidLoad()
         presenter.setReceiptTextHeight(receiptViewOriginY: receiptView.frame.origin.y,
                                        receiptTextOriginY: receiptTextView.frame.origin.y,
