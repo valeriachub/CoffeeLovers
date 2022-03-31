@@ -12,23 +12,13 @@ class IngredientCell: UITableViewCell {
     
     // MARK: - IBOutlets
     
-    @IBOutlet weak var dotView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    
-    // MARK: - Lifecycle Methods
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    @IBOutlet weak var dotView: UIView! {
+        didSet {
+            dotView.layer.cornerRadius = dotView.bounds.width / 2
+        }
+    }
         
-        setDotView()
-    }
-    
-    // MARK: - Methods
-    
-    private func setDotView() {
-        dotView.layer.cornerRadius = dotView.bounds.width / 2
-    }
-    
     static func getCellForRowAt(indexPath: IndexPath, of tableView: UITableView, for ingredient: String) -> IngredientCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "\(IngredientCell.self)", for: indexPath) as? IngredientCell else {
             fatalError()
@@ -39,7 +29,7 @@ class IngredientCell: UITableViewCell {
         return cell
     }
     
-    private func setTitle(title: String) {
+    func setTitle(title: String) {
         titleLabel.text = title
     }
 }

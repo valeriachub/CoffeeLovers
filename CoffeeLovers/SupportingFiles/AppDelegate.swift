@@ -102,6 +102,5 @@ public class WeakWrapper<T: AnyObject> {
     }
 }
 
-extension WeakWrapper: CoffeeCollectionView where T: CoffeeCollectionView {
-    
-}
+extension WeakWrapper: CoffeeCollectionView where T: CoffeeCollectionView {}
+

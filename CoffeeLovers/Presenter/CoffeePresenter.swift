@@ -8,9 +8,15 @@
 
 import Foundation
 
+struct CoffeeViewModel {
+    let title: String
+    let imageTitle: String
+    let description: String
+}
+
 protocol CoffeeView: AnyObject {
-    func setCoffeeDetails(with configurator: CoffeeDetailsConfigurator)
-    func setImage(title: String)
+    func display(viewModel: CoffeeViewModel)
+    
     func goBack()
 }
 
@@ -24,6 +30,7 @@ class CoffeePresenter {
         return coffee.image
     }
     
+    
     weak var coffeeView: CoffeeView!
     
     // MARK: - Init Methods
@@ -35,20 +42,10 @@ class CoffeePresenter {
     
     // MARK: - Methods
     
-    func setViews() {
-        setCoffeeImage()
-        setCoffeeDetails()
+    func viewDidLoad() {
+        let viewModel = CoffeeViewModel(title: coffee.title, imageTitle: coffee.image, description: coffee.descriptions)
+        coffeeView.display(viewModel: viewModel)
     }
-    
-    func setCoffeeImage() {
-        coffeeView.setImage(title: coffee.image)
-    }
-    
-    func setCoffeeDetails() {
-        let coffeeDetailsConfigurator = CoffeeDetailsConfigurator(coffee: coffee)
-        coffeeView.setCoffeeDetails(with: coffeeDetailsConfigurator)
-    }
-    
     
     func closeAction() {
         coffeeView.goBack()

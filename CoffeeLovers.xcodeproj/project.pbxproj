@@ -44,6 +44,9 @@
 		AB4A51C1231EA9B30097A849 /* MLControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB4A51C0231EA9B30097A849 /* MLControl.swift */; };
 		AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */; };
 		AB583A56231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */; };
+		ABE7CD9627F0C30800DBB02E /* CustomModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CD9527F0C30800DBB02E /* CustomModalViewController.swift */; };
+		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
+		ABE7CD9B27F19F2B00DBB02E /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		AB4A51C0231EA9B30097A849 /* MLControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLControl.swift; sourceTree = "<group>"; };
 		AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsPresenter.swift; sourceTree = "<group>"; };
 		AB583A55231D5FD200E875D3 /* CoffeeDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsConfigurator.swift; sourceTree = "<group>"; };
+		ABE7CD9527F0C30800DBB02E /* CustomModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModalViewController.swift; sourceTree = "<group>"; };
+		ABE7CD9727F0E7D600DBB02E /* ModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
+		ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeLovers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D166E95D079EC521A3BBBCF9 /* Pods-CoffeeLovers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +207,7 @@
 				3AA18249231AE2DE006ADC8A /* CoffeeController.swift */,
 				3AA1824B231AE32F006ADC8A /* CoffeeDetailsController.swift */,
 				3AA1824D231BE09C006ADC8A /* CoffeeDetailsController.xib */,
+				ABE7CD9527F0C30800DBB02E /* CustomModalViewController.swift */,
 			);
 			name = Controllers;
 			path = ../Controllers;
@@ -209,6 +216,7 @@
 		3A468C092135397A0046DAFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ABE7CD9927F19EAC00DBB02E /* ModalView */,
 				3A468C08213539710046DAFD /* Controllers */,
 				3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */,
 				3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */,
@@ -246,6 +254,15 @@
 				AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */,
 			);
 			path = CoffeeLoversUnitTests;
+			sourceTree = "<group>";
+		};
+		ABE7CD9927F19EAC00DBB02E /* ModalView */ = {
+			isa = PBXGroup;
+			children = (
+				ABE7CD9727F0E7D600DBB02E /* ModalView.xib */,
+				ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */,
+			);
+			path = ModalView;
 			sourceTree = "<group>";
 		};
 		ABEA48F3231821DD00A655B1 /* Storyboard */ = {
@@ -363,6 +380,7 @@
 				3AA1824E231BE09C006ADC8A /* CoffeeDetailsController.xib in Resources */,
 				3A468BF121346B320046DAFD /* Assets.xcassets in Resources */,
 				3AF197BE213E67A70087140F /* ImageSlideView.xib in Resources */,
+				ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */,
 				3AC54297231C369800E78AAE /* IngredientCell.xib in Resources */,
 				3A468BFC213476AC0046DAFD /* Launch Screen.storyboard in Resources */,
 				3A468BEF21346B2E0046DAFD /* Main.storyboard in Resources */,
@@ -428,6 +446,7 @@
 				3AF197BC213E678F0087140F /* ImageSlideView.swift in Sources */,
 				3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */,
 				AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */,
+				ABE7CD9627F0C30800DBB02E /* CustomModalViewController.swift in Sources */,
 				3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */,
 				AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */,
 				3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */,
@@ -449,6 +468,7 @@
 				AB0B2D41232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift in Sources */,
 				AB26AAFA231D3A3E00F2B92B /* CoffeeConfigurator.swift in Sources */,
 				3AA1824C231AE32F006ADC8A /* CoffeeDetailsController.swift in Sources */,
+				ABE7CD9B27F19F2B00DBB02E /* ModalView.swift in Sources */,
 				3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

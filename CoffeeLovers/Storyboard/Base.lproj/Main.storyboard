@@ -23,6 +23,10 @@
                                 <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-4I-XgJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-Cw-jpD">
                                 <rect key="frame" x="20" y="20" width="40" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,8 +34,8 @@
                                     <constraint firstAttribute="height" constant="40" id="5Bk-WW-oy4"/>
                                     <constraint firstAttribute="width" constant="40" id="e9n-bv-mRt"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="ic_cross"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="ic_cross"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="20"/>
@@ -41,10 +45,6 @@
                                     <action selector="closeAction:" destination="sVS-Ez-L3q" eventType="touchUpInside" id="XW5-An-ZTC"/>
                                 </connections>
                             </button>
-                            <view hidden="YES" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-4I-XgJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Tgu-ZZ-EpV"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,7 +54,7 @@
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="bottom" secondItem="Tgu-ZZ-EpV" secondAttribute="bottom" id="DQC-O0-Y9o"/>
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="top" secondItem="Rwb-We-SEz" secondAttribute="top" id="E9S-Ch-m2D"/>
                             <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="bottom" secondItem="1OU-fK-y0c" secondAttribute="bottom" id="I9o-g2-NN6"/>
-                            <constraint firstItem="1OU-fK-y0c" firstAttribute="height" secondItem="kyT-5f-ERK" secondAttribute="height" multiplier="0.5" id="IdO-3Z-Q73"/>
+                            <constraint firstItem="1OU-fK-y0c" firstAttribute="height" secondItem="kyT-5f-ERK" secondAttribute="height" multiplier="1/2" id="IdO-3Z-Q73"/>
                             <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="trailing" secondItem="kyT-5f-ERK" secondAttribute="trailing" id="MHe-5Q-9xx"/>
                             <constraint firstItem="kyT-5f-ERK" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="PAO-kQ-Qaz"/>
                             <constraint firstItem="kyT-5f-ERK" firstAttribute="top" secondItem="Rwb-We-SEz" secondAttribute="top" id="S0M-Kz-rHh"/>
@@ -68,7 +68,7 @@
                     <connections>
                         <outlet property="closeButton" destination="Irb-Cw-jpD" id="EL2-g3-I0P"/>
                         <outlet property="coffeeImageView" destination="kyT-5f-ERK" id="afE-Bc-jwt"/>
-                        <outlet property="darkView" destination="NgX-4I-XgJ" id="lfk-ob-7gF"/>
+                        <outlet property="dimmedView" destination="NgX-4I-XgJ" id="lfk-ob-7gF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b97-Wg-vEd" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleAspectFit" id="iN0-l3-epB" customClass="ModalView" customModule="CoffeeLovers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="403" height="702"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTV-RV-oxP">
+                    <rect key="frame" x="0.0" y="44" width="403" height="658"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A shot of espresso that is served with at least one cup (or more) of steamed milk." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUX-fO-jEC">
+                            <rect key="frame" x="20" y="63" width="363" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="xO0-W5-3X7"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="12"/>
+                            <color key="textColor" red="0.4431372549" green="0.46274509800000002" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coffee" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zZm-dh-WXS">
+                            <rect key="frame" x="20" y="30" width="363" height="33"/>
+                            <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="24"/>
+                            <color key="textColor" red="0.2156862745" green="0.2274509804" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Vk-qK-CAz">
+                            <rect key="frame" x="0.0" y="106" width="403" height="1"/>
+                            <color key="backgroundColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="AaX-mo-oIn"/>
+                            </constraints>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="24" estimatedRowHeight="-1" sectionHeaderHeight="24" estimatedSectionHeaderHeight="-1" sectionFooterHeight="24" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A7Q-U4-BqM">
+                            <rect key="frame" x="0.0" y="107" width="383" height="531"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zZm-dh-WXS" secondAttribute="trailing" constant="20" id="0Uy-s5-9nd"/>
+                        <constraint firstItem="QUX-fO-jEC" firstAttribute="top" secondItem="zZm-dh-WXS" secondAttribute="bottom" id="0o0-tF-JcJ"/>
+                        <constraint firstAttribute="trailing" secondItem="QUX-fO-jEC" secondAttribute="trailing" constant="20" id="J2S-qk-6qn"/>
+                        <constraint firstItem="zZm-dh-WXS" firstAttribute="top" secondItem="cTV-RV-oxP" secondAttribute="top" constant="30" id="JVY-iX-CsL"/>
+                        <constraint firstItem="A7Q-U4-BqM" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" id="OIU-Zv-v7Y"/>
+                        <constraint firstItem="QUX-fO-jEC" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" constant="20" id="PBr-ge-vag"/>
+                        <constraint firstAttribute="bottom" secondItem="A7Q-U4-BqM" secondAttribute="bottom" constant="20" id="R47-Wi-nxe"/>
+                        <constraint firstItem="6Vk-qK-CAz" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" id="SKR-01-q2a"/>
+                        <constraint firstAttribute="trailing" secondItem="A7Q-U4-BqM" secondAttribute="trailing" constant="20" id="Vai-qg-JC7"/>
+                        <constraint firstItem="zZm-dh-WXS" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" constant="20" id="cL2-uk-nab"/>
+                        <constraint firstItem="A7Q-U4-BqM" firstAttribute="top" secondItem="6Vk-qK-CAz" secondAttribute="bottom" id="lyb-KH-0TF"/>
+                        <constraint firstItem="6Vk-qK-CAz" firstAttribute="top" secondItem="QUX-fO-jEC" secondAttribute="bottom" constant="8" id="npc-eg-rGV"/>
+                        <constraint firstAttribute="trailing" secondItem="6Vk-qK-CAz" secondAttribute="trailing" id="xI7-1Y-G5n"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cTV-RV-oxP" secondAttribute="bottom" id="E9e-4R-Fvm"/>
+                <constraint firstItem="cTV-RV-oxP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="eRK-X7-W86"/>
+                <constraint firstItem="cTV-RV-oxP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="nhs-sz-0v6"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cTV-RV-oxP" secondAttribute="trailing" id="xo9-rK-dMu"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="QUX-fO-jEC" id="onr-oJ-2eM"/>
+                <outlet property="tableView" destination="A7Q-U4-BqM" id="Xtt-mf-gou"/>
+                <outlet property="titleLabel" destination="zZm-dh-WXS" id="D1r-Hh-2Ga"/>
+            </connections>
+            <point key="canvasLocation" x="129.71014492753625" y="178.79464285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

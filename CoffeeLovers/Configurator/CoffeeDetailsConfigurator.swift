@@ -28,6 +28,6 @@ class CoffeeDetailsConfigurator: CoffeeDetailsConfiguratorProtocol {
     
     func configure(controller: CoffeeDetailsController) {
         let presenter = CoffeeDetailsPresenter(view: controller, coffee: coffee)
-        controller.presenter = presenter
+//        controller.presenter = presenter
     }
 }
