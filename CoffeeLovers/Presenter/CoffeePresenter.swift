@@ -12,6 +12,7 @@ struct CoffeeViewModel {
     let title: String
     let imageTitle: String
     let description: String
+    let ingredients: [String]
 }
 
 protocol CoffeeView: AnyObject {
@@ -43,7 +44,7 @@ class CoffeePresenter {
     // MARK: - Methods
     
     func viewDidLoad() {
-        let viewModel = CoffeeViewModel(title: coffee.title, imageTitle: coffee.image, description: coffee.descriptions)
+        let viewModel = CoffeeViewModel(title: coffee.title, imageTitle: coffee.image, description: coffee.descriptions, ingredients: coffee.ingredients)
         coffeeView.display(viewModel: viewModel)
     }
     
