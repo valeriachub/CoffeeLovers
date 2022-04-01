@@ -22,7 +22,7 @@ public class ManagedCoffee: NSManagedObject {
         return NSFetchRequest<ManagedCoffee>(entityName: "CachedCoffee")
     }
     
-    var localCoffee: Coffee {
+    var coffee: Coffee {
         let ingredientsArray: [String] = (ingredients.array as! [StringHolder]).map { $0.value }
         let recipeArray: [String] = (recipe.array as! [StringHolder]).map { $0.value }
         

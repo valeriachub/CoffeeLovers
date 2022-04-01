@@ -81,7 +81,7 @@ extension CoreDataStore {
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
         do {
-            let local = try context.fetch(request).map { $0.localCoffee }
+            let local = try context.fetch(request).map { $0.coffee }
             return local
             
         } catch {
