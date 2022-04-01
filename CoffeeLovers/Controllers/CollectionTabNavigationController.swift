@@ -10,7 +10,7 @@ import UIKit
 
 public class CollectionTabNavigationController: UINavigationController {
     
-    var selection: ((LocalCoffee) -> Void)?
+    var selection: ((Coffee) -> Void)?
     
     init(rootViewController: UIViewController, imageName: String, tag: Int) {
         super.init(rootViewController: rootViewController)

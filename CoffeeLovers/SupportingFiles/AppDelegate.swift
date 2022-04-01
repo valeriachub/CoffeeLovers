@@ -60,7 +60,7 @@ public final class CollectionUIComposer {
         let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
         let controller = CoffeeCollectionViewController()
         let navigationController = CollectionTabNavigationController(rootViewController: controller, imageName: imageName, tag: tag)
-        let selection: (LocalCoffee) -> Void = { [weak navigationController] coffee in
+        let selection: (Coffee) -> Void = { [weak navigationController] coffee in
             let controller = CollectionUIComposer.getCoffeeController(for: coffee)
             navigationController?.pushViewController(controller, animated: true)
         }
@@ -70,7 +70,7 @@ public final class CollectionUIComposer {
         return navigationController
     }
     
-    private static func getCoffeeController(for coffee: LocalCoffee) -> CoffeeController {
+    private static func getCoffeeController(for coffee: Coffee) -> CoffeeController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CoffeeController") as! CoffeeController
         let presenter = CoffeePresenter(view: controller, coffee: coffee)

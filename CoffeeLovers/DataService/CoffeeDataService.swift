@@ -10,7 +10,7 @@ import CoreData
 
 public final class CoreDataStore {
     private static let modelName = "CoffeeLoversDB"
-    private static let model: NSManagedObjectModel? = Bundle(for: Coffee.self)
+    private static let model: NSManagedObjectModel? = Bundle(for: ManagedCoffee.self)
         .url(forResource: modelName, withExtension: "momd")
         .flatMap { NSManagedObjectModel(contentsOf: $0) }
     
@@ -39,18 +39,29 @@ public final class CoreDataStore {
 
 extension CoreDataStore {
     
-    func setCoffeeFavourite(coffee: LocalCoffee) {
+    func setCoffeeFavourite(coffee: Coffee) {
 //        coffee.isFavourite = !coffee.isFavourite
         try? context.save()
     }
     
     func saveCoffeeModels(_ models: [CoffeeModel]) {
         for model in models {
-            let coffee = Coffee(context: context)
-            coffee.title = model.title
-            coffee.image = model.image
-            coffee.descriptions = model.descriptions
-            coffee.is_favourite = model.is_favourite
+            let managedCoffee = ManagedCoffee(context: context)
+            managedCoffee.title = model.title
+            managedCoffee.image = model.image
+            managedCoffee.descriptions = model.descriptions
+            managedCoffee.is_favourite = model.is_favourite
+            managedCoffee.ingredients = NSOrderedSet()
+            
+            for ingredient in model.ingredients {
+                let stringHolder = StringHolder(context: context)
+                stringHolder.value = ingredient
+                managedCoffee.addToIngredients(stringHolder)
+            }
+            
+            
+//            managedCoffee.addToIngredients(NSOrderedSet(array: model.ingredients))
+//            managedCoffee.addToRecipe(NSOrderedSet(array: model.recipe))
             
             try? context.save()
         }
@@ -58,9 +69,9 @@ extension CoreDataStore {
 }
 
 extension CoreDataStore {
-    func getCoffeeData(isFavouritesOnly: Bool = false) -> [LocalCoffee]? {
+    func getCoffeeData(isFavouritesOnly: Bool = false) -> [Coffee]? {
                 
-        let request = NSFetchRequest<Coffee>(entityName: "Coffee")
+        let request = NSFetchRequest<ManagedCoffee>(entityName: "ManagedCoffee")
         request.returnsObjectsAsFaults = false
         
         if isFavouritesOnly {
@@ -136,11 +147,15 @@ struct CoffeeModel: Codable {
     let image: String
     let is_favourite: Bool
     let descriptions: String
+    let ingredients: [String]
+    let recipe: [String]
     
 }
-public struct LocalCoffee {
+public struct Coffee {
     let title: String
     let image: String
     let isFavourite: Bool
     let descriptions: String
+    let ingredients: [String]
+    let recipeSteps: [String]
 }

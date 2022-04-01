@@ -25,16 +25,15 @@
 		3AF197AF2138FFB40087140F /* CoffeeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
 		3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF197B7213BCB190087140F /* IngredientColor.swift */; };
 		AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */; };
-		AB0B2D41232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D3D232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift */; };
-		AB0B2D43232A5C0B00D65D96 /* Coffee+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D3F232A5C0B00D65D96 /* Coffee+CoreDataClass.swift */; };
+		AB0B2D43232A5C0B00D65D96 /* ManagedCoffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0B2D3F232A5C0B00D65D96 /* ManagedCoffee.swift */; };
 		AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */; };
 		AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB26AAFD231D3B2700F2B92B /* SegueHelper.swift */; };
 		AB3791B527C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */; };
 		AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */; };
-		AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
 		ABE7CD9B27F19F2B00DBB02E /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */; };
 		ABE7CD9D27F5EC6700DBB02E /* CollectionTabNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CD9C27F5EC6700DBB02E /* CollectionTabNavigationController.swift */; };
+		ABE7CD9F27F74C5500DBB02E /* StringHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE7CD9E27F74C5500DBB02E /* StringHolder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,17 +56,16 @@
 		3AF197B7213BCB190087140F /* IngredientColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientColor.swift; sourceTree = "<group>"; };
 		7B1969495835B20856A27964 /* Pods-CoffeeLovers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.release.xcconfig"; sourceTree = "<group>"; };
 		AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePresenter.swift; sourceTree = "<group>"; };
-		AB0B2D3D232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaloriesSize+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AB0B2D3F232A5C0B00D65D96 /* Coffee+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coffee+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AB0B2D3F232A5C0B00D65D96 /* ManagedCoffee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedCoffee.swift; sourceTree = "<group>"; };
 		AB26AAFB231D3AD100F2B92B /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		AB26AAFD231D3B2700F2B92B /* SegueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHelper.swift; sourceTree = "<group>"; };
 		AB3791B227C3E8B90000B0A4 /* CoffeeLoversUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeLoversUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLoversUnitTests.swift; sourceTree = "<group>"; };
 		AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionPresenter.swift; sourceTree = "<group>"; };
-		AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeDetailsPresenter.swift; sourceTree = "<group>"; };
 		ABE7CD9727F0E7D600DBB02E /* ModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
 		ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		ABE7CD9C27F5EC6700DBB02E /* CollectionTabNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTabNavigationController.swift; sourceTree = "<group>"; };
+		ABE7CD9E27F74C5500DBB02E /* StringHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHolder.swift; sourceTree = "<group>"; };
 		C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeLovers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D166E95D079EC521A3BBBCF9 /* Pods-CoffeeLovers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +102,6 @@
 			children = (
 				AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */,
 				AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */,
-				AB583A53231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -166,8 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				3A468C392137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld */,
-				AB0B2D3D232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift */,
-				AB0B2D3F232A5C0B00D65D96 /* Coffee+CoreDataClass.swift */,
+				AB0B2D3F232A5C0B00D65D96 /* ManagedCoffee.swift */,
+				ABE7CD9E27F74C5500DBB02E /* StringHolder.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -390,20 +387,19 @@
 				3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */,
 				AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */,
 				3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */,
-				AB583A54231D5D3D00E875D3 /* CoffeeDetailsPresenter.swift in Sources */,
 				3AF197B8213BCB190087140F /* IngredientColor.swift in Sources */,
 				3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */,
 				AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */,
 				ABE7CD9D27F5EC6700DBB02E /* CollectionTabNavigationController.swift in Sources */,
+				ABE7CD9F27F74C5500DBB02E /* StringHolder.swift in Sources */,
 				3A8469AD2321611300CCC354 /* ImageView+Ext.swift in Sources */,
-				AB0B2D43232A5C0B00D65D96 /* Coffee+CoreDataClass.swift in Sources */,
+				AB0B2D43232A5C0B00D65D96 /* ManagedCoffee.swift in Sources */,
 				AB26AAFE231D3B2700F2B92B /* SegueHelper.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
 				3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */,
 				3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */,
 				3AB02005231A693000AC0EC4 /* CoffeeDataService.swift in Sources */,
 				AB26AAFC231D3AD100F2B92B /* ViewRouter.swift in Sources */,
-				AB0B2D41232A5C0B00D65D96 /* CaloriesSize+CoreDataClass.swift in Sources */,
 				ABE7CD9B27F19F2B00DBB02E /* ModalView.swift in Sources */,
 				3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */,
 			);

@@ -15,17 +15,17 @@ protocol CoffeeCollectionView {
 
 public class CoffeeCollectionPresenter {
     
-    private let localCoffee: [LocalCoffee]
-    private var filtered: [LocalCoffee] {
+    private let localCoffee: [Coffee]
+    private var filtered: [Coffee] {
         get {
             return isFavourite ? localCoffee.filter { $0.isFavourite } : localCoffee
         }
     }
     private let view: CoffeeCollectionView
     private let isFavourite: Bool
-    private let select: (LocalCoffee) -> Void
+    private let select: (Coffee) -> Void
     
-    init(localCoffee: [LocalCoffee], view: CoffeeCollectionView, isFavourite: Bool, select: @escaping (LocalCoffee) -> Void) {
+    init(localCoffee: [Coffee], view: CoffeeCollectionView, isFavourite: Bool, select: @escaping (Coffee) -> Void) {
         self.localCoffee = localCoffee
         self.view = view
         self.isFavourite = isFavourite

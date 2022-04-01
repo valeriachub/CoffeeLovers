@@ -24,7 +24,7 @@ class CoffeePresenter {
     
     // MARK: - Properties
     
-    private var coffee: LocalCoffee!
+    private var coffee: Coffee!
     
     var imageName: String {
         return coffee.image
@@ -35,7 +35,7 @@ class CoffeePresenter {
     
     // MARK: - Init Methods
     
-    init(view: CoffeeView, coffee: LocalCoffee) {
+    init(view: CoffeeView, coffee: Coffee) {
         self.coffeeView = view
         self.coffee = coffee
     }
