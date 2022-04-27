@@ -39,9 +39,9 @@ public final class CoreDataStore {
 
 extension CoreDataStore {
     
-    private let IS_DATA_PRELOADED = "isDataPreloaded"
-    private let COFFEE_DATA = "CoffeeData"
-    private let JSON = "json"
+    private var IS_DATA_PRELOADED: String { "isDataPreloaded" }
+    private var COFFEE_DATA: String { "CoffeeData" }
+    private var JSON: String { "json" }
     
     struct FailedLoadJson: Swift.Error {}
     struct FailedMapJson: Swift.Error {}
@@ -111,24 +111,12 @@ extension CoreDataStore {
 
 
 extension CoreDataStore {
-    func getCoffeeData(isFavouritesOnly: Bool = false) -> [Coffee]? {
+    func getCoffeeData() -> [Coffee]? {
                 
         let request = NSFetchRequest<ManagedCoffee>(entityName: "ManagedCoffee")
         request.returnsObjectsAsFaults = false
-        
-        if isFavouritesOnly {
-            request.predicate = NSPredicate(format: "is_favourite == 1")
-        }
-        
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-        
-        do {
-            let local = try context.fetch(request).map { $0.coffee }
-            return local
-            
-        } catch {
-            return nil
-        }
+        return try? context.fetch(request).map { $0.coffee }
     }
 }
 
