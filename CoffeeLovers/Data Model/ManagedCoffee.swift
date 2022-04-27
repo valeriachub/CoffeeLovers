@@ -18,8 +18,11 @@ public class ManagedCoffee: NSManagedObject {
     @NSManaged public var ingredients: NSOrderedSet
     @NSManaged public var recipe: NSOrderedSet
     
-    @nonobjc public class func fetchRequest() -> NSFetchRequest<ManagedCoffee> {
-        return NSFetchRequest<ManagedCoffee>(entityName: "CachedCoffee")
+    public static var sortedFetchRequest: NSFetchRequest<ManagedCoffee> {
+        let request = NSFetchRequest<ManagedCoffee>(entityName: "ManagedCoffee")
+        request.returnsObjectsAsFaults = false
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+        return request
     }
     
     var coffee: Coffee {
@@ -27,15 +30,6 @@ public class ManagedCoffee: NSManagedObject {
         let recipeArray: [String] = (recipe.array as! [StringHolder]).map { $0.value }
         
         return Coffee(title: title, image: image, isFavourite: is_favourite, descriptions: descriptions, ingredients: ingredientsArray, recipeSteps: recipeArray)
-    }
-    
-    func addToIngredients(_ values: NSOrderedSet, context: NSManagedObjectContext) {
-        for value in values {
-            guard let stringValue = value as? String else { return }
-            let ingredient = StringHolder(context: context)
-            ingredient.value = stringValue
-            
-        }
     }
 }
 

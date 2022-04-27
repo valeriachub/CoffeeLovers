@@ -75,14 +75,6 @@ extension CoreDataStore {
             completion(.failure(FailedMapJson()))
         }
     }
-}
-
-extension CoreDataStore {
-    
-    func setCoffeeFavourite(coffee: Coffee) {
-//        coffee.isFavourite = !coffee.isFavourite
-        try? context.save()
-    }
     
     func saveCoffeeModels(_ models: [CoffeeModel]) {
         for model in models {
@@ -92,31 +84,37 @@ extension CoreDataStore {
             managedCoffee.descriptions = model.descriptions
             managedCoffee.is_favourite = model.is_favourite
             managedCoffee.ingredients = NSOrderedSet()
+            managedCoffee.recipe = NSOrderedSet()
             
             for ingredient in model.ingredients {
-                let stringHolder = StringHolder(context: context)
-                stringHolder.value = ingredient
-                managedCoffee.addToIngredients(stringHolder)
+                managedCoffee.addToIngredients(StringHolder(value: ingredient, context: context))
             }
             
-            
-//            managedCoffee.addToIngredients(NSOrderedSet(array: model.ingredients))
-//            managedCoffee.addToRecipe(NSOrderedSet(array: model.recipe))
+            for recipe in model.recipe {
+                managedCoffee.addToIngredients(StringHolder(value: recipe, context: context))
+            }
             
             try? context.save()
         }
     }
 }
 
+extension CoreDataStore {
+    
+    func setCoffeeFavourite(coffee: Coffee) {
+//        coffee.isFavourite = !coffee.isFavourite
+        try? context.save()
+    }
+    
+    
+}
+
 
 
 extension CoreDataStore {
+    
     func getCoffeeData() -> [Coffee]? {
-                
-        let request = NSFetchRequest<ManagedCoffee>(entityName: "ManagedCoffee")
-        request.returnsObjectsAsFaults = false
-        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
-        return try? context.fetch(request).map { $0.coffee }
+        return try? context.fetch(ManagedCoffee.sortedFetchRequest).map { $0.coffee }
     }
 }
 

@@ -17,3 +17,11 @@ public class StringHolder: NSManagedObject {
         return NSFetchRequest<StringHolder>(entityName: "StringHolder")
     }
 }
+
+extension StringHolder {
+    
+    convenience init(value: String, context: NSManagedObjectContext) {
+        self.init(context: context)
+        self.value = value
+    }
+}
