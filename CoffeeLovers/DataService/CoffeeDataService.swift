@@ -39,6 +39,46 @@ public final class CoreDataStore {
 
 extension CoreDataStore {
     
+    private let IS_DATA_PRELOADED = "isDataPreloaded"
+    private let COFFEE_DATA = "CoffeeData"
+    private let JSON = "json"
+    
+    struct FailedLoadJson: Swift.Error {}
+    struct FailedMapJson: Swift.Error {}
+    
+    func preloadData() {
+        guard UserDefaults.standard.bool(forKey: IS_DATA_PRELOADED) == false else {
+            return
+        }
+        
+        loadDataFromJson { result in
+            if let models = try? result.get() {
+                saveCoffeeModels(models)
+                UserDefaults.standard.set(true, forKey: IS_DATA_PRELOADED)
+            } else {
+                print(result.mapError { $0 })
+            }
+        }
+    }
+    
+    private func loadDataFromJson(completion: (Result<[CoffeeModel], Error>) -> Void) {
+        guard let url = Bundle.main.url(forResource: COFFEE_DATA, withExtension: JSON) else {
+            completion(.failure(FailedLoadJson()))
+            return
+        }
+        
+        do {
+            let data = try Data(contentsOf: url)
+            let root = try JSONDecoder().decode(Root.self, from: data)
+            completion(.success(root.coffee))
+        } catch {
+            completion(.failure(FailedMapJson()))
+        }
+    }
+}
+
+extension CoreDataStore {
+    
     func setCoffeeFavourite(coffee: Coffee) {
 //        coffee.isFavourite = !coffee.isFavourite
         try? context.save()
@@ -68,6 +108,8 @@ extension CoreDataStore {
     }
 }
 
+
+
 extension CoreDataStore {
     func getCoffeeData(isFavouritesOnly: Bool = false) -> [Coffee]? {
                 
@@ -86,39 +128,6 @@ extension CoreDataStore {
             
         } catch {
             return nil
-        }
-    }
-    
-    struct FailedLoadJson: Swift.Error {}
-    struct FailedMapJson: Swift.Error {}
-    
-    func preloadData() {
-        guard UserDefaults.standard.bool(forKey: "isDataPreloaded") == false else {
-            return
-        }
-        
-        loadDataFromJson { result in
-            if let models = try? result.get() {
-                saveCoffeeModels(models)
-                UserDefaults.standard.set(true, forKey: "isDataPreloaded")
-            } else {
-                print(result.mapError { $0 })
-            }
-        }
-    }
-    
-    private func loadDataFromJson(completion: (Result<[CoffeeModel], Error>) -> Void) {
-        guard let url = Bundle.main.url(forResource: "CoffeeData", withExtension: "json") else {
-            completion(.failure(FailedLoadJson()))
-            return
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let root = try JSONDecoder().decode(Root.self, from: data)
-            completion(.success(root.coffee))
-        } catch {
-            completion(.failure(FailedMapJson()))
         }
     }
 }
