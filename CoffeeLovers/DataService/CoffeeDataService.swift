@@ -91,7 +91,7 @@ extension CoreDataStore {
             }
             
             for recipe in model.recipe {
-                managedCoffee.addToIngredients(StringHolder(value: recipe, context: context))
+                managedCoffee.addToRecipe(StringHolder(value: recipe, context: context))
             }
             
             try? context.save()
