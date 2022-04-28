@@ -16,6 +16,9 @@ class ModalView: UIView {
         didSet {
             
             tableView.register(UINib(nibName: "\(IngredientCell.self)", bundle: nil), forCellReuseIdentifier: "\(IngredientCell.self)")
+            tableView.register(UINib(nibName: "\(RecipeCell.self)", bundle: nil), forCellReuseIdentifier: "\(RecipeCell.self)")
+            tableView.rowHeight = UITableView.automaticDimension
+            tableView.estimatedRowHeight = 500
             tableView.delegate = self
             tableView.dataSource = self
         }
@@ -56,7 +59,7 @@ extension ModalView: UITableViewDelegate, UITableViewDataSource {
             return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: ingredients[indexPath.row])
             
         default:
-            return IngredientCell.getCellForRowAt(indexPath: indexPath, of: tableView, for: ingredients[indexPath.row])
+            return RecipeCell.getCellForRow(indexPath: indexPath, of: tableView, for: recipeSteps[indexPath.row])
 
             
         }
@@ -65,7 +68,7 @@ extension ModalView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return ingredients.count
-        default: return ingredients.count
+        default: return recipeSteps.count
         }
     }
     

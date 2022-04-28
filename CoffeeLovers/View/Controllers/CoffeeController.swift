@@ -143,10 +143,10 @@ extension CoffeeController: CoffeeView {
         coffeeDescriptionModalView.updateTitleLabel(with: viewModel.title)
         coffeeDescriptionModalView.updateDescriptionLabel(with: viewModel.description)
         
-        let ingredient = viewModel.ingredients
-        let recipeSteps = ["Recipe 1", "Recipe 2", "Recipe 3", "Recipe 4", "Recipe 5"]
+        let ingredients = viewModel.ingredients
+        let recipeSteps = viewModel.recipe
         
-        coffeeDescriptionModalView.updateRecipe(ingredients: ingredient, steps: recipeSteps)
+        coffeeDescriptionModalView.updateRecipe(ingredients: ingredients, steps: recipeSteps)
     }
     
     func goBack() {
