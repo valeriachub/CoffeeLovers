@@ -99,27 +99,43 @@ class CoffeeController: UIViewController {
         let isDraggingDown = yPoint > 0
         
         let newHeight = currentContainerHeight - yPoint
-        
+            
         switch gesture.state {
         case .changed:
             if newHeight < maxContainerHeight && newHeight > defaultHeight {
                 containerViewHeightConstraint?.constant = newHeight
-                containerView.layoutIfNeeded()
+                animateDimmedAlpha(height: newHeight)
             }
             
         case .ended:
             if newHeight < dismissableHeight {
                 animateContainerHeight(with: defaultHeight)
+                animateDimmedAlpha(height: defaultHeight)
+
             } else if newHeight < maxContainerHeight && isDraggingDown {
                 animateContainerHeight(with: defaultHeight)
+                animateDimmedAlpha(height: defaultHeight)
+                
             } else if newHeight > defaultHeight && !isDraggingDown {
                 animateContainerHeight(with: maxContainerHeight)
+                animateDimmedAlpha(height: maxContainerHeight)
             }
             
         default: break
             
         }
         
+    }
+    
+    private func animateDimmedAlpha(height: CGFloat) {
+        
+        let alphaStep = maxDimmedAlpha / (maxContainerHeight - defaultHeight)
+        let distance = height - defaultHeight
+        let alpha = alphaStep * distance
+        
+        UIView.animate(withDuration: 0.2) {
+            self.dimmedView.alpha = alpha
+        }
     }
     
     private func animateContainerHeight(with height: CGFloat) {
