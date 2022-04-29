@@ -25,6 +25,15 @@ public class ManagedCoffee: NSManagedObject {
         return request
     }
     
+    public static func managedCoffee(of coffee: Coffee, from context: NSManagedObjectContext) -> ManagedCoffee? {
+        let predicate = NSPredicate(format: "title = %@", coffee.title)
+        let request = NSFetchRequest<ManagedCoffee>(entityName: "ManagedCoffee")
+        request.returnsObjectsAsFaults = false
+        request.predicate = predicate
+        
+        return try? context.fetch(request).first
+    }
+        
     var coffee: Coffee {
         let ingredientsArray: [String] = (ingredients.array as! [StringHolder]).map { $0.value }
         let recipeArray: [String] = (recipe.array as! [StringHolder]).map { $0.value }
