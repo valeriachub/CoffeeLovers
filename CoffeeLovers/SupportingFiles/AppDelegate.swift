@@ -51,6 +51,7 @@ extension AppDelegate {
         let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: coreDataStore, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
         
         let tabBarController = UITabBarController()
+        tabBarController.tabBar.tintColor = .red
         tabBarController.viewControllers = [mainCollectionTabNavigationController, favouriteCollectionTabNavigationController]
         
         return tabBarController
