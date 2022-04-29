@@ -49,6 +49,7 @@ class ModalView: UIView {
     }
     
     @objc func likeButtonClicked() {
+        likeImageView.tapAnimation()
         delegate?.likeButtonClicked()
     }
 }

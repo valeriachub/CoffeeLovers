@@ -111,16 +111,13 @@ extension CoreDataStore {
         managedCoffee.is_favourite = isFavourite
         do {
             try context.save()
-            var newCoffee = coffee
-            newCoffee.isFavourite = isFavourite
+            let newCoffee = Coffee(title: coffee.title, image: coffee.image, isFavourite: isFavourite, descriptions: coffee.descriptions, ingredients: coffee.ingredients, recipeSteps: coffee.recipeSteps)
             updatedCoffee(newCoffee)
         } catch {
             updatedCoffee(coffee)
         }
     }
 }
-
-
 
 extension CoreDataStore {
     
