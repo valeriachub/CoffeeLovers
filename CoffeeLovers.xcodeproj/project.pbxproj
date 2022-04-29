@@ -186,14 +186,9 @@
 		3A468C092135397A0046DAFD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB25B118281C2A890059DDE9 /* Cell */,
 				ABE7CD9927F19EAC00DBB02E /* ModalView */,
 				3A468C08213539710046DAFD /* Controllers */,
-				3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */,
-				3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */,
-				3AC54294231C369800E78AAE /* IngredientCell.swift */,
-				3AC54295231C369800E78AAE /* IngredientCell.xib */,
-				AB25B10B281A7C8D0059DDE9 /* RecipeCell.swift */,
-				AB25B10C281A7C8D0059DDE9 /* RecipeCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +200,19 @@
 				AB25B114281C290B0059DDE9 /* WeakWrapper.swift */,
 			);
 			path = Composer;
+			sourceTree = "<group>";
+		};
+		AB25B118281C2A890059DDE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3A468C0D21371B570046DAFD /* CoffeeViewCell.swift */,
+				3A468C0E21371B570046DAFD /* CoffeeViewCell.xib */,
+				3AC54294231C369800E78AAE /* IngredientCell.swift */,
+				3AC54295231C369800E78AAE /* IngredientCell.xib */,
+				AB25B10B281A7C8D0059DDE9 /* RecipeCell.swift */,
+				AB25B10C281A7C8D0059DDE9 /* RecipeCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AB3791B327C3E8B90000B0A4 /* CoffeeLoversUnitTests */ = {
