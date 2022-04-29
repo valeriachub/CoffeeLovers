@@ -21,7 +21,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1OU-fK-y0c">
                                 <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-4I-XgJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
@@ -53,7 +53,6 @@
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="trailing" secondItem="Tgu-ZZ-EpV" secondAttribute="trailing" id="BfA-Yb-RAK"/>
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="bottom" secondItem="Tgu-ZZ-EpV" secondAttribute="bottom" constant="-50" id="DQC-O0-Y9o"/>
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="top" secondItem="Rwb-We-SEz" secondAttribute="top" id="E9S-Ch-m2D"/>
-                            <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="bottom" secondItem="1OU-fK-y0c" secondAttribute="bottom" id="I9o-g2-NN6"/>
                             <constraint firstItem="1OU-fK-y0c" firstAttribute="height" secondItem="kyT-5f-ERK" secondAttribute="height" multiplier="1/2" id="IdO-3Z-Q73"/>
                             <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="trailing" secondItem="kyT-5f-ERK" secondAttribute="trailing" id="MHe-5Q-9xx"/>
                             <constraint firstItem="kyT-5f-ERK" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="PAO-kQ-Qaz"/>
@@ -61,6 +60,7 @@
                             <constraint firstItem="1OU-fK-y0c" firstAttribute="top" secondItem="kyT-5f-ERK" secondAttribute="bottom" id="g9p-AG-tc4"/>
                             <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="trailing" secondItem="1OU-fK-y0c" secondAttribute="trailing" id="hJS-dW-Vpo"/>
                             <constraint firstItem="Irb-Cw-jpD" firstAttribute="top" secondItem="Tgu-ZZ-EpV" secondAttribute="top" constant="20" id="iWB-VF-gdk"/>
+                            <constraint firstAttribute="bottom" secondItem="1OU-fK-y0c" secondAttribute="bottom" id="quW-fK-PVH"/>
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="uuM-ZJ-lNn"/>
                             <constraint firstItem="Irb-Cw-jpD" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" constant="20" id="xnd-aL-bPs"/>
                         </constraints>

@@ -41,7 +41,7 @@
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="24" estimatedRowHeight="-1" sectionHeaderHeight="24" estimatedSectionHeaderHeight="-1" sectionFooterHeight="24" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A7Q-U4-BqM">
-                                    <rect key="frame" x="0.0" y="105" width="383" height="529"/>
+                                    <rect key="frame" x="0.0" y="105" width="383" height="549"/>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -52,7 +52,7 @@
                                 <constraint firstItem="zZm-dh-WXS" firstAttribute="top" secondItem="cTV-RV-oxP" secondAttribute="top" constant="30" id="JVY-iX-CsL"/>
                                 <constraint firstItem="A7Q-U4-BqM" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" id="OIU-Zv-v7Y"/>
                                 <constraint firstItem="QUX-fO-jEC" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" constant="20" id="PBr-ge-vag"/>
-                                <constraint firstAttribute="bottom" secondItem="A7Q-U4-BqM" secondAttribute="bottom" constant="20" id="R47-Wi-nxe"/>
+                                <constraint firstAttribute="bottom" secondItem="A7Q-U4-BqM" secondAttribute="bottom" id="R47-Wi-nxe"/>
                                 <constraint firstItem="6Vk-qK-CAz" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" id="SKR-01-q2a"/>
                                 <constraint firstAttribute="trailing" secondItem="A7Q-U4-BqM" secondAttribute="trailing" constant="20" id="Vai-qg-JC7"/>
                                 <constraint firstItem="zZm-dh-WXS" firstAttribute="leading" secondItem="cTV-RV-oxP" secondAttribute="leading" constant="20" id="cL2-uk-nab"/>
@@ -84,16 +84,27 @@
                         <constraint firstAttribute="trailing" secondItem="oId-CG-6Te" secondAttribute="trailing" constant="24" id="bZu-LB-kJM"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kkf-yt-7m3">
+                    <rect key="frame" x="0.0" y="672" width="403" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="f62-UC-L1h"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="Kkf-yt-7m3" secondAttribute="bottom" constant="-10" id="A04-Cv-CG1"/>
                 <constraint firstItem="tDE-gQ-lcP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="I3f-DK-xxY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Kkf-yt-7m3" secondAttribute="trailing" id="RQp-8J-8eD"/>
                 <constraint firstItem="tDE-gQ-lcP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Skx-MH-65I"/>
-                <constraint firstItem="tDE-gQ-lcP" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="o3C-xI-VMg"/>
+                <constraint firstAttribute="bottom" secondItem="tDE-gQ-lcP" secondAttribute="bottom" id="YFS-zC-xEW"/>
+                <constraint firstItem="Kkf-yt-7m3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pUq-eR-OG6"/>
                 <constraint firstItem="tDE-gQ-lcP" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="uD6-6G-b91"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="bottomGradientView" destination="Kkf-yt-7m3" id="jsv-Oc-M6B"/>
                 <outlet property="descriptionLabel" destination="QUX-fO-jEC" id="onr-oJ-2eM"/>
                 <outlet property="likeImageView" destination="oId-CG-6Te" id="J3f-nu-7Xn"/>
                 <outlet property="tableView" destination="A7Q-U4-BqM" id="Xtt-mf-gou"/>

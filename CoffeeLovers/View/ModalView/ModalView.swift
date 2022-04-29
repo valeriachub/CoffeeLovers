@@ -14,6 +14,16 @@ protocol ModalViewDelegate: NSObject {
 
 class ModalView: UIView {
     
+    @IBOutlet weak var bottomGradientView: UIView! {
+        didSet {
+            let gradient = CAGradientLayer()
+            gradient.type = .axial
+            gradient.colors = [UIColor.white.withAlphaComponent(0.0).cgColor,
+                               UIColor.white.cgColor]
+            gradient.locations = [0, 0.6]
+            bottomGradientView.layer.addSublayer(gradient)
+        }
+    }
     @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
         
@@ -46,6 +56,12 @@ class ModalView: UIView {
         let bundle = Bundle(for: self)
         let nib = UINib(nibName: "ModalView", bundle: bundle)
         return nib.instantiate(withOwner: nil).first as! ModalView
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        bottomGradientView.layer.sublayers?.first?.frame = bottomGradientView.bounds
     }
     
     @objc func likeButtonClicked() {
