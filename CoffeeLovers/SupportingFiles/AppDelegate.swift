@@ -56,15 +56,3 @@ extension AppDelegate {
         return tabBarController
     }
 }
-
-
-public class WeakWrapper<T: AnyObject> {
-    private weak var object: T?
-    
-    init(_ object: T) {
-        self.object = object
-    }
-}
-
-extension WeakWrapper: CoffeeCollectionView where T: CoffeeCollectionView {}
-
