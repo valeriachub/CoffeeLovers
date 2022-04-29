@@ -30,6 +30,7 @@
 		AB25B113281C28A30059DDE9 /* CollectionUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B112281C28A20059DDE9 /* CollectionUIComposer.swift */; };
 		AB25B115281C290B0059DDE9 /* WeakWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B114281C290B0059DDE9 /* WeakWrapper.swift */; };
 		AB25B117281C2A430059DDE9 /* Coffee.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B116281C2A430059DDE9 /* Coffee.swift */; };
+		AB25B11A281C2AE40059DDE9 /* CoffeeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B119281C2AE40059DDE9 /* CoffeeModalView.swift */; };
 		AB3791B527C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */; };
 		AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
@@ -63,6 +64,7 @@
 		AB25B112281C28A20059DDE9 /* CollectionUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUIComposer.swift; sourceTree = "<group>"; };
 		AB25B114281C290B0059DDE9 /* WeakWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakWrapper.swift; sourceTree = "<group>"; };
 		AB25B116281C2A430059DDE9 /* Coffee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffee.swift; sourceTree = "<group>"; };
+		AB25B119281C2AE40059DDE9 /* CoffeeModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeModalView.swift; sourceTree = "<group>"; };
 		AB3791B227C3E8B90000B0A4 /* CoffeeLoversUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeLoversUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLoversUnitTests.swift; sourceTree = "<group>"; };
 		AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionPresenter.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			children = (
 				ABE7CD9727F0E7D600DBB02E /* ModalView.xib */,
 				ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */,
+				AB25B119281C2AE40059DDE9 /* CoffeeModalView.swift */,
 			);
 			path = ModalView;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				AB25B113281C28A30059DDE9 /* CollectionUIComposer.swift in Sources */,
 				3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */,
 				AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */,
+				AB25B11A281C2AE40059DDE9 /* CoffeeModalView.swift in Sources */,
 				ABE7CD9D27F5EC6700DBB02E /* CollectionTabNavigationController.swift in Sources */,
 				AB25B110281C18AD0059DDE9 /* UIView+Extensions.swift in Sources */,
 				ABE7CD9F27F74C5500DBB02E /* StringHolder.swift in Sources */,
