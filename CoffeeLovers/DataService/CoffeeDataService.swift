@@ -101,12 +101,23 @@ extension CoreDataStore {
 
 extension CoreDataStore {
     
-    func setCoffeeFavourite(coffee: Coffee) {
-//        coffee.isFavourite = !coffee.isFavourite
-        try? context.save()
+    func updateCoffeeFavority(_ coffee: Coffee, updatedCoffee: @escaping (Coffee) -> Void) {
+        guard let managedCoffee = ManagedCoffee.managedCoffee(of: coffee, from: context) else {
+            updatedCoffee(coffee)
+            return
+        }
+        
+        let isFavourite = !coffee.isFavourite
+        managedCoffee.is_favourite = isFavourite
+        do {
+            try context.save()
+            var newCoffee = coffee
+            newCoffee.isFavourite = isFavourite
+            updatedCoffee(newCoffee)
+        } catch {
+            updatedCoffee(coffee)
+        }
     }
-    
-    
 }
 
 
