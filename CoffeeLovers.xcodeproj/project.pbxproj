@@ -27,6 +27,7 @@
 		AB25B10D281A7C8D0059DDE9 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B10B281A7C8D0059DDE9 /* RecipeCell.swift */; };
 		AB25B10E281A7C8D0059DDE9 /* RecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB25B10C281A7C8D0059DDE9 /* RecipeCell.xib */; };
 		AB25B110281C18AD0059DDE9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B10F281C18AD0059DDE9 /* UIView+Extensions.swift */; };
+		AB25B113281C28A30059DDE9 /* CollectionUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B112281C28A20059DDE9 /* CollectionUIComposer.swift */; };
 		AB3791B527C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */; };
 		AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
@@ -57,6 +58,7 @@
 		AB25B10B281A7C8D0059DDE9 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 		AB25B10C281A7C8D0059DDE9 /* RecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCell.xib; sourceTree = "<group>"; };
 		AB25B10F281C18AD0059DDE9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AB25B112281C28A20059DDE9 /* CollectionUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionUIComposer.swift; sourceTree = "<group>"; };
 		AB3791B227C3E8B90000B0A4 /* CoffeeLoversUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeLoversUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3791B427C3E8B90000B0A4 /* CoffeeLoversUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeLoversUnitTests.swift; sourceTree = "<group>"; };
 		AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionPresenter.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 		3A468BE821346B2E0046DAFD /* CoffeeLovers */ = {
 			isa = PBXGroup;
 			children = (
+				AB25B111281C28900059DDE9 /* Composer */,
 				ABEA48F4231821F500A655B1 /* SupportingFiles */,
 				ABEA48F3231821DD00A655B1 /* Storyboard */,
 				3A468C07213539430046DAFD /* Data Model */,
@@ -188,6 +191,14 @@
 				AB25B10C281A7C8D0059DDE9 /* RecipeCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		AB25B111281C28900059DDE9 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				AB25B112281C28A20059DDE9 /* CollectionUIComposer.swift */,
+			);
+			path = Composer;
 			sourceTree = "<group>";
 		};
 		AB3791B327C3E8B90000B0A4 /* CoffeeLoversUnitTests */ = {
@@ -385,6 +396,7 @@
 				3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */,
 				AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */,
 				3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */,
+				AB25B113281C28A30059DDE9 /* CollectionUIComposer.swift in Sources */,
 				3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */,
 				AB0355CA231D315600BE3D59 /* CoffeePresenter.swift in Sources */,
 				ABE7CD9D27F5EC6700DBB02E /* CollectionTabNavigationController.swift in Sources */,

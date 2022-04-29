@@ -46,7 +46,13 @@ extension CoreDataStore {
     struct FailedLoadJson: Swift.Error {}
     struct FailedMapJson: Swift.Error {}
     
-    func preloadData() {
+    public static func simulatePreloadData(storeURL: URL) {
+        let service = try! CoreDataStore(storeURL: storeURL)
+        service.preloadData()
+    }
+    
+    private func preloadData() {
+        
         guard UserDefaults.standard.bool(forKey: IS_DATA_PRELOADED) == false else {
             return
         }
@@ -76,7 +82,7 @@ extension CoreDataStore {
         }
     }
     
-    func saveCoffeeModels(_ models: [CoffeeModel]) {
+    private func saveCoffeeModels(_ models: [CoffeeModel]) {
         for model in models {
             let managedCoffee = ManagedCoffee(context: context)
             managedCoffee.title = model.title
@@ -116,8 +122,11 @@ extension CoreDataStore {
 
 extension CoreDataStore {
     
-    func getCoffeeData() -> [Coffee]? {
-        return try? context.fetch(ManagedCoffee.sortedFetchRequest).map { $0.coffee }
+    func getCoffeeData() -> [Coffee] {
+        guard let response = try? context.fetch(ManagedCoffee.sortedFetchRequest) else {
+            return []
+        }
+        return response.map { $0.coffee }
     }
 }
 
