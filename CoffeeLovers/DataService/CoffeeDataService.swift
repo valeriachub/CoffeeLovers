@@ -101,20 +101,15 @@ extension CoreDataStore {
 
 extension CoreDataStore {
     
-    func updateCoffeeFavority(_ coffee: Coffee, updatedCoffee: @escaping (Coffee) -> Void) {
+    func updateCoffeeFavority(_ coffee: Coffee, completionSuccess: @escaping () -> Void) {
         guard let managedCoffee = ManagedCoffee.managedCoffee(of: coffee, from: context) else {
-            updatedCoffee(coffee)
             return
         }
         
         let isFavourite = !coffee.isFavourite
         managedCoffee.is_favourite = isFavourite
-        do {
-            try context.save()
-            let newCoffee = Coffee(title: coffee.title, image: coffee.image, isFavourite: isFavourite, descriptions: coffee.descriptions, ingredients: coffee.ingredients, recipeSteps: coffee.recipeSteps)
-            updatedCoffee(newCoffee)
-        } catch {
-            updatedCoffee(coffee)
+        if let _ = try? context.save() {
+            completionSuccess()
         }
     }
 }
@@ -154,11 +149,21 @@ struct CoffeeModel: Codable {
     let recipe: [String]
     
 }
-public struct Coffee {
+
+public class Coffee {
     let title: String
     let image: String
-    let isFavourite: Bool
+    var isFavourite: Bool
     let descriptions: String
     let ingredients: [String]
     let recipeSteps: [String]
+    
+    init(title: String, image: String, isFavourite: Bool, descriptions: String, ingredients: [String], recipeSteps: [String]) {
+        self.title = title
+        self.image = image
+        self.isFavourite = isFavourite
+        self.descriptions = descriptions
+        self.ingredients = ingredients
+        self.recipeSteps = recipeSteps
+    }
 }

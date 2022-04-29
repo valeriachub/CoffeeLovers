@@ -44,8 +44,11 @@ extension AppDelegate {
     
     private func getRootViewController() -> UITabBarController {
         
-        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
-        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(storeURL: storeURL, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
+        let coreDataStore = try! CoreDataStore(storeURL: storeURL)
+        let localCoffee = coreDataStore.getCoffeeData() ?? []
+        
+        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: coreDataStore, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
+        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: coreDataStore, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [mainCollectionTabNavigationController, favouriteCollectionTabNavigationController]
@@ -56,9 +59,8 @@ extension AppDelegate {
 
 public final class CollectionUIComposer {
     
-    public static func composedWith(storeURL: URL, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
-        let coreDataStore = try! CoreDataStore(storeURL: storeURL)
-        let localCoffee = coreDataStore.getCoffeeData() ?? []
+    public static func composedWith(coffeeData: [Coffee], coreDataStore: CoreDataStore, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
+
         let controller = CoffeeCollectionViewController()
         let navigationController = CollectionTabNavigationController(rootViewController: controller, imageName: imageName, tag: tag)
         let selection: (Coffee) -> Void = { [weak navigationController] coffee in
@@ -66,7 +68,7 @@ public final class CollectionUIComposer {
             navigationController?.pushViewController(controller, animated: true)
         }
         
-        let presenter = CoffeeCollectionPresenter(localCoffee: localCoffee, view: WeakWrapper(controller), isFavourite: isFavouriteTab, select: selection)
+        let presenter = CoffeeCollectionPresenter(localCoffee: coffeeData, view: WeakWrapper(controller), isFavourite: isFavouriteTab, select: selection)
         controller.presenter = presenter
         return navigationController
     }

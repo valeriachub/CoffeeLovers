@@ -48,10 +48,10 @@ class CoffeePresenter {
     // MARK: - Methods
     
     func viewDidLoad() {
-        displayCoffeeInfo(coffee)
+        displayCoffeeInfo()
     }
     
-    private func displayCoffeeInfo(_ coffee: Coffee) {
+    private func displayCoffeeInfo() {
         let viewModel = CoffeeViewModel(title: coffee.title, imageTitle: coffee.image, description: coffee.descriptions, ingredients: coffee.ingredients, recipe: coffee.recipeSteps, isFavourite: coffee.isFavourite)
         coffeeView.display(viewModel: viewModel)
     }
@@ -61,9 +61,13 @@ class CoffeePresenter {
     }
     
     func likeButtonAction() {
-        coreDataStore.updateCoffeeFavority(coffee) { [weak self] updatedCoffee in
-            self?.coffee = updatedCoffee
-            self?.displayCoffeeInfo(updatedCoffee)
+        coreDataStore.updateCoffeeFavority(coffee) { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            self.coffee.isFavourite = !self.coffee.isFavourite
+            self.displayCoffeeInfo()
         }
     }
 }
