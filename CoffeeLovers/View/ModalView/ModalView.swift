@@ -8,10 +8,23 @@
 
 import UIKit
 
+protocol ModalViewDelegate: NSObject {
+    func likeButtonClicked()
+}
+
 class ModalView: UIView {
     
     @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
+        
+    @IBOutlet weak var likeImageView: UIImageView! {
+        didSet {
+            likeImageView.image = likeImageView.image?.withRenderingMode(.alwaysTemplate)
+            likeImageView.tintColor = .gray
+            likeImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(likeButtonClicked)))
+        }
+    }
+    
     @IBOutlet private(set) weak var tableView: UITableView! {
         didSet {
             
@@ -27,14 +40,24 @@ class ModalView: UIView {
     private var ingredients = [String]()
     private var recipeSteps = [String]()
     
+    private weak var delegate: ModalViewDelegate?
+    
     static func loadFromNib() -> ModalView {
         let bundle = Bundle(for: self)
         let nib = UINib(nibName: "ModalView", bundle: bundle)
         return nib.instantiate(withOwner: nil).first as! ModalView
     }
+    
+    @objc func likeButtonClicked() {
+        delegate?.likeButtonClicked()
+    }
 }
 
 extension ModalView {
+    
+    func updateFavority(isLike: Bool) {
+        likeImageView.tintColor = isLike ? .red : .gray
+    }
     
     func updateTitleLabel(with text: String) {
         titleLabel.text = text
@@ -47,6 +70,10 @@ extension ModalView {
     func updateRecipe(ingredients: [String], steps: [String]) {
         self.ingredients = ingredients
         recipeSteps = steps
+    }
+    
+    func setDelegate(_ delegate: ModalViewDelegate) {
+        self.delegate = delegate
     }
 }
 
@@ -91,13 +118,16 @@ class CoffeeModalView: UIView {
     override init(frame: CGRect) {
         contentView = ModalView.loadFromNib()
         super.init(frame: frame)
-        contentView.frame = bounds
-        addSubview(contentView)
+        addContentView(contentView)
     }
     
     required init?(coder: NSCoder) {
         contentView = ModalView.loadFromNib()
         super.init(coder: coder)
+        addContentView(contentView)
+    }
+    
+    private func addContentView(_ contentView: ModalView) {
         contentView.frame = bounds
         addSubview(contentView)
     }
@@ -112,5 +142,13 @@ class CoffeeModalView: UIView {
     
     func updateRecipe(ingredients: [String], steps: [String]) {
         contentView.updateRecipe(ingredients: ingredients, steps: steps)
+    }
+    
+    func updateFavority(isLike: Bool) {
+        contentView.updateFavority(isLike: isLike)
+    }
+    
+    func setDelegate(_ delegate: ModalViewDelegate) {
+        contentView.setDelegate(delegate)
     }
 }

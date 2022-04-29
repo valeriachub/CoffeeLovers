@@ -15,15 +15,12 @@ class CoffeeController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     
     lazy var containerView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 30
-        view.clipsToBounds = true
-        return view
+        return UIView()
     }()
     
     lazy var coffeeDescriptionModalView: CoffeeModalView = {
         let view = CoffeeModalView()
+        view.setDelegate(self)
         return view
     }()
     
@@ -163,10 +160,18 @@ extension CoffeeController: CoffeeView {
         let recipeSteps = viewModel.recipe
         
         coffeeDescriptionModalView.updateRecipe(ingredients: ingredients, steps: recipeSteps)
+        coffeeDescriptionModalView.updateFavority(isLike: viewModel.isFavourite)
     }
     
     func goBack() {
         navigationController?.popViewController(animated: true)
+    }
+}
+
+extension CoffeeController: ModalViewDelegate {
+    
+    func likeButtonClicked() {
+        presenter.likeButtonAction()
     }
 }
 

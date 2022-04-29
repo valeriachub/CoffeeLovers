@@ -14,6 +14,7 @@ struct CoffeeViewModel {
     let description: String
     let ingredients: [String]
     let recipe: [String]
+    let isFavourite: Bool
 }
 
 protocol CoffeeView: AnyObject {
@@ -27,6 +28,7 @@ class CoffeePresenter {
     // MARK: - Properties
     
     private var coffee: Coffee!
+    private var coreDataStore: CoreDataStore!
     
     var imageName: String {
         return coffee.image
@@ -37,19 +39,31 @@ class CoffeePresenter {
     
     // MARK: - Init Methods
     
-    init(view: CoffeeView, coffee: Coffee) {
+    init(view: CoffeeView, coffee: Coffee, coreDataStore: CoreDataStore) {
         self.coffeeView = view
         self.coffee = coffee
+        self.coreDataStore = coreDataStore
     }
     
     // MARK: - Methods
     
     func viewDidLoad() {
-        let viewModel = CoffeeViewModel(title: coffee.title, imageTitle: coffee.image, description: coffee.descriptions, ingredients: coffee.ingredients, recipe: coffee.recipeSteps)
+        displayCoffeeInfo(coffee)
+    }
+    
+    private func displayCoffeeInfo(_ coffee: Coffee) {
+        let viewModel = CoffeeViewModel(title: coffee.title, imageTitle: coffee.image, description: coffee.descriptions, ingredients: coffee.ingredients, recipe: coffee.recipeSteps, isFavourite: coffee.isFavourite)
         coffeeView.display(viewModel: viewModel)
     }
     
     func closeAction() {
         coffeeView.goBack()
+    }
+    
+    func likeButtonAction() {
+        coreDataStore.updateCoffeeFavority(coffee) { [weak self] updatedCoffee in
+            self?.coffee = updatedCoffee
+            self?.displayCoffeeInfo(updatedCoffee)
+        }
     }
 }

@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-4I-XgJ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-Cw-jpD">
@@ -51,7 +51,7 @@
                         <constraints>
                             <constraint firstItem="1OU-fK-y0c" firstAttribute="leading" secondItem="Tgu-ZZ-EpV" secondAttribute="leading" id="0aJ-cU-Qs8"/>
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="trailing" secondItem="Tgu-ZZ-EpV" secondAttribute="trailing" id="BfA-Yb-RAK"/>
-                            <constraint firstItem="NgX-4I-XgJ" firstAttribute="bottom" secondItem="Tgu-ZZ-EpV" secondAttribute="bottom" id="DQC-O0-Y9o"/>
+                            <constraint firstItem="NgX-4I-XgJ" firstAttribute="bottom" secondItem="Tgu-ZZ-EpV" secondAttribute="bottom" constant="-50" id="DQC-O0-Y9o"/>
                             <constraint firstItem="NgX-4I-XgJ" firstAttribute="top" secondItem="Rwb-We-SEz" secondAttribute="top" id="E9S-Ch-m2D"/>
                             <constraint firstItem="Tgu-ZZ-EpV" firstAttribute="bottom" secondItem="1OU-fK-y0c" secondAttribute="bottom" id="I9o-g2-NN6"/>
                             <constraint firstItem="1OU-fK-y0c" firstAttribute="height" secondItem="kyT-5f-ERK" secondAttribute="height" multiplier="1/2" id="IdO-3Z-Q73"/>

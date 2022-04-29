@@ -57,11 +57,12 @@ extension AppDelegate {
 public final class CollectionUIComposer {
     
     public static func composedWith(storeURL: URL, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
-        let localCoffee = try! CoreDataStore(storeURL: storeURL).getCoffeeData() ?? []
+        let coreDataStore = try! CoreDataStore(storeURL: storeURL)
+        let localCoffee = coreDataStore.getCoffeeData() ?? []
         let controller = CoffeeCollectionViewController()
         let navigationController = CollectionTabNavigationController(rootViewController: controller, imageName: imageName, tag: tag)
         let selection: (Coffee) -> Void = { [weak navigationController] coffee in
-            let controller = CollectionUIComposer.getCoffeeController(for: coffee)
+            let controller = CollectionUIComposer.getCoffeeController(for: coffee, coreDataStore: coreDataStore)
             navigationController?.pushViewController(controller, animated: true)
         }
         
@@ -70,10 +71,10 @@ public final class CollectionUIComposer {
         return navigationController
     }
     
-    private static func getCoffeeController(for coffee: Coffee) -> CoffeeController {
+    private static func getCoffeeController(for coffee: Coffee, coreDataStore: CoreDataStore) -> CoffeeController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CoffeeController") as! CoffeeController
-        let presenter = CoffeePresenter(view: controller, coffee: coffee)
+        let presenter = CoffeePresenter(view: controller, coffee: coffee, coreDataStore: coreDataStore)
         controller.presenter = presenter
         return controller
     }
