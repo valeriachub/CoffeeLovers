@@ -8,7 +8,12 @@
 
 import CoreData
 
-public final class CoreDataStore {
+public protocol CoffeeStore {
+    func retrieve(completion: @escaping (Swift.Result<[ManagedCoffee], Error>) -> Void)
+}
+
+
+public final class CoreDataStore: CoffeeStore {
     private static let modelName = "CoffeeLoversDB"
     private static let model: NSManagedObjectModel? = Bundle(for: ManagedCoffee.self)
         .url(forResource: modelName, withExtension: "momd")
@@ -22,7 +27,7 @@ public final class CoreDataStore {
     private let container: NSPersistentContainer
     private let context: NSManagedObjectContext
     
-    init(storeURL: URL) throws {
+    public init(storeURL: URL) throws {
         guard let model = CoreDataStore.model else {
             throw StoreError.modelNotFound
         }
@@ -122,12 +127,21 @@ extension CoreDataStore {
 
 extension CoreDataStore {
     
-    func getCoffeeData() -> [Coffee] {
-        guard let response = try? context.fetch(ManagedCoffee.sortedFetchRequest) else {
-            return []
+    public func retrieve(completion: @escaping (Result<[ManagedCoffee], Error>) -> Void) {
+        do {
+            let managedCoffee = try context.fetch(ManagedCoffee.sortedFetchRequest)
+            completion(.success(managedCoffee))
+        } catch let error {
+            completion(.failure(error))
         }
-        return response.map { $0.coffee }
     }
+    
+//    func getCoffeeData() -> [Coffee] {
+//        guard let response = try? context.fetch(ManagedCoffee.sortedFetchRequest) else {
+//            return []
+//        }
+//        return response.map { $0.coffee }
+//    }
 }
 
 private extension NSPersistentContainer {

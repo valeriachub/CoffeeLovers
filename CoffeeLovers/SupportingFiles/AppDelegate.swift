@@ -18,6 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .appendingPathComponent("coffee-store.sqlite")
     }()
     
+    private lazy var store: CoffeeStore = {
+        return try! CoreDataStore(
+            storeURL: NSPersistentContainer
+                .defaultDirectoryURL()
+                .appendingPathComponent("coffee-store.sqlite"))
+    }()
+    
+    private lazy var localDataLoader: LocalDataLoader = {
+       return LocalDataLoader(store: store)
+    }()
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -36,23 +47,10 @@ extension AppDelegate {
     }
     
     private func setRootViewController() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = getRootViewController()
-        window?.makeKeyAndVisible()
-    }
-    
-    private func getRootViewController() -> UITabBarController {
-        
-        let coreDataStore = try! CoreDataStore(storeURL: storeURL)
-        let localCoffee = coreDataStore.getCoffeeData()
-        
-        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: coreDataStore, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
-        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: coreDataStore, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
-        
-        let tabBarController = UITabBarController()
-        tabBarController.tabBar.tintColor = .red
-        tabBarController.viewControllers = [mainCollectionTabNavigationController, favouriteCollectionTabNavigationController]
-        
-        return tabBarController
+        RootUIComposer.getRoot(localDataLoader: localDataLoader, store: store) { [weak self] controller in
+            self?.window = UIWindow(frame: UIScreen.main.bounds)
+            self?.window?.rootViewController = controller
+            self?.window?.makeKeyAndVisible()
+        }
     }
 }
