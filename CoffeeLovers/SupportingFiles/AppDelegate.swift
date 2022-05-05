@@ -12,12 +12,6 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private lazy var storeURL: URL = {
-        return NSPersistentContainer
-            .defaultDirectoryURL()
-            .appendingPathComponent("coffee-store.sqlite")
-    }()
-    
     private lazy var store: CoffeeStore = {
         return try! CoreDataStore(
             storeURL: NSPersistentContainer
@@ -26,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }()
     
     private lazy var localDataLoader: LocalDataLoader = {
-       return LocalDataLoader(store: store)
+        return LocalDataLoader(store: store)
     }()
     
     var window: UIWindow?
@@ -43,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate {
     
     private func simulatePreloadDataForFirstLaunch() {
-        CoreDataStore.simulatePreloadData(storeURL: storeURL)
+        localDataLoader.preload()
     }
     
     private func setRootViewController() {

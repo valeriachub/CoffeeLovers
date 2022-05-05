@@ -9,11 +9,12 @@
 import CoreData
 
 public protocol CoffeeStore {
+    func cache(models: [CoffeeModel])
     func retrieve(completion: @escaping (Swift.Result<[ManagedCoffee], Error>) -> Void)
 }
 
-
 public final class CoreDataStore: CoffeeStore {
+    
     private static let modelName = "CoffeeLoversDB"
     private static let model: NSManagedObjectModel? = Bundle(for: ManagedCoffee.self)
         .url(forResource: modelName, withExtension: "momd")
@@ -44,50 +45,7 @@ public final class CoreDataStore: CoffeeStore {
 
 extension CoreDataStore {
     
-    private var IS_DATA_PRELOADED: String { "isDataPreloaded" }
-    private var COFFEE_DATA: String { "CoffeeData" }
-    private var JSON: String { "json" }
-    
-    struct FailedLoadJson: Swift.Error {}
-    struct FailedMapJson: Swift.Error {}
-    
-    public static func simulatePreloadData(storeURL: URL) {
-        let service = try! CoreDataStore(storeURL: storeURL)
-        service.preloadData()
-    }
-    
-    private func preloadData() {
-        
-        guard UserDefaults.standard.bool(forKey: IS_DATA_PRELOADED) == false else {
-            return
-        }
-        
-        loadDataFromJson { result in
-            if let models = try? result.get() {
-                saveCoffeeModels(models)
-                UserDefaults.standard.set(true, forKey: IS_DATA_PRELOADED)
-            } else {
-                print(result.mapError { $0 })
-            }
-        }
-    }
-    
-    private func loadDataFromJson(completion: (Result<[CoffeeModel], Error>) -> Void) {
-        guard let url = Bundle.main.url(forResource: COFFEE_DATA, withExtension: JSON) else {
-            completion(.failure(FailedLoadJson()))
-            return
-        }
-        
-        do {
-            let data = try Data(contentsOf: url)
-            let root = try JSONDecoder().decode(Root.self, from: data)
-            completion(.success(root.coffee))
-        } catch {
-            completion(.failure(FailedMapJson()))
-        }
-    }
-    
-    private func saveCoffeeModels(_ models: [CoffeeModel]) {
+    public func cache(models: [CoffeeModel]) {
         for model in models {
             let managedCoffee = ManagedCoffee(context: context)
             managedCoffee.title = model.title
@@ -157,18 +115,4 @@ private extension NSPersistentContainer {
         
         return container
     }
-}
-
-struct Root: Codable {
-    let coffee: [CoffeeModel]
-}
-
-struct CoffeeModel: Codable {
-    let title: String
-    let image: String
-    let is_favourite: Bool
-    let descriptions: String
-    let ingredients: [String]
-    let recipe: [String]
-    
 }
