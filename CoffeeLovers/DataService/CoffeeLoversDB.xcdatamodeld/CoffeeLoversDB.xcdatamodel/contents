@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G527" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ManagedCoffee" representedClassName=".ManagedCoffee" syncable="YES">
         <attribute name="descriptions" attributeType="String"/>
         <attribute name="image" attributeType="String"/>
         <attribute name="is_favourite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="title" attributeType="String"/>
-        <relationship name="ingredients" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StringHolder"/>
-        <relationship name="recipe" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StringHolder"/>
+        <relationship name="ingredients" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StringHolder" inverseName="ingredients" inverseEntity="StringHolder"/>
+        <relationship name="recipe" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StringHolder" inverseName="recipe" inverseEntity="StringHolder"/>
     </entity>
     <entity name="StringHolder" representedClassName=".StringHolder" syncable="YES">
         <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="ingredients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCoffee" inverseName="ingredients" inverseEntity="ManagedCoffee"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedCoffee" inverseName="recipe" inverseEntity="ManagedCoffee"/>
     </entity>
     <elements>
-        <element name="ManagedCoffee" positionX="-565.559326171875" positionY="105.4716186523438" width="128" height="119"/>
-        <element name="StringHolder" positionX="-441" positionY="162" width="128" height="44"/>
+        <element name="ManagedCoffee" positionX="-966.0943908691406" positionY="286.8284912109376" width="132.8362121582031" height="133"/>
+        <element name="StringHolder" positionX="-714.2713623046875" positionY="324.2127075195312" width="128" height="88"/>
     </elements>
 </model>
