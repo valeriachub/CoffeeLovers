@@ -14,25 +14,25 @@ class CoffeeController: UIViewController {
     @IBOutlet weak var dimmedView: UIView!
     @IBOutlet weak var closeButton: UIButton!
     
-    lazy var containerView: UIView = {
+    private lazy var containerView: UIView = {
         return UIView()
     }()
     
-    lazy var coffeeDescriptionModalView: CoffeeModalView = {
+    private lazy var coffeeDescriptionModalView: CoffeeModalView = {
         let view = CoffeeModalView()
         view.setDelegate(self)
         return view
     }()
     
-    let maxDimmedAlpha: CGFloat = 0.6
+    private let maxDimmedAlpha: CGFloat = 0.6
     
-    let defaultHeight: CGFloat = UIScreen.main.bounds.height / 3 + 100
-    let dismissableHeight: CGFloat = UIScreen.main.bounds.height / 2
-    let maxContainerHeight: CGFloat = UIScreen.main.bounds.height - 40 - 80
-    var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 3 + 100
+    private let defaultHeight: CGFloat = UIScreen.main.bounds.height / 3 + 100
+    private let dismissableHeight: CGFloat = UIScreen.main.bounds.height / 2
+    private let maxContainerHeight: CGFloat = UIScreen.main.bounds.height - 40 - 80
+    private var currentContainerHeight: CGFloat = UIScreen.main.bounds.height / 3 + 100
     
-    var containerViewHeightConstraint: NSLayoutConstraint?
-    var containerViewBottomConstraint: NSLayoutConstraint?
+    private var containerViewHeightConstraint: NSLayoutConstraint?
+    private var containerViewBottomConstraint: NSLayoutConstraint?
     
     var presenter: CoffeePresenter!
     
