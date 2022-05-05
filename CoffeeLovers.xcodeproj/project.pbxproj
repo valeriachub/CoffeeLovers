@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		14AC61E1D77949FF55389B1E /* Pods_CoffeeLovers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */; };
 		3A468BEA21346B2E0046DAFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A468BE921346B2E0046DAFD /* AppDelegate.swift */; };
 		3A468BEF21346B2E0046DAFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A468BED21346B2E0046DAFD /* Main.storyboard */; };
 		3A468BF121346B320046DAFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A468BF021346B320046DAFD /* Assets.xcassets */; };
@@ -54,7 +53,6 @@
 		3AC4B87C2138FBB600052E9F /* CoffeeData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CoffeeData.json; sourceTree = "<group>"; };
 		3AC54294231C369800E78AAE /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
 		3AC54295231C369800E78AAE /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
-		7B1969495835B20856A27964 /* Pods-CoffeeLovers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.release.xcconfig"; sourceTree = "<group>"; };
 		AB0355C9231D315600BE3D59 /* CoffeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeePresenter.swift; sourceTree = "<group>"; };
 		AB0B2D3F232A5C0B00D65D96 /* ManagedCoffee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedCoffee.swift; sourceTree = "<group>"; };
 		AB25B10B281A7C8D0059DDE9 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
@@ -71,8 +69,6 @@
 		ABE7CD9A27F19F2B00DBB02E /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		ABE7CD9C27F5EC6700DBB02E /* CollectionTabNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTabNavigationController.swift; sourceTree = "<group>"; };
 		ABE7CD9E27F74C5500DBB02E /* StringHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringHolder.swift; sourceTree = "<group>"; };
-		C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoffeeLovers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D166E95D079EC521A3BBBCF9 /* Pods-CoffeeLovers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoffeeLovers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14AC61E1D77949FF55389B1E /* Pods_CoffeeLovers.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,14 +89,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		253F188A24C7CE8DFBFDB048 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C5CD10579C9BCAB451768F91 /* Pods_CoffeeLovers.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		3A22931B2319153000CE30CD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,8 +123,6 @@
 				3A468BE821346B2E0046DAFD /* CoffeeLovers */,
 				AB3791B327C3E8B90000B0A4 /* CoffeeLoversUnitTests */,
 				3A468BE721346B2E0046DAFD /* Products */,
-				E662BAFA8568133A69E11007 /* Pods */,
-				253F188A24C7CE8DFBFDB048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,15 +239,6 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		E662BAFA8568133A69E11007 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				D166E95D079EC521A3BBBCF9 /* Pods-CoffeeLovers.debug.xcconfig */,
-				7B1969495835B20856A27964 /* Pods-CoffeeLovers.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -270,11 +246,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A468BF821346B320046DAFD /* Build configuration list for PBXNativeTarget "CoffeeLovers" */;
 			buildPhases = (
-				AB1080842F816C62B6AF50A3 /* [CP] Check Pods Manifest.lock */,
 				3A468BE221346B2D0046DAFD /* Sources */,
 				3A468BE321346B2D0046DAFD /* Frameworks */,
 				3A468BE421346B2D0046DAFD /* Resources */,
-				0F358AA45C86C29E32BD7344 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -364,45 +338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		0F358AA45C86C29E32BD7344 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AB1080842F816C62B6AF50A3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CoffeeLovers-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A468BE221346B2D0046DAFD /* Sources */ = {
@@ -571,7 +506,6 @@
 		};
 		3A468BF921346B320046DAFD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D166E95D079EC521A3BBBCF9 /* Pods-CoffeeLovers.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -590,7 +524,6 @@
 		};
 		3A468BFA21346B320046DAFD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7B1969495835B20856A27964 /* Pods-CoffeeLovers.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
