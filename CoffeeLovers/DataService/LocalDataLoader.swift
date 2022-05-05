@@ -34,6 +34,14 @@ extension LocalDataLoader {
 
 extension LocalDataLoader {
     
+    public func update(_ coffee: Coffee, completionSuccess: @escaping () -> Void) {
+        store.update(coffee, completionSuccess: completionSuccess)
+    }
+}
+
+
+extension LocalDataLoader {
+    
     private var IS_DATA_PRELOADED: String { "isDataPreloaded" }
     private var COFFEE_DATA: String { "CoffeeData" }
     private var JSON: String { "json" }

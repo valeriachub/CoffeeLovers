@@ -10,12 +10,12 @@ import UIKit
 
 public final class CollectionUIComposer {
     
-    public static func composedWith(coffeeData: [Coffee], coreDataStore: CoreDataStore, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
+    public static func composedWith(coffeeData: [Coffee], localDataLoader: LocalDataLoader, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
 
         let controller = CoffeeCollectionViewController()
         let navigationController = CollectionTabNavigationController(rootViewController: controller, imageName: imageName, tag: tag)
         let selection: (Coffee) -> Void = { [weak navigationController] coffee in
-            let controller = CollectionUIComposer.getCoffeeController(for: coffee, coreDataStore: coreDataStore)
+            let controller = CollectionUIComposer.getCoffeeController(for: coffee, localDataLoader: localDataLoader)
             navigationController?.pushViewController(controller, animated: true)
         }
         
@@ -24,10 +24,10 @@ public final class CollectionUIComposer {
         return navigationController
     }
     
-    private static func getCoffeeController(for coffee: Coffee, coreDataStore: CoreDataStore) -> CoffeeController {
+    private static func getCoffeeController(for coffee: Coffee, localDataLoader: LocalDataLoader) -> CoffeeController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CoffeeController") as! CoffeeController
-        let presenter = CoffeePresenter(view: controller, coffee: coffee, coreDataStore: coreDataStore)
+        let presenter = CoffeePresenter(view: controller, coffee: coffee, localDataLoader: localDataLoader)
         controller.presenter = presenter
         return controller
     }

@@ -11,6 +11,7 @@ import CoreData
 public protocol CoffeeStore {
     func cache(models: [CoffeeModel])
     func retrieve(completion: @escaping (Swift.Result<[ManagedCoffee], Error>) -> Void)
+    func update(_ coffee: Coffee, completionSuccess: @escaping () -> Void)
 }
 
 public final class CoreDataStore: CoffeeStore {
@@ -70,7 +71,7 @@ extension CoreDataStore {
 
 extension CoreDataStore {
     
-    func updateCoffeeFavority(_ coffee: Coffee, completionSuccess: @escaping () -> Void) {
+    public func update(_ coffee: Coffee, completionSuccess: @escaping () -> Void) {
         guard let managedCoffee = ManagedCoffee.managedCoffee(of: coffee, from: context) else {
             return
         }
@@ -93,13 +94,6 @@ extension CoreDataStore {
             completion(.failure(error))
         }
     }
-    
-//    func getCoffeeData() -> [Coffee] {
-//        guard let response = try? context.fetch(ManagedCoffee.sortedFetchRequest) else {
-//            return []
-//        }
-//        return response.map { $0.coffee }
-//    }
 }
 
 private extension NSPersistentContainer {

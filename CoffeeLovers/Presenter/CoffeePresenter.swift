@@ -28,7 +28,7 @@ class CoffeePresenter {
     // MARK: - Properties
     
     private var coffee: Coffee!
-    private var coreDataStore: CoreDataStore!
+    private var localDataLoader: LocalDataLoader!
     
     var imageName: String {
         return coffee.image
@@ -39,10 +39,10 @@ class CoffeePresenter {
     
     // MARK: - Init Methods
     
-    init(view: CoffeeView, coffee: Coffee, coreDataStore: CoreDataStore) {
+    init(view: CoffeeView, coffee: Coffee, localDataLoader: LocalDataLoader) {
         self.coffeeView = view
         self.coffee = coffee
-        self.coreDataStore = coreDataStore
+        self.localDataLoader = localDataLoader
     }
     
     // MARK: - Methods
@@ -61,7 +61,7 @@ class CoffeePresenter {
     }
     
     func likeButtonAction() {
-        coreDataStore.updateCoffeeFavority(coffee) { [weak self] in
+        localDataLoader.update(coffee) { [weak self] in
             guard let self = self else {
                 return
             }

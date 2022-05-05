@@ -10,11 +10,11 @@ import UIKit
 
 public final class RootUIComposer {
     
-    public static func getRoot(localDataLoader: LocalDataLoader, store: CoffeeStore, completion: @escaping (UIViewController) -> Void) {
+    public static func getRoot(localDataLoader: LocalDataLoader, completion: @escaping (UIViewController) -> Void) {
         localDataLoader.load { result in
             switch result {
             case let .success(coffee):
-                completion(getTabBarViewController(for: coffee, store: store as! CoreDataStore))
+                completion(getTabBarViewController(for: coffee, localDataLoader: localDataLoader))
 
             case .failure:
                 completion(getErrorViewController())
@@ -22,9 +22,9 @@ public final class RootUIComposer {
         }
     }
     
-    private static func getTabBarViewController(for localCoffee: [Coffee], store: CoreDataStore) -> UITabBarController {
-        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: store, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
-        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, coreDataStore: store, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
+    private static func getTabBarViewController(for localCoffee: [Coffee], localDataLoader: LocalDataLoader) -> UITabBarController {
+        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, localDataLoader: localDataLoader, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
+        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, localDataLoader: localDataLoader, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
         
         let tabBarController = UITabBarController()
         tabBarController.tabBar.tintColor = .red
