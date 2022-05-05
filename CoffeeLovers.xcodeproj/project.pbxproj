@@ -18,7 +18,6 @@
 		3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA18249231AE2DE006ADC8A /* CoffeeController.swift */; };
 		3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADE6CF231ACFB10099168C /* CoffeeCollectionViewController.swift */; };
 		3AB02005231A693000AC0EC4 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB02004231A693000AC0EC4 /* CoreDataStore.swift */; };
-		3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
 		3AC54296231C369800E78AAE /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC54294231C369800E78AAE /* IngredientCell.swift */; };
 		3AC54297231C369800E78AAE /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC54295231C369800E78AAE /* IngredientCell.xib */; };
 		3AF197AF2138FFB40087140F /* CoffeeData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AC4B87C2138FBB600052E9F /* CoffeeData.json */; };
@@ -424,7 +423,6 @@
 				ABE7CD9F27F74C5500DBB02E /* StringHolder.swift in Sources */,
 				AB0B2D43232A5C0B00D65D96 /* ManagedCoffee.swift in Sources */,
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
-				3AC4B87D2138FBB600052E9F /* CoffeeData.json in Sources */,
 				3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */,
 				AB25B10D281A7C8D0059DDE9 /* RecipeCell.swift in Sources */,
 				3AB02005231A693000AC0EC4 /* CoreDataStore.swift in Sources */,
