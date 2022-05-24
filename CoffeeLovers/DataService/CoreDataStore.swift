@@ -36,7 +36,7 @@ public final class CoreDataStore: CoffeeStore {
         
         do {
             container = try NSPersistentContainer.load(name: CoreDataStore.modelName, model: model, from: storeURL)
-            context = container.newBackgroundContext()
+            context = Thread.isMainThread ? container.viewContext : container.newBackgroundContext()
             
         } catch {
             throw StoreError.failedLoadPersistentContainer(error)

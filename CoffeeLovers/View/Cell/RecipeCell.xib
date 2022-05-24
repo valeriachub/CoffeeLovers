@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpK-Mp-Id7">
-                        <rect key="frame" x="20" y="4" width="16" height="24"/>
+                        <rect key="frame" x="20" y="4" width="16" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="16" id="97G-w3-irW"/>
-                            <constraint firstAttribute="height" constant="24" id="KcP-AP-Yiq"/>
+                            <constraint firstAttribute="height" constant="20" id="KcP-AP-Yiq"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
-                        <color key="textColor" red="0.2156862745" green="0.2274509804" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                        <color key="textColor" name="CoffeeLabel"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vS-Mu-50q">
@@ -33,7 +34,7 @@
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="czW-bR-xJ6"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="14"/>
-                        <color key="textColor" red="0.2156862745" green="0.2274509804" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" name="CoffeeLabel"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -41,7 +42,7 @@
                     <constraint firstAttribute="trailing" secondItem="9vS-Mu-50q" secondAttribute="trailing" constant="2" id="4kj-iT-CVu"/>
                     <constraint firstItem="EpK-Mp-Id7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="MRu-El-45t"/>
                     <constraint firstItem="9vS-Mu-50q" firstAttribute="leading" secondItem="EpK-Mp-Id7" secondAttribute="trailing" constant="2" id="auO-61-Q06"/>
-                    <constraint firstItem="EpK-Mp-Id7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="lV9-AG-P88"/>
+                    <constraint firstItem="EpK-Mp-Id7" firstAttribute="top" secondItem="9vS-Mu-50q" secondAttribute="top" id="o4X-51-OWK"/>
                     <constraint firstAttribute="bottom" secondItem="9vS-Mu-50q" secondAttribute="bottom" constant="4" id="qdX-2e-pHr"/>
                     <constraint firstItem="9vS-Mu-50q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="u7r-p0-GTt"/>
                 </constraints>
@@ -54,4 +55,9 @@
             <point key="canvasLocation" x="163.768115942029" y="63.616071428571423"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <namedColor name="CoffeeLabel">
+            <color red="0.18218402382039176" green="0.18799206148964701" blue="0.19607251099865841" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

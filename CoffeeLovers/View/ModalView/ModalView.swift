@@ -18,15 +18,15 @@ class ModalView: UIView {
         didSet {
             let gradient = CAGradientLayer()
             gradient.type = .axial
-            gradient.colors = [UIColor.white.withAlphaComponent(0.0).cgColor,
-                               UIColor.white.cgColor]
+            gradient.colors = [UIColor.systemBackground.withAlphaComponent(0.0).cgColor,
+                               UIColor.systemBackground.cgColor]
             gradient.locations = [0, 0.6]
             bottomGradientView.layer.addSublayer(gradient)
         }
     }
     @IBOutlet private(set) weak var titleLabel: UILabel!
     @IBOutlet private(set) weak var descriptionLabel: UILabel!
-        
+    
     @IBOutlet weak var likeImageView: UIImageView! {
         didSet {
             likeImageView.image = likeImageView.image?.withRenderingMode(.alwaysTemplate)
@@ -40,6 +40,7 @@ class ModalView: UIView {
             
             tableView.register(UINib(nibName: "\(IngredientCell.self)", bundle: nil), forCellReuseIdentifier: "\(IngredientCell.self)")
             tableView.register(UINib(nibName: "\(RecipeCell.self)", bundle: nil), forCellReuseIdentifier: "\(RecipeCell.self)")
+            tableView.register(SectionHeaderView.self, forHeaderFooterViewReuseIdentifier: SectionHeaderView.reuseIdentifier)
             tableView.rowHeight = UITableView.automaticDimension
             tableView.estimatedRowHeight = 500
             tableView.delegate = self
@@ -104,7 +105,7 @@ extension ModalView: UITableViewDelegate, UITableViewDataSource {
             
         default:
             return RecipeCell.getCellForRow(indexPath: indexPath, of: tableView, for: recipeSteps[indexPath.row])
-
+            
             
         }
     }
@@ -120,10 +121,14 @@ extension ModalView: UITableViewDelegate, UITableViewDataSource {
         2
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view =  tableView.dequeueReusableHeaderFooterView(withIdentifier: SectionHeaderView.reuseIdentifier) as! SectionHeaderView
+       
         switch section {
-        case 0: return "Ingredients"
-        default: return "Recipe"
+        case 0: view.set("Ingredients")
+        default: view.set("Recipe")
         }
+        
+        return view
     }
 }
