@@ -18,3 +18,9 @@ public class WeakWrapper<T: AnyObject> {
 
 extension WeakWrapper: CoffeeCollectionView where T: CoffeeCollectionView {}
 
+extension WeakWrapper: NewsView where T: NewsView {
+    func updateNews(_ news: [NewsItem]) {
+        object?.updateNews(news)
+    }
+}
+

@@ -12,10 +12,10 @@ public class CollectionTabNavigationController: UINavigationController {
     
     var selection: ((Coffee) -> Void)?
     
-    init(rootViewController: UIViewController, imageName: String, tag: Int) {
+    init(rootViewController: UIViewController, image: UIImage, tag: Int) {
         super.init(rootViewController: rootViewController)
         isNavigationBarHidden = true
-        tabBarItem = UITabBarItem(title: nil, image: UIImage(named: imageName)!, tag: tag)
+        tabBarItem = UITabBarItem(title: nil, image: image, tag: tag)
     }
     
     required init?(coder aDecoder: NSCoder) {

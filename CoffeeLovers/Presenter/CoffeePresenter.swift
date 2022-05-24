@@ -27,8 +27,9 @@ class CoffeePresenter {
     
     // MARK: - Properties
     
-    private var coffee: Coffee!
-    private var localDataLoader: LocalDataLoader!
+    private var coffee: Coffee
+    private var localDataLoader: LocalDataLoader
+    private let localNotificationService: LocalNotificationService
     
     var imageName: String {
         return coffee.image
@@ -39,10 +40,11 @@ class CoffeePresenter {
     
     // MARK: - Init Methods
     
-    init(view: CoffeeView, coffee: Coffee, localDataLoader: LocalDataLoader) {
+    init(view: CoffeeView, coffee: Coffee, localNotificationService: LocalNotificationService, localDataLoader: LocalDataLoader) {
         self.coffeeView = view
         self.coffee = coffee
         self.localDataLoader = localDataLoader
+        self.localNotificationService = localNotificationService
     }
     
     // MARK: - Methods
@@ -68,6 +70,7 @@ class CoffeePresenter {
             
             self.coffee.isFavourite = !self.coffee.isFavourite
             self.displayCoffeeInfo()
+            self.localNotificationService.updateMorningNotification()
         }
     }
 }

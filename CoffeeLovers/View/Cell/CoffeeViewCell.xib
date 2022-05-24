@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,7 +25,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Americano" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3i-XT-lCi">
                                 <rect key="frame" x="0.0" y="183" width="236" height="60"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <color key="backgroundColor" systemColor="lightTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7ib-Dm-FEm"/>
                                 </constraints>
@@ -49,13 +47,13 @@
                     </view>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="tC5-J6-bLd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="U35-8e-h8r"/>
                 <constraint firstAttribute="trailing" secondItem="tC5-J6-bLd" secondAttribute="trailing" id="VM0-hT-UkX"/>
                 <constraint firstAttribute="bottom" secondItem="tC5-J6-bLd" secondAttribute="bottom" id="ung-WL-Zpr"/>
                 <constraint firstItem="tC5-J6-bLd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="voU-My-eCV"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="236" height="243"/>
             <connections>
                 <outlet property="coffeeImageView" destination="CuX-xJ-psw" id="9uv-jt-OXJ"/>
@@ -66,6 +64,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="c_americano" width="166.66667175292969" height="181.66667175292969"/>
+        <image name="c_americano" width="166.66667175292969" height="250"/>
+        <systemColor name="lightTextColor">
+            <color white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

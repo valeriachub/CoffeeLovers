@@ -10,12 +10,13 @@ import UIKit
 
 public final class CollectionUIComposer {
     
-    public static func composedWith(coffeeData: [Coffee], localDataLoader: LocalDataLoader, isFavouriteTab: Bool, imageName: String, tag: Int) -> CollectionTabNavigationController {
+    public static func composedWith(coffeeData: [Coffee], localDataLoader: LocalDataLoader, isFavouriteTab: Bool, image: UIImage, tag: Int) -> CollectionTabNavigationController {
 
+        let localNotificationService = LocalNotificationService(coffeeData: coffeeData)
         let controller = CoffeeCollectionViewController()
-        let navigationController = CollectionTabNavigationController(rootViewController: controller, imageName: imageName, tag: tag)
+        let navigationController = CollectionTabNavigationController(rootViewController: controller, image: image, tag: tag)
         let selection: (Coffee) -> Void = { [weak navigationController] coffee in
-            let controller = CollectionUIComposer.getCoffeeController(for: coffee, localDataLoader: localDataLoader)
+            let controller = CollectionUIComposer.getCoffeeController(for: coffee, localNotificationService: localNotificationService, localDataLoader: localDataLoader)
             navigationController?.pushViewController(controller, animated: true)
         }
         
@@ -24,10 +25,10 @@ public final class CollectionUIComposer {
         return navigationController
     }
     
-    private static func getCoffeeController(for coffee: Coffee, localDataLoader: LocalDataLoader) -> CoffeeController {
+    private static func getCoffeeController(for coffee: Coffee, localNotificationService: LocalNotificationService, localDataLoader: LocalDataLoader) -> CoffeeController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewController(withIdentifier: "CoffeeController") as! CoffeeController
-        let presenter = CoffeePresenter(view: controller, coffee: coffee, localDataLoader: localDataLoader)
+        let presenter = CoffeePresenter(view: controller, coffee: coffee, localNotificationService: localNotificationService, localDataLoader: localDataLoader)
         controller.presenter = presenter
         return controller
     }

@@ -23,12 +23,13 @@ public final class RootUIComposer {
     }
     
     private static func getTabBarViewController(for localCoffee: [Coffee], localDataLoader: LocalDataLoader) -> UITabBarController {
-        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, localDataLoader: localDataLoader, isFavouriteTab: false, imageName: "ic_coffee", tag: 0)
-        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, localDataLoader: localDataLoader, isFavouriteTab: true, imageName: "ic_favourite", tag: 1)
+        let mainCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, localDataLoader: localDataLoader, isFavouriteTab: false, image: UIImage(systemName: "cup.and.saucer")!, tag: 0)
+        let favouriteCollectionTabNavigationController = CollectionUIComposer.composedWith(coffeeData: localCoffee, localDataLoader: localDataLoader, isFavouriteTab: true, image: UIImage(systemName: "heart")!, tag: 1)
+        let newsController = NewsUIComposer.compose(with: UIImage(systemName: "newspaper")!, tag: 2)
         
         let tabBarController = UITabBarController()
         tabBarController.tabBar.tintColor = .red
-        tabBarController.viewControllers = [mainCollectionTabNavigationController, favouriteCollectionTabNavigationController]
+        tabBarController.viewControllers = [mainCollectionTabNavigationController, favouriteCollectionTabNavigationController, newsController]
         
         return tabBarController
     }
