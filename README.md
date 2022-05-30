@@ -1,7 +1,6 @@
 # CoffeeLovers
 
-App for Coffee Lovers who take care about their fit and food calories. It's became so simple to 
-drink your coffee and count its calories. The App will do all for you. Enjoy! ♥
+Show you a top famous coffee recipes. Choose your favourite and learn what the difference between Latte and Cappuccino :D
 
 Technologies and Frameworks:
 
