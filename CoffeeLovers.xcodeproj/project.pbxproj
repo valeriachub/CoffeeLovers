@@ -41,6 +41,7 @@
 		ABB10AC728451CE300B9AE1E /* NewsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AC628451CE300B9AE1E /* NewsItem.swift */; };
 		ABB10AC928451D0100B9AE1E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AC828451D0000B9AE1E /* NewsViewController.swift */; };
 		ABB10ACC28451D4900B9AE1E /* FirebaseNewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10ACB28451D4900B9AE1E /* FirebaseNewsLoader.swift */; };
+		ABB10ACE2845340700B9AE1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB10ACD2845340700B9AE1E /* GoogleService-Info.plist */; };
 		ABC3373B2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373A2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift */; };
 		ABC3373D28242D4400723DA9 /* RootUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373C28242D4400723DA9 /* RootUIComposer.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
@@ -102,6 +103,7 @@
 		ABB10AC628451CE300B9AE1E /* NewsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItem.swift; sourceTree = "<group>"; };
 		ABB10AC828451D0000B9AE1E /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		ABB10ACB28451D4900B9AE1E /* FirebaseNewsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseNewsLoader.swift; sourceTree = "<group>"; };
+		ABB10ACD2845340700B9AE1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABC3373A2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCoffeeFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		ABC3373C28242D4400723DA9 /* RootUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUIComposer.swift; sourceTree = "<group>"; };
 		ABE7CD9727F0E7D600DBB02E /* ModalView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalView.xib; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		3A468BDD21346B2D0046DAFD = {
 			isa = PBXGroup;
 			children = (
+				ABB10ACD2845340700B9AE1E /* GoogleService-Info.plist */,
 				3A468BE821346B2E0046DAFD /* CoffeeLovers */,
 				AB25B133282425800059DDE9 /* CoffeeLoversTests */,
 				3A468BE721346B2E0046DAFD /* Products */,
@@ -445,6 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF197AF2138FFB40087140F /* CoffeeData.json in Resources */,
+				ABB10ACE2845340700B9AE1E /* GoogleService-Info.plist in Resources */,
 				3A468BF121346B320046DAFD /* Assets.xcassets in Resources */,
 				ABB10ABC2845087900B9AE1E /* NewsCell.xib in Resources */,
 				ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */,
