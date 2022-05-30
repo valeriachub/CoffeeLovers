@@ -8,7 +8,7 @@ target 'CoffeeLovers' do
 
 pod 'FirebaseAnalytics'
 pod 'FirebaseCrashlytics'
-pod 'FirebaseMessaging'
-pod 'FirebaseFirestore'
+#pod 'FirebaseMessaging'
+#pod 'FirebaseFirestore'
 
 end
