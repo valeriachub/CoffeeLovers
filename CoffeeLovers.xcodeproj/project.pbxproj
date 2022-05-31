@@ -43,7 +43,7 @@
 		ABB10AC928451D0100B9AE1E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AC828451D0000B9AE1E /* NewsViewController.swift */; };
 		ABB10ACC28451D4900B9AE1E /* FirebaseNewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10ACB28451D4900B9AE1E /* FirebaseNewsLoader.swift */; };
 		ABB10ACE2845340700B9AE1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB10ACD2845340700B9AE1E /* GoogleService-Info.plist */; };
-		ABB10AD62845741C00B9AE1E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ABB10AD62845741C00B9AE1E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ABC3373B2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373A2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift */; };
 		ABC3373D28242D4400723DA9 /* RootUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373C28242D4400723DA9 /* RootUIComposer.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
@@ -69,7 +69,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ABB10AD62845741C00B9AE1E /* BuildFile in Embed Frameworks */,
+				ABB10AD62845741C00B9AE1E /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
