@@ -46,8 +46,9 @@ extension AppDelegate {
     }
     
     private func setRootViewController() {
-        RootUIComposer.getRoot(localDataLoader: localDataLoader) { [weak self] controller in
-            self?.window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
+        
+        RootUIComposer.getRoot(in: window!, localDataLoader: localDataLoader) { [weak self] controller in
             self?.window?.rootViewController = controller
             self?.window?.makeKeyAndVisible()
         }

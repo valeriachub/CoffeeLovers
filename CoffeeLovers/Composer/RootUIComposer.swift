@@ -10,15 +10,30 @@ import UIKit
 
 public final class RootUIComposer {
     
-    public static func getRoot(localDataLoader: LocalDataLoader, completion: @escaping (UIViewController) -> Void) {
+    public static func getRoot(in window: UIWindow, localDataLoader: LocalDataLoader, completion: @escaping (UIViewController) -> Void) {
+        
         localDataLoader.load { result in
             switch result {
             case let .success(coffee):
-                completion(getTabBarViewController(for: coffee, localDataLoader: localDataLoader))
-
+                completion(getRootController(with: coffee, in: window, loader: localDataLoader))
+                
             case .failure:
                 completion(getErrorViewController())
             }
+        }
+    }
+    
+    private static func getRootController(with coffee: [Coffee], in window: UIWindow, loader: LocalDataLoader) -> UIViewController {
+        let isFirstLaunch = !(UserDefaults.standard.bool(forKey: "showedOnboarding"))
+        let homeController = getTabBarViewController(for: coffee, localDataLoader: loader)
+        guard isFirstLaunch else {
+            return homeController
+        }
+        
+        return OnboardingUIComposer.compose {
+            UserDefaults.standard.set(true, forKey: "showedOnboarding")
+            window.rootViewController = homeController
+            window.makeKeyAndVisible()
         }
     }
     
