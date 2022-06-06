@@ -51,7 +51,7 @@
 		ABB10AC928451D0100B9AE1E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AC828451D0000B9AE1E /* NewsViewController.swift */; };
 		ABB10ACC28451D4900B9AE1E /* FirebaseNewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10ACB28451D4900B9AE1E /* FirebaseNewsLoader.swift */; };
 		ABB10ACE2845340700B9AE1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB10ACD2845340700B9AE1E /* GoogleService-Info.plist */; };
-		ABB10AD62845741C00B9AE1E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ABB10AD62845741C00B9AE1E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ABC3373B2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373A2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift */; };
 		ABC3373D28242D4400723DA9 /* RootUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373C28242D4400723DA9 /* RootUIComposer.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
@@ -77,7 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ABB10AD62845741C00B9AE1E /* (null) in Embed Frameworks */,
+				ABB10AD62845741C00B9AE1E /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,10 +452,10 @@
 				3A468BE221346B2D0046DAFD /* Sources */,
 				3A468BE321346B2D0046DAFD /* Frameworks */,
 				3A468BE421346B2D0046DAFD /* Resources */,
-				ABB10AA6283D041D00B9AE1E /* ShellScript */,
 				ABB10AD72845741C00B9AE1E /* Embed Frameworks */,
 				72B5E6332C0F36FB4C5BD401 /* [CP] Embed Pods Frameworks */,
-				B84C4A0D6B04CF2240A8B337 /* [CP] Copy Pods Resources */,
+				ABB10AA6283D041D00B9AE1E /* Crashlytics */,
+				964CB508DE2FC00F6D56A9E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -570,26 +570,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABB10AA6283D041D00B9AE1E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		B84C4A0D6B04CF2240A8B337 /* [CP] Copy Pods Resources */ = {
+		964CB508DE2FC00F6D56A9E0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -605,6 +586,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		ABB10AA6283D041D00B9AE1E /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		F46CE22C611ADB7074C9A5B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
