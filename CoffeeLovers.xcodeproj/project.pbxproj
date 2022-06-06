@@ -32,6 +32,14 @@
 		AB25B11A281C2AE40059DDE9 /* CoffeeModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B119281C2AE40059DDE9 /* CoffeeModalView.swift */; };
 		AB25B11C2823CE7B0059DDE9 /* LocalDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB25B11B2823CE7B0059DDE9 /* LocalDataLoader.swift */; };
 		AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */; };
+		AB94F7B42846103C00A86168 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94F7B22846103C00A86168 /* OnboardingViewController.swift */; };
+		AB94F7B52846103C00A86168 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB94F7B32846103C00A86168 /* OnboardingViewController.xib */; };
+		AB94F7B72846118D00A86168 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94F7B62846118D00A86168 /* OnboardingPresenter.swift */; };
+		AB94F7BA2846126600A86168 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94F7B82846126600A86168 /* OnboardingCell.swift */; };
+		AB94F7BB2846126600A86168 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB94F7B92846126600A86168 /* OnboardingCell.xib */; };
+		AB94F7BD28464C5900A86168 /* OnboardingUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94F7BC28464C5900A86168 /* OnboardingUIComposer.swift */; };
+		AB94F7C3284659AE00A86168 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94F7C2284659AE00A86168 /* OnboardingSlide.swift */; };
+		AB94F7C528465ABE00A86168 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB94F7C428465ABE00A86168 /* UICollectionView+Extensions.swift */; };
 		ABB10AA3283CE03100B9AE1E /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AA2283CE03100B9AE1E /* SectionHeaderView.swift */; };
 		ABB10AB62843F78700B9AE1E /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AB52843F78700B9AE1E /* LocalNotificationService.swift */; };
 		ABB10AB82844EBC100B9AE1E /* NewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AB72844EBC100B9AE1E /* NewsLoader.swift */; };
@@ -43,7 +51,7 @@
 		ABB10AC928451D0100B9AE1E /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10AC828451D0000B9AE1E /* NewsViewController.swift */; };
 		ABB10ACC28451D4900B9AE1E /* FirebaseNewsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB10ACB28451D4900B9AE1E /* FirebaseNewsLoader.swift */; };
 		ABB10ACE2845340700B9AE1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABB10ACD2845340700B9AE1E /* GoogleService-Info.plist */; };
-		ABB10AD62845741C00B9AE1E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		ABB10AD62845741C00B9AE1E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		ABC3373B2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373A2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift */; };
 		ABC3373D28242D4400723DA9 /* RootUIComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3373C28242D4400723DA9 /* RootUIComposer.swift */; };
 		ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABE7CD9727F0E7D600DBB02E /* ModalView.xib */; };
@@ -69,7 +77,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				ABB10AD62845741C00B9AE1E /* (null) in Embed Frameworks */,
+				ABB10AD62845741C00B9AE1E /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +112,14 @@
 		AB25B11B2823CE7B0059DDE9 /* LocalDataLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataLoader.swift; sourceTree = "<group>"; };
 		AB25B132282425800059DDE9 /* CoffeeLoversTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeLoversTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3791B927C51DB30000B0A4 /* CoffeeCollectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCollectionPresenter.swift; sourceTree = "<group>"; };
+		AB94F7B22846103C00A86168 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		AB94F7B32846103C00A86168 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		AB94F7B62846118D00A86168 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		AB94F7B82846126600A86168 /* OnboardingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCell.swift; sourceTree = "<group>"; };
+		AB94F7B92846126600A86168 /* OnboardingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCell.xib; sourceTree = "<group>"; };
+		AB94F7BC28464C5900A86168 /* OnboardingUIComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingUIComposer.swift; sourceTree = "<group>"; };
+		AB94F7C2284659AE00A86168 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		AB94F7C428465ABE00A86168 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		ABB10AA2283CE03100B9AE1E /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		ABB10AB42842B3CD00B9AE1E /* CoffeeLovers.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoffeeLovers.entitlements; sourceTree = "<group>"; };
 		ABB10AB52843F78700B9AE1E /* LocalNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
@@ -171,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				AB25B10F281C18AD0059DDE9 /* UIView+Extensions.swift */,
+				AB94F7C428465ABE00A86168 /* UICollectionView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +216,7 @@
 		3A468BE821346B2E0046DAFD /* CoffeeLovers */ = {
 			isa = PBXGroup;
 			children = (
+				AB94F7B12846100C00A86168 /* Onboarding */,
 				ABB10ABF28451C8B00B9AE1E /* News Feature */,
 				ABB10AB42842B3CD00B9AE1E /* CoffeeLovers.entitlements */,
 				AB25B111281C28900059DDE9 /* Composer */,
@@ -283,6 +301,52 @@
 				ABC3373A2824265400723DA9 /* LoadCoffeeFromCacheUseCaseTests.swift */,
 			);
 			path = CoffeeLoversTests;
+			sourceTree = "<group>";
+		};
+		AB94F7B12846100C00A86168 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				AB94F7C12846599C00A86168 /* Domain */,
+				AB94F7C02846598800A86168 /* View */,
+				AB94F7BF2846597500A86168 /* Presenter */,
+				AB94F7BE2846596D00A86168 /* Composer */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		AB94F7BE2846596D00A86168 /* Composer */ = {
+			isa = PBXGroup;
+			children = (
+				AB94F7BC28464C5900A86168 /* OnboardingUIComposer.swift */,
+			);
+			path = Composer;
+			sourceTree = "<group>";
+		};
+		AB94F7BF2846597500A86168 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				AB94F7B62846118D00A86168 /* OnboardingPresenter.swift */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		AB94F7C02846598800A86168 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AB94F7B22846103C00A86168 /* OnboardingViewController.swift */,
+				AB94F7B32846103C00A86168 /* OnboardingViewController.xib */,
+				AB94F7B82846126600A86168 /* OnboardingCell.swift */,
+				AB94F7B92846126600A86168 /* OnboardingCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB94F7C12846599C00A86168 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AB94F7C2284659AE00A86168 /* OnboardingSlide.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		ABB10ABF28451C8B00B9AE1E /* News Feature */ = {
@@ -388,10 +452,10 @@
 				3A468BE221346B2D0046DAFD /* Sources */,
 				3A468BE321346B2D0046DAFD /* Frameworks */,
 				3A468BE421346B2D0046DAFD /* Resources */,
-				ABB10AA6283D041D00B9AE1E /* ShellScript */,
 				ABB10AD72845741C00B9AE1E /* Embed Frameworks */,
 				72B5E6332C0F36FB4C5BD401 /* [CP] Embed Pods Frameworks */,
-				B84C4A0D6B04CF2240A8B337 /* [CP] Copy Pods Resources */,
+				ABB10AA6283D041D00B9AE1E /* Crashlytics */,
+				964CB508DE2FC00F6D56A9E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -467,8 +531,10 @@
 				3AF197AF2138FFB40087140F /* CoffeeData.json in Resources */,
 				ABB10ACE2845340700B9AE1E /* GoogleService-Info.plist in Resources */,
 				3A468BF121346B320046DAFD /* Assets.xcassets in Resources */,
+				AB94F7B52846103C00A86168 /* OnboardingViewController.xib in Resources */,
 				ABB10ABC2845087900B9AE1E /* NewsCell.xib in Resources */,
 				ABE7CD9827F0E7D600DBB02E /* ModalView.xib in Resources */,
+				AB94F7BB2846126600A86168 /* OnboardingCell.xib in Resources */,
 				3AC54297231C369800E78AAE /* IngredientCell.xib in Resources */,
 				3A468BFC213476AC0046DAFD /* Launch Screen.storyboard in Resources */,
 				3A468BEF21346B2E0046DAFD /* Main.storyboard in Resources */,
@@ -504,26 +570,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ABB10AA6283D041D00B9AE1E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
-				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
-		};
-		B84C4A0D6B04CF2240A8B337 /* [CP] Copy Pods Resources */ = {
+		964CB508DE2FC00F6D56A9E0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -539,6 +586,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoffeeLovers/Pods-CoffeeLovers-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		ABB10AA6283D041D00B9AE1E /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 		F46CE22C611ADB7074C9A5B3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -569,9 +636,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB94F7C3284659AE00A86168 /* OnboardingSlide.swift in Sources */,
 				3A468C0F21371B570046DAFD /* CoffeeViewCell.swift in Sources */,
 				ABB10AC728451CE300B9AE1E /* NewsItem.swift in Sources */,
 				AB25B117281C2A430059DDE9 /* Coffee.swift in Sources */,
+				AB94F7C528465ABE00A86168 /* UICollectionView+Extensions.swift in Sources */,
 				AB25B115281C290B0059DDE9 /* WeakWrapper.swift in Sources */,
 				ABB10AB82844EBC100B9AE1E /* NewsLoader.swift in Sources */,
 				AB3791BA27C51DB30000B0A4 /* CoffeeCollectionPresenter.swift in Sources */,
@@ -583,7 +652,9 @@
 				AB25B11A281C2AE40059DDE9 /* CoffeeModalView.swift in Sources */,
 				ABE7CD9D27F5EC6700DBB02E /* CollectionTabNavigationController.swift in Sources */,
 				ABB10AA3283CE03100B9AE1E /* SectionHeaderView.swift in Sources */,
+				AB94F7BD28464C5900A86168 /* OnboardingUIComposer.swift in Sources */,
 				AB25B110281C18AD0059DDE9 /* UIView+Extensions.swift in Sources */,
+				AB94F7B72846118D00A86168 /* OnboardingPresenter.swift in Sources */,
 				ABB10ABE28450C0700B9AE1E /* NewsUIComposer.swift in Sources */,
 				ABE7CD9F27F74C5500DBB02E /* StringHolder.swift in Sources */,
 				ABB10AB62843F78700B9AE1E /* LocalNotificationService.swift in Sources */,
@@ -592,6 +663,7 @@
 				3A468C3B2137D88B0046DAFD /* CoffeeLoversDB.xcdatamodeld in Sources */,
 				3AADE6D0231ACFB10099168C /* CoffeeCollectionViewController.swift in Sources */,
 				AB25B10D281A7C8D0059DDE9 /* RecipeCell.swift in Sources */,
+				AB94F7B42846103C00A86168 /* OnboardingViewController.swift in Sources */,
 				3AB02005231A693000AC0EC4 /* CoreDataStore.swift in Sources */,
 				ABE7CD9B27F19F2B00DBB02E /* ModalView.swift in Sources */,
 				ABB10AC528451CC500B9AE1E /* NewsPresenter.swift in Sources */,
@@ -599,6 +671,7 @@
 				3AA1824A231AE2DE006ADC8A /* CoffeeController.swift in Sources */,
 				ABB10ACC28451D4900B9AE1E /* FirebaseNewsLoader.swift in Sources */,
 				ABB10ABB2845087900B9AE1E /* NewsCell.swift in Sources */,
+				AB94F7BA2846126600A86168 /* OnboardingCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

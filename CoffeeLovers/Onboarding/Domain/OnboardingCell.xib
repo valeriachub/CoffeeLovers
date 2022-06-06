@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCell" id="gTV-IL-0wX" customClass="OnboardingCell" customModule="CoffeeLovers" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="558"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="558"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ef2-hT-SRu">
+                        <rect key="frame" x="0.0" y="0.0" width="402" height="558"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CpQ-IF-1PN">
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="330"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6z-eY-F20">
+                                <rect key="frame" x="0.0" y="346" width="402" height="196"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is a Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ty-4Z-a8y">
+                                        <rect key="frame" x="16" y="0.0" width="370" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="pJg-Ow-Zw0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eg5-f7-51b">
+                                        <rect key="frame" x="16" y="76" width="370" height="120"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long Description Long Description Long Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y8-i6-IBb">
+                                                <rect key="frame" x="0.0" y="0.0" width="370" height="44"/>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="16"/>
+                                                <color key="textColor" name="CoffeeSubLabel"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="2y8-i6-IBb" firstAttribute="top" secondItem="eg5-f7-51b" secondAttribute="top" id="5Mc-dg-4Ho"/>
+                                            <constraint firstItem="2y8-i6-IBb" firstAttribute="leading" secondItem="eg5-f7-51b" secondAttribute="leading" id="7Qp-wJ-knp"/>
+                                            <constraint firstAttribute="trailing" secondItem="2y8-i6-IBb" secondAttribute="trailing" id="cNT-Q0-3IZ"/>
+                                            <constraint firstAttribute="height" constant="120" id="cVx-Ka-rWb"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eg5-f7-51b" secondAttribute="trailing" constant="16" id="7da-CC-1BQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="eg5-f7-51b" secondAttribute="bottom" id="C4l-hT-8Xf"/>
+                                    <constraint firstItem="eg5-f7-51b" firstAttribute="top" secondItem="4Ty-4Z-a8y" secondAttribute="bottom" constant="16" id="GkL-OM-7c2"/>
+                                    <constraint firstItem="eg5-f7-51b" firstAttribute="leading" secondItem="c6z-eY-F20" secondAttribute="leading" constant="16" id="U6U-cq-4OG"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Ty-4Z-a8y" secondAttribute="trailing" constant="16" id="Vtb-yb-BW5"/>
+                                    <constraint firstItem="4Ty-4Z-a8y" firstAttribute="leading" secondItem="c6z-eY-F20" secondAttribute="leading" constant="16" id="nHD-bb-H4D"/>
+                                    <constraint firstItem="4Ty-4Z-a8y" firstAttribute="top" secondItem="c6z-eY-F20" secondAttribute="top" id="wPJ-qQ-2LH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="c6z-eY-F20" secondAttribute="trailing" id="NhM-rL-DO6"/>
+                            <constraint firstItem="c6z-eY-F20" firstAttribute="top" secondItem="CpQ-IF-1PN" secondAttribute="bottom" constant="16" id="NpO-BI-ZIm"/>
+                            <constraint firstItem="CpQ-IF-1PN" firstAttribute="top" secondItem="Ef2-hT-SRu" secondAttribute="top" id="Sbo-BL-7T5"/>
+                            <constraint firstItem="c6z-eY-F20" firstAttribute="leading" secondItem="Ef2-hT-SRu" secondAttribute="leading" id="dR5-e4-ARS"/>
+                            <constraint firstAttribute="bottom" secondItem="c6z-eY-F20" secondAttribute="bottom" constant="16" id="eMw-yj-XXn"/>
+                            <constraint firstItem="CpQ-IF-1PN" firstAttribute="leading" secondItem="Ef2-hT-SRu" secondAttribute="leading" id="hjl-ca-90V"/>
+                            <constraint firstAttribute="trailing" secondItem="CpQ-IF-1PN" secondAttribute="trailing" id="uTk-Bh-OD7"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="Ef2-hT-SRu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="BPH-Ut-qn4"/>
+                <constraint firstAttribute="trailing" secondItem="Ef2-hT-SRu" secondAttribute="trailing" id="Ean-qX-w7H"/>
+                <constraint firstAttribute="bottom" secondItem="Ef2-hT-SRu" secondAttribute="bottom" id="ukV-Gg-Tej"/>
+                <constraint firstItem="Ef2-hT-SRu" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vtJ-JV-Nae"/>
+            </constraints>
+            <size key="customSize" width="402" height="558"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="2y8-i6-IBb" id="Fqg-fw-KuQ"/>
+                <outlet property="imageView" destination="CpQ-IF-1PN" id="KIl-ie-wc5"/>
+                <outlet property="titleLabel" destination="4Ty-4Z-a8y" id="8Aq-nb-mfR"/>
+            </connections>
+            <point key="canvasLocation" x="176.81159420289856" y="85.044642857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="CoffeeSubLabel">
+            <color red="0.33000001311302185" green="0.33000001311302185" blue="0.33000001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
